@@ -11,8 +11,8 @@ import SiteHeader from "../components/SiteHeader.astro";
       <div class="registry-annotation" style="margin-bottom: 1rem;">
         <span class="registry-key">OBJECT_TYPE</span>: <span class="registry-value">OPERATING_METHODS_APPENDIX</span>
       </div>
-      <h1 style="font-size: 4rem; font-weight: 800; letter-spacing: -0.04em;">METHODS</h1>
-      <p class="lead" style="max-width: 50ch;">Structured methods and repeatable frameworks for orchestrating AI agent systems.</p>
+      <h1 class="registry-title">METHODS_&_PLAYBOOKS</h1>
+      <p class="lead registry-lead-desc">Structured methods and repeatable frameworks for orchestrating AI agent systems at scale.</p>
     </div>
   </div>
 
@@ -22,7 +22,7 @@ import SiteHeader from "../components/SiteHeader.astro";
         <div class="registry-annotation" style="margin-bottom: 2rem;">
           <span class="registry-key">APPENDIX_ID</span>: <span class="registry-value">METHOD_PLAYBOOK_01</span>
         </div>
-        <div class="prose" style="max-width: 65ch; font-size: 1.1rem; line-height: 1.7; color: var(--current-muted);">
+        <div class="prose" style="max-width: 65ch; font-size: 1.15rem; line-height: 1.7; color: var(--current-muted);">
           <p>Methods are the executable logic of the protocol. They describe the specific sequences of action, verification, and correction that lead to reliable work output.</p>
           <div class="registry-chassis" style="margin-top: 3rem; padding: 2rem; border-left: 2px solid var(--accent-caution);">
              <div class="registry-annotation" style="margin-bottom: 0.5rem;">
@@ -35,3 +35,21 @@ import SiteHeader from "../components/SiteHeader.astro";
     </section>
   </div>
 </BaseLayout>
+
+<style>
+  .registry-title {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+  }
+  .registry-lead-desc {
+    max-width: 55ch;
+    font-size: 1.25rem;
+    color: var(--text-registry-muted);
+    border-left: 2px solid var(--border-registry);
+    padding-left: 1.5rem;
+  }
+</style>

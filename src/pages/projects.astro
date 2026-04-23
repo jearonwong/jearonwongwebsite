@@ -20,9 +20,11 @@ import { siteConfig } from "../data/site";
 
   <div class="zone-b page-body" style="padding: 6rem 0;">
     <section class="shell">
-      <div class="card-grid">
+      <div class="evidence-ledger">
         {projects.map(project => (
-          <ProjectProofCard {...project} />
+          <div class="ledger-item">
+            <ProjectProofCard {...project} />
+          </div>
         ))}
       </div>
     </section>
@@ -30,14 +32,17 @@ import { siteConfig } from "../data/site";
 </BaseLayout>
 
 <style>
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-    gap: 3rem;
+  .evidence-ledger {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
   }
-  @media (max-width: 768px) {
-    .card-grid {
-      grid-template-columns: 1fr;
-    }
+  .ledger-item {
+    border-bottom: 1px solid var(--current-line);
+    padding-bottom: 4rem;
+  }
+  .ledger-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
   }
 </style>

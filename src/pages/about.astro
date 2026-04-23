@@ -11,8 +11,11 @@ import SiteHeader from "../components/SiteHeader.astro";
       <div class="registry-annotation" style="margin-bottom: 1rem;">
         <span class="registry-key">OBJECT_TYPE</span>: <span class="registry-value">IDENTITY_SPECIFICATION</span>
       </div>
-      <h1 style="font-size: 4rem; font-weight: 800; letter-spacing: -0.04em;">JEARON WANG</h1>
-      <p class="lead" style="max-width: 50ch;">Protocol Architect for the Agent Era. Specializing in the engineering of reliable work delivery systems.</p>
+      <h1 class="hero-title-inner">JEARON WANG</h1>
+      <div class="registry-annotation" style="font-size: 1.15rem; margin-bottom: 2.5rem; color: var(--accent-signal); font-weight: 700;">
+        <span class="registry-key">ROLE</span>: <span class="registry-value">PROTOCOL_ARCHITECT</span>
+      </div>
+      <p class="lead hero-lead-inner">Defining how AI agents reliably deliver real work through architectural constraints.</p>
     </div>
   </div>
 
@@ -53,6 +56,22 @@ import SiteHeader from "../components/SiteHeader.astro";
 </BaseLayout>
 
 <style>
+  .hero-title-inner {
+    font-size: clamp(3rem, 10vw, 6rem);
+    font-weight: 900;
+    letter-spacing: -0.05em;
+    line-height: 0.9;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+  }
+  .hero-lead-inner {
+    max-width: 45ch;
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: var(--text-registry-muted);
+    border-left: 2px solid var(--border-registry);
+    padding-left: 1.5rem;
+  }
   .spec-label {
     font-family: var(--font-mono);
     font-size: 0.8rem;

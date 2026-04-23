@@ -19,9 +19,11 @@ import { theoryClusters, siteConfig } from "../data/site";
 
   <div class="zone-b page-body" style="padding: 6rem 0;">
     <section class="shell">
-      <div class="card-grid">
+      <div class="spec-stack">
         {theoryClusters.map(cluster => (
-          <SignatureIdeaCard {...cluster} />
+          <div class="spec-panel-wrapper">
+            <SignatureIdeaCard {...cluster} />
+          </div>
         ))}
       </div>
     </section>
@@ -29,14 +31,17 @@ import { theoryClusters, siteConfig } from "../data/site";
 </BaseLayout>
 
 <style>
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    gap: 3rem;
+  .spec-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
   }
-  @media (max-width: 768px) {
-    .card-grid {
-      grid-template-columns: 1fr;
-    }
+  .spec-panel-wrapper {
+    border-bottom: 1px solid var(--current-line);
+    padding-bottom: 4rem;
+  }
+  .spec-panel-wrapper:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
   }
 </style>

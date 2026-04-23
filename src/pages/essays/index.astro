@@ -16,8 +16,8 @@ const essays = (await getCollection("essays")).sort(
       <div class="registry-annotation" style="margin-bottom: 1rem;">
         <span class="registry-key">OBJECT_TYPE</span>: <span class="registry-value">REGISTRY_LOGBOOK</span>
       </div>
-      <h1 style="font-size: 4rem; font-weight: 800; letter-spacing: -0.04em;">THOUGHT REGISTRY</h1>
-      <p class="lead" style="max-width: 50ch;">A linear log of protocol iterations, system observations, and architectural decisions.</p>
+      <h1 class="registry-title">REGISTRY_LOGBOOK</h1>
+      <p class="lead registry-lead-desc">A chronologically ordered ledger of protocol iterations, architectural decisions, and system state observations.</p>
     </div>
   </div>
 
@@ -46,6 +46,21 @@ const essays = (await getCollection("essays")).sort(
 </BaseLayout>
 
 <style>
+  .registry-title {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+  }
+  .registry-lead-desc {
+    max-width: 55ch;
+    font-size: 1.25rem;
+    color: var(--text-registry-muted);
+    border-left: 2px solid var(--border-registry);
+    padding-left: 1.5rem;
+  }
   .registry-log {
     display: flex;
     flex-direction: column;
@@ -54,15 +69,17 @@ const essays = (await getCollection("essays")).sort(
   .log-entry {
     display: grid;
     grid-template-columns: 280px 1fr;
-    padding: 3rem;
+    padding: 3.5rem;
     border-bottom: 1px solid var(--current-line);
-    transition: background-color 0.2s ease;
+    transition: all 0.3s ease;
   }
   .log-entry:last-child {
     border-bottom: none;
   }
   .log-entry:hover {
-    background-color: rgba(59, 130, 246, 0.02);
+    background-color: rgba(59, 130, 246, 0.03);
+    border-left: 4px solid var(--accent-signal);
+    padding-left: calc(3.5rem - 4px);
   }
   .log-metadata {
     display: flex;
@@ -70,10 +87,11 @@ const essays = (await getCollection("essays")).sort(
     gap: 1rem;
   }
   .log-title {
-    font-size: 1.75rem;
+    font-size: 2rem;
     font-weight: 800;
     margin-bottom: 1rem;
     letter-spacing: -0.02em;
+    line-height: 1.2;
   }
   .log-title a {
     color: var(--current-text);
@@ -83,16 +101,19 @@ const essays = (await getCollection("essays")).sort(
     color: var(--accent-signal);
   }
   .log-desc {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     line-height: 1.6;
     color: var(--current-muted);
-    max-width: 60ch;
+    max-width: 65ch;
   }
   @media (max-width: 900px) {
     .log-entry {
       grid-template-columns: 1fr;
       gap: 2rem;
       padding: 2rem;
+    }
+    .log-entry:hover {
+      padding-left: 2rem;
     }
   }
 </style>

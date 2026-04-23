@@ -11,8 +11,8 @@ import SiteHeader from "../components/SiteHeader.astro";
       <div class="registry-annotation" style="margin-bottom: 1rem;">
         <span class="registry-key">OBJECT_TYPE</span>: <span class="registry-value">SYSTEM_GOVERNANCE_APPENDIX</span>
       </div>
-      <h1 style="font-size: 4rem; font-weight: 800; letter-spacing: -0.04em;">GOVERNANCE</h1>
-      <p class="lead" style="max-width: 50ch;">The fundamental operating procedures and compliance checks for the Cognitive OS.</p>
+      <h1 class="registry-title">SYSTEM_GOVERNANCE</h1>
+      <p class="lead registry-lead-desc">Fundamental operating procedures, compliance protocols, and audit requirements for autonomous cognitive substrates.</p>
     </div>
   </div>
 
@@ -22,7 +22,7 @@ import SiteHeader from "../components/SiteHeader.astro";
         <div class="registry-annotation" style="margin-bottom: 2rem;">
           <span class="registry-key">APPENDIX_ID</span>: <span class="registry-value">GOV_SUBSTRATE_01</span>
         </div>
-        <div class="prose" style="max-width: 65ch; font-size: 1.1rem; line-height: 1.7; color: var(--current-muted);">
+        <div class="prose" style="max-width: 65ch; font-size: 1.15rem; line-height: 1.7; color: var(--current-muted);">
           <p>Governance is the binding layer. It defines how autonomous agents are constrained, how they are audited, and how they report state changes back to the human architect.</p>
           <div class="registry-chassis" style="margin-top: 3rem; padding: 2rem; border-left: 2px solid var(--accent-signal);">
              <div class="registry-annotation" style="margin-bottom: 0.5rem;">
@@ -35,3 +35,21 @@ import SiteHeader from "../components/SiteHeader.astro";
     </section>
   </div>
 </BaseLayout>
+
+<style>
+  .registry-title {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+  }
+  .registry-lead-desc {
+    max-width: 55ch;
+    font-size: 1.25rem;
+    color: var(--text-registry-muted);
+    border-left: 2px solid var(--border-registry);
+    padding-left: 1.5rem;
+  }
+</style>
