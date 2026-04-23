@@ -6,6 +6,11 @@ export default defineConfig({
   output: "static",
   integrations: [sitemap()],
   server: {
-    allowedHosts: ["mortgage-assists-unable-scholarship.trycloudflare.com"]
+    allowedHosts: true
+  },
+  vite: {
+    server: {
+      allowedHosts: true
+    }
   }
 });
