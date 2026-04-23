@@ -17,47 +17,37 @@ import { secondaryNav, siteConfig } from "../data/site";
 
 <style>
   .site-footer {
-    padding: 3rem 0;
+    padding: 4rem 0 6rem;
     display: grid;
     grid-template-columns: 1fr auto;
-    gap: 4rem;
-    align-items: start;
+    gap: 2rem;
+    align-items: end;
     border-top: 1px solid var(--zone-b-line);
-    margin-top: 6rem;
+    margin-top: 4rem;
   }
   .footer-title {
     font-family: var(--font-display);
     font-weight: 700;
-    font-size: 1.15rem;
     margin: 0;
     color: var(--zone-b-text);
   }
   .footer-meta {
     font-family: var(--font-mono);
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: var(--zone-b-muted);
-    margin: 0.5rem 0 2rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    margin: 0.25rem 0 0.5rem;
   }
   .footer-copy {
-    font-size: 0.8rem;
-    font-family: var(--font-mono);
+    font-size: 0.85rem;
     margin: 0;
-    color: var(--zone-b-muted);
   }
   .secondary-nav {
     display: flex;
-    flex-direction: column;
-    gap: 0.85rem;
-    text-align: right;
+    gap: 1.5rem;
   }
   .secondary-nav a {
-    font-size: 0.85rem;
-    font-family: var(--font-mono);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    font-size: 0.9rem;
+    font-weight: 500;
     color: var(--zone-b-muted);
   }
   .secondary-nav a:hover {
@@ -67,10 +57,6 @@ import { secondaryNav, siteConfig } from "../data/site";
     .site-footer {
       grid-template-columns: 1fr;
       align-items: start;
-      gap: 2rem;
-    }
-    .secondary-nav {
-      text-align: left;
     }
   }
 </style>
