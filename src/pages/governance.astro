@@ -1,55 +1,55 @@
 ---
-import { siteConfig } from "../data/site";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import SiteHeader from "../components/SiteHeader.astro";
+import RegistryPageHero from "../components/RegistryPageHero.astro";
+import { governanceModules, siteConfig } from "../data/site";
 ---
 
 <BaseLayout title={`Governance | ${siteConfig.title}`}>
-  <div class="zone-a registry-grid" style="padding-top: 10rem; padding-bottom: 6rem; border-bottom: 1px solid var(--border-registry);">
-    <SiteHeader />
-    <div class="shell">
-      <div class="registry-annotation" style="margin-bottom: 1rem;">
-        <span class="registry-key">OBJECT_TYPE</span>: <span class="registry-value">SYSTEM_GOVERNANCE_APPENDIX</span>
-      </div>
-      <h1 class="registry-title">SYSTEM_GOVERNANCE</h1>
-      <p class="lead registry-lead-desc">Fundamental operating procedures, compliance protocols, and audit requirements for autonomous cognitive substrates.</p>
-    </div>
-  </div>
+  <RegistryPageHero
+    title="SYSTEM_GOVERNANCE"
+    objectType="OBJECT_TYPE"
+    objectValue="SYSTEM_APPENDIX"
+    lead="The governance appendix describes the binding conditions for auditable autonomous work."
+  />
 
   <div class="zone-b page-body" style="padding: 6rem 0;">
     <section class="shell">
-      <div class="registry-chassis" style="padding: 4rem;">
-        <div class="registry-annotation" style="margin-bottom: 2rem;">
-          <span class="registry-key">APPENDIX_ID</span>: <span class="registry-value">GOV_SUBSTRATE_01</span>
-        </div>
-        <div class="prose" style="max-width: 65ch; font-size: 1.15rem; line-height: 1.7; color: var(--current-muted);">
-          <p>Governance is the binding layer. It defines how autonomous agents are constrained, how they are audited, and how they report state changes back to the human architect.</p>
-          <div class="registry-chassis" style="margin-top: 3rem; padding: 2rem; border-left: 2px solid var(--accent-signal);">
-             <div class="registry-annotation" style="margin-bottom: 0.5rem;">
-               <span class="registry-key">STATUS</span>: <span class="registry-value">DRAFT_PHASE</span>
-             </div>
-             <p style="margin: 0;">Full governance specifications are currently being refined for the v0.4 release.</p>
-          </div>
-        </div>
+      <div class="appendix-stack">
+        {governanceModules.map((item) => (
+          <article class="registry-chassis appendix-panel" id={item.id}>
+            <div class="registry-annotation" style="margin-bottom: 1rem;">
+              <span class="registry-key">MODULE</span>: <span class="registry-value">{item.label}</span>
+            </div>
+            <h2 class="appendix-title">{item.title}</h2>
+            <p class="appendix-body">{item.body}</p>
+          </article>
+        ))}
       </div>
     </section>
   </div>
 </BaseLayout>
 
 <style>
-  .registry-title {
-    font-size: clamp(2.5rem, 8vw, 5rem);
-    font-weight: 900;
-    letter-spacing: -0.04em;
-    line-height: 1;
-    margin-bottom: 1.5rem;
-    text-transform: uppercase;
+  .appendix-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
-  .registry-lead-desc {
-    max-width: 55ch;
-    font-size: 1.25rem;
-    color: var(--text-registry-muted);
-    border-left: 2px solid var(--border-registry);
-    padding-left: 1.5rem;
+  .appendix-panel {
+    padding: 2.5rem;
+  }
+  .appendix-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    color: var(--current-text);
+  }
+  .appendix-body {
+    max-width: 62ch;
+    margin: 0;
+    color: var(--current-muted);
+    line-height: 1.7;
+    font-size: 1.05rem;
   }
 </style>

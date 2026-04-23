@@ -1,0 +1,41 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import RegistryPageHero from "../components/RegistryPageHero.astro";
+import { siteConfig } from "../data/site";
+---
+
+<BaseLayout title={`Contact | ${siteConfig.title}`}>
+  <RegistryPageHero
+    title="CONTACT_PATH"
+    objectType="OBJECT_TYPE"
+    objectValue="QUIET_ENDPOINT"
+    lead="For direct conversations about Protocol Engineering, agent governance, proof systems, or collaboration."
+  />
+
+  <div class="zone-b page-body" style="padding: 6rem 0;">
+    <section class="shell">
+      <article class="registry-chassis appendix-panel">
+        <div class="registry-annotation" style="margin-bottom: 1rem;">
+          <span class="registry-key">STATUS</span>: <span class="registry-value">MANUAL_ROUTING</span>
+        </div>
+        <p class="appendix-body">
+          Direct routing is still lightweight in this public version of the site. For now, contact
+          requests are handled manually rather than through a live backend form.
+        </p>
+      </article>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .appendix-panel {
+    padding: 2.5rem;
+  }
+  .appendix-body {
+    max-width: 62ch;
+    margin: 0;
+    color: var(--current-muted);
+    line-height: 1.7;
+    font-size: 1.05rem;
+  }
+</style>

@@ -1,0 +1,43 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import RegistryPageHero from "../components/RegistryPageHero.astro";
+import SignatureIdeaCard from "../components/SignatureIdeaCard.astro";
+import { theoryClusters, siteConfig } from "../data/site";
+---
+
+<BaseLayout title={`Ideas | ${siteConfig.title}`} canonicalPath="/theories">
+  <RegistryPageHero
+    title="CONCEPTUAL_BLUEPRINT"
+    objectType="OBJECT_TYPE"
+    objectValue="IDEAS_REGISTRY"
+    lead="The conceptual library behind reliable AI agent work delivery, Protocol Engineering, and Agent Governance."
+  />
+
+  <div class="zone-b page-body" style="padding: 6rem 0;">
+    <section class="shell">
+      <div class="spec-stack">
+        {theoryClusters.map((cluster) => (
+          <div class="spec-panel-wrapper">
+            <SignatureIdeaCard {...cluster} />
+          </div>
+        ))}
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .spec-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+  .spec-panel-wrapper {
+    border-bottom: 1px solid var(--current-line);
+    padding-bottom: 4rem;
+  }
+  .spec-panel-wrapper:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+</style>

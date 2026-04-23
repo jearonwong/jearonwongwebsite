@@ -1,47 +1,22 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import SiteHeader from "../components/SiteHeader.astro";
-import SignatureIdeaCard from "../components/SignatureIdeaCard.astro";
-import { theoryClusters, siteConfig } from "../data/site";
+import RegistryPageHero from "../components/RegistryPageHero.astro";
 ---
 
-<BaseLayout title={`Blueprint | ${siteConfig.title}`}>
-  <div class="zone-a registry-grid" style="padding-top: 10rem; padding-bottom: 6rem; border-bottom: 1px solid var(--border-registry);">
-    <SiteHeader />
-    <div class="shell">
-      <div class="registry-annotation" style="margin-bottom: 1rem;">
-        <span class="registry-key">OBJECT_TYPE</span>: <span class="registry-value">CONCEPTUAL_BLUEPRINT</span>
-      </div>
-      <h1 style="font-size: 4rem; font-weight: 800; letter-spacing: -0.04em;">SYSTEM PILLARS</h1>
-      <p class="lead" style="max-width: 50ch;">The core framework for autonomous agent work delivery. Structured as three auditable system modules.</p>
+<BaseLayout
+  title="Ideas"
+  description="Compatibility route retained for older links. The canonical ideas route is /theories."
+  canonicalPath="/theories"
+  noindex={true}
+>
+  <RegistryPageHero
+    title="IDEAS_ROUTE_REDIRECT"
+    objectType="OBJECT_TYPE"
+    objectValue="LEGACY_COMPATIBILITY"
+    lead="The canonical ideas route is now /theories. This compatibility page remains only so older links still have a clear destination."
+  >
+    <div class="registry-annotation">
+      <span class="registry-key">NEXT_ROUTE</span>: <span class="registry-value">/theories</span>
     </div>
-  </div>
-
-  <div class="zone-b page-body" style="padding: 6rem 0;">
-    <section class="shell">
-      <div class="spec-stack">
-        {theoryClusters.map(cluster => (
-          <div class="spec-panel-wrapper">
-            <SignatureIdeaCard {...cluster} />
-          </div>
-        ))}
-      </div>
-    </section>
-  </div>
+  </RegistryPageHero>
 </BaseLayout>
-
-<style>
-  .spec-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-  }
-  .spec-panel-wrapper {
-    border-bottom: 1px solid var(--current-line);
-    padding-bottom: 4rem;
-  }
-  .spec-panel-wrapper:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-</style>

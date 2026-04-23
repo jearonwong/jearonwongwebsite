@@ -1,18 +1,18 @@
 ---
-title: Governance Before Growth
-description: Small systems benefit when they clarify their rules before scale forces them to do it badly.
+title: Evidence Before Agent Claims
+description: AI agent systems need evidence surfaces that show what happened, who was responsible, and what checks support the final output.
 publishDate: 2026-04-22
-cluster: governance-before-scale
-projectProof: Operating Manual Prototype
+cluster: agent-governance
+projectProof: Validation Lab
 featured: true
 ---
 
-Growth does not create the need for governance. Growth reveals that the need has been present for a while.
+AI agent systems will keep making large claims about reliability, governance, and safety. The real question is what those claims are attached to. If the answer is only a sentence on a website, the claim is weak.
 
-Small teams often postpone governance because the people involved can still remember the unwritten rules. That convenience is real, but it is temporary. The moment a project starts moving faster than memory can keep up, hidden assumptions become operational risk.
+Evidence changes the conversation. Evidence says what state the work moved through, what checks were run, what approvals happened, and where responsibility sat when something important changed. That is a much stronger basis for judgment than polished positioning.
 
-The point is not to produce a bureaucratic layer in advance. The point is to make a few decisions explicit while the system is still small enough to inspect. Which choices are reversible? Which review rituals are required before something public ships? Which terms actually mean something precise in this project and which ones are still vague?
+This is one reason responsibility boundaries matter so much in multi-agent systems. When prompts are authored by one party, context is assembled by another, and the harness is maintained by a third, the system needs a way to say which layer was responsible for which part of the outcome.
 
-If those answers only live in conversation, they will drift. The most useful governance artifacts are usually modest: a page that explains the thesis, a list that explains what belongs in primary navigation, a project note that distinguishes proof from promotion.
+Validation Lab is a useful proof surface because it pushes work in this direction. Instead of asking people to trust lifecycle guarantees, it asks what evidence can be produced to evaluate them. That shift matters. It moves the conversation from promise to proof.
 
-Governance before growth is really an argument about timing. Clarify while the cost is low, not later when the entire surface area has already congealed around ambiguity.
+Reliable AI agent work will not be won by the boldest sentence. It will be won by better evidence, clearer responsibility, and more disciplined lifecycle review.

@@ -1,26 +1,21 @@
 ---
-const navItems = [
-  { href: "/essays", label: "REGISTRY" },
-  { href: "/theory-clusters", label: "BLUEPRINT" },
-  { href: "/playbooks", label: "METHODS" },
-  { href: "/projects", label: "LEDGER" },
-  { href: "/about", label: "SPEC" }
-];
+import { primaryNav } from "../data/site";
 ---
 
 <header class="site-monitor-container">
   <div class="shell monitor-shell">
     <div class="logo">
       <a href="/" class="logo-link">
-        <div class="registry-annotation">
-          <span class="registry-key">SITE_ID</span>: <span class="registry-value">ARCHITECT.OS</span>
+        <div class="brand-lockup">
+          <span class="brand-name">Jearon Wang</span>
+          <span class="brand-role">Protocol Architect for the Agent Era</span>
         </div>
       </a>
     </div>
     
     <nav class="nav-desktop">
       <ul class="nav-list">
-        {navItems.map(item => (
+        {primaryNav.map(item => (
           <li class="nav-item">
             <a href={item.href} class="nav-link registry-annotation">
               <span class="registry-value">{item.label}</span>
@@ -32,7 +27,7 @@ const navItems = [
 
     <div class="nav-actions">
       <a href="/contact" class="nav-cta registry-annotation">
-        <span class="registry-key">CMD</span>: <span class="registry-value">CONNECT</span>
+        <span class="registry-value">Contact</span>
       </a>
     </div>
   </div>
@@ -51,23 +46,49 @@ const navItems = [
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.6rem 2.5rem;
-    background: rgba(10, 10, 10, 0.7);
+    padding: 0.75rem 2rem;
+    background: rgba(10, 10, 10, 0.72);
     backdrop-filter: blur(12px);
     border: none;
     border-bottom: 1px solid var(--border-registry);
+  }
+
+  .logo-link {
+    text-decoration: none;
+  }
+
+  .brand-lockup {
+    display: grid;
+    gap: 0.1rem;
+  }
+
+  .brand-name {
+    color: var(--text-registry-primary);
+    font-family: var(--font-display);
+    font-size: 1.02rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+  }
+
+  .brand-role {
+    color: var(--text-registry-muted);
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
   
   .nav-list {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1.6rem;
     margin: 0;
     padding: 0;
   }
   
   .nav-link {
     transition: opacity 0.2s ease;
+    text-decoration: none;
   }
   
   .nav-link:hover {
@@ -75,14 +96,13 @@ const navItems = [
   }
 
   .nav-cta {
-    padding: 0.4rem 1rem;
-    border: 1px solid var(--accent-signal);
+    padding: 0.35rem 0.85rem;
+    border: 1px solid var(--border-registry);
     border-radius: var(--radius-module);
     transition: all 0.2s ease;
   }
   .nav-cta:hover {
-    background: var(--accent-signal);
-    color: white;
+    border-color: var(--accent-signal);
   }
 
   @media (max-width: 900px) {

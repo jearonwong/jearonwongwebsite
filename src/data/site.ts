@@ -12,7 +12,7 @@ export const siteConfig = {
 
 export const primaryNav = [
   { href: "/essays", label: "Essays" },
-  { href: "/theory-clusters", label: "Ideas" },
+  { href: "/theories", label: "Ideas" },
   { href: "/playbooks", label: "Playbooks" },
   { href: "/projects", label: "Projects" },
   { href: "/about", label: "About" }
@@ -49,25 +49,92 @@ export const projects = [
   {
     name: "MPLP",
     status: "Protocol",
-    summary: "Machine Priority Legibility Protocol. A specification for making autonomous work auditable.",
-    proof: "Defines the protocol level of reliable agent work."
+    summary: "Open lifecycle protocol for AI agent systems.",
+    proof: "Defines the protocol vocabulary for context, planning, confirmation, trace, and evidence."
   },
   {
     name: "Cognitive OS",
     status: "Runtime",
-    summary: "The execution layer implementing the MPLP specification for agent workloads.",
-    proof: "Demonstrates runtime protocol enforcement."
+    summary: "Runtime substrate for protocol-aware agent work.",
+    proof: "Shows how runtime state and operating constraints enforce reliable delivery."
   },
   {
     name: "SoloCrew",
     status: "Implementation",
-    summary: "A concrete engineering apparatus delivering reliable task orchestration.",
-    proof: "Shows practical application of the cognitive runtime."
+    summary: "Personal AI operating loop and product projection.",
+    proof: "Applies protocol and runtime ideas to one-person-company AI work."
   },
   {
     name: "Validation Lab",
     status: "Audit",
-    summary: "A secure sandbox and matrix for automated regression and capability verification.",
-    proof: "Proves that the system is governable."
+    summary: "Evidence-based evaluation surface for lifecycle guarantees.",
+    proof: "Evaluates lifecycle guarantees with evidence rather than claims."
+  }
+];
+
+export const aboutSpecs = [
+  {
+    label: "ROLE_LINE",
+    value: "Protocol Architect for the Agent Era"
+  },
+  {
+    label: "THESIS_LINE",
+    value: "Defining how AI agents reliably deliver real work."
+  },
+  {
+    label: "CATEGORY",
+    value: "AI systems thinker / protocol architect / founder-editorial voice"
+  },
+  {
+    label: "PROOF_CHAIN",
+    value: "MPLP / Cognitive OS / SoloCrew / Validation Lab"
+  }
+];
+
+export const governanceModules = [
+  {
+    id: "agent-governance",
+    label: "AGENT_GOVERNANCE",
+    title: "Agent governance sets the binding conditions for autonomous work.",
+    body:
+      "Governance defines how agents are constrained, how state changes are reviewed, and how delivery remains auditable when execution is delegated."
+  },
+  {
+    id: "auditability",
+    label: "AUDITABILITY",
+    title: "Evidence matters more than abstract safety language.",
+    body:
+      "Reliable systems must produce traceable artifacts: what changed, who approved it, and what evidence supports the claim of completion."
+  },
+  {
+    id: "human-oversight",
+    label: "HUMAN_OVERSIGHT",
+    title: "The human stays in the loop as architect, reviewer, and escalation boundary.",
+    body:
+      "Governance is not anti-agent. It is the structure that makes delegation legible and keeps authority aligned with responsibility."
+  }
+];
+
+export const playbookModules = [
+  {
+    id: "remote-truth-first",
+    label: "REMOTE_TRUTH_FIRST",
+    title: "Begin with repo truth before touching implementation.",
+    body:
+      "Verify branch, remote, current HEAD, and acceptance gates before an agent starts coding. The working environment is part of the protocol."
+  },
+  {
+    id: "three-repo-flow",
+    label: "THREE_REPO_FLOW",
+    title: "Separate experiment, delivery, and reference surfaces.",
+    body:
+      "Use bounded working trees so proof, risk, and release discipline stay understandable instead of collapsing into one vague task surface."
+  },
+  {
+    id: "verification-discipline",
+    label: "VERIFICATION_DISCIPLINE",
+    title: "Build, typecheck, lint, audit, and remote equality are part of the work.",
+    body:
+      "Agent output is not done when the code exists. It is done when truth, verification, and delivery closure agree."
   }
 ];

@@ -1,0 +1,54 @@
+---
+import SiteHeader from "./SiteHeader.astro";
+
+const title = Astro.props.title;
+const objectType = Astro.props.objectType;
+const objectValue = Astro.props.objectValue;
+const lead = Astro.props.lead;
+const zone = Astro.props.zone ?? "zone-a";
+const className = Astro.props.class ?? "";
+---
+
+<div class:list={[zone, "registry-grid", "registry-page-hero", className]}>
+  <SiteHeader />
+  <div class="shell registry-page-hero__shell">
+    {objectType && objectValue && (
+      <div class="registry-annotation registry-page-hero__annotation">
+        <span class="registry-key">{objectType}</span>: <span class="registry-value">{objectValue}</span>
+      </div>
+    )}
+    <h1 class="registry-page-hero__title">{title}</h1>
+    {lead && <p class="lead registry-page-hero__lead">{lead}</p>}
+    <slot />
+  </div>
+</div>
+
+<style>
+  .registry-page-hero {
+    padding-top: 9.5rem;
+    padding-bottom: 5.5rem;
+    border-bottom: 1px solid var(--border-registry);
+  }
+
+  .registry-page-hero__annotation {
+    margin-bottom: 1rem;
+  }
+
+  .registry-page-hero__title {
+    font-size: clamp(2.6rem, 8vw, 5.2rem);
+    font-weight: 900;
+    letter-spacing: -0.05em;
+    line-height: 0.95;
+    margin-bottom: 1.4rem;
+    text-transform: uppercase;
+    max-width: 12ch;
+  }
+
+  .registry-page-hero__lead {
+    max-width: 56ch;
+    font-size: 1.2rem;
+    color: var(--text-registry-muted);
+    border-left: 2px solid var(--border-registry);
+    padding-left: 1.4rem;
+  }
+</style>

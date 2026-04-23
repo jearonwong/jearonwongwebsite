@@ -1,18 +1,18 @@
 ---
-title: Interface as Institutional Memory
-description: Public pages can preserve reasoning that would otherwise disappear into meetings, messages, and recency bias.
+title: Harness Engineering Sets the Working Conditions
+description: The quality of an AI agent's output is inseparable from the quality of the environment in which it is asked to work.
 publishDate: 2026-04-22
-cluster: interface-as-memory
-projectProof: Field Notes Atlas
+cluster: reliable-ai-agent-work-delivery
+projectProof: Cognitive OS
 featured: true
 ---
 
-Most institutional memory is lost for boring reasons. People move on, chat history gets buried, and the project inherits a set of conclusions without the path that produced them.
+When people talk about agent performance, they often jump straight to model quality. That misses a major variable. Agents do not work in the abstract. They work inside harnesses: repositories, branches, command permissions, audit gates, and explicit constraints.
 
-An interface can do more than decorate ideas. It can hold them in place. Navigation labels tell readers what categories matter. Frontmatter tells future maintainers which essay belongs to which cluster. A projects page can explain why the work exists instead of only showing that it does.
+Harness Engineering is the discipline of designing those working conditions on purpose. A good harness tells the agent where truth lives, what it may change, what it must verify, and when it needs to stop. A weak harness leaves those things implicit and then acts surprised when the result is brittle.
 
-When a site is arranged well, it becomes a usable memory system. The layout makes the thesis visible. The metadata tells crawlers what kind of object they are indexing. The feed gives subscribers a durable path for updates without requiring a platform account.
+This is especially important in software delivery. If an agent does not know the target repository, the accepted baseline commit, the required build gates, or the difference between local and remote truth, then it is not operating in a reliable delivery environment. It is improvising.
 
-This is why information architecture is not a cosmetic concern. It is one of the cheapest ways to make reasoning durable. The right structure lowers the cost of returning to an idea months later and understanding what it was supposed to support.
+Cognitive OS points toward this runtime-state-first view. SoloCrew points toward how the same logic can project into one-person-company AI work. In both cases, the harness is not secondary. It is the thing that determines whether the agent is working inside a controlled operating loop.
 
-For a small publishing system, that durability matters more than volume. A quiet, legible archive is more valuable than an active but forgetful stream.
+Reliable AI work therefore requires more than a good instruction. It requires a good working surface. Harness Engineering is what turns a model invocation into an accountable task environment.

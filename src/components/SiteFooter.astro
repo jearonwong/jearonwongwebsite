@@ -4,9 +4,12 @@ import { secondaryNav, siteConfig } from "../data/site";
 
 <footer class="shell site-footer">
   <div class="footer-core">
+    <div class="registry-annotation" style="margin-bottom: 0.6rem;">
+      <span class="registry-key">SITE_STATE</span>: <span class="registry-value">PUBLIC_HEADQUARTERS</span>
+    </div>
     <p class="footer-title">{siteConfig.author.name}</p>
-    <p class="footer-meta">Protocol Architect for the Agent Era</p>
-    <p class="footer-copy">&copy; {new Date().getFullYear()} All rights reserved.</p>
+    <p class="footer-meta">{siteConfig.author.role}</p>
+    <p class="footer-copy">{siteConfig.author.bio}</p>
   </div>
   <nav aria-label="Secondary" class="secondary-nav">
     {secondaryNav.map((item) => (
@@ -19,10 +22,10 @@ import { secondaryNav, siteConfig } from "../data/site";
   .site-footer {
     padding: 6rem 0;
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1.1fr auto;
     gap: 4rem;
     align-items: start;
-    border-top: 1px solid rgba(15, 23, 42, 0.05);
+    border-top: 1px solid var(--current-line);
     margin-top: 4rem;
   }
   .footer-title {
@@ -43,15 +46,16 @@ import { secondaryNav, siteConfig } from "../data/site";
     letter-spacing: 0.05em;
   }
   .footer-copy {
-    font-size: 0.75rem;
-    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    line-height: 1.7;
     margin: 0;
     color: #64748b;
+    max-width: 38ch;
   }
   .secondary-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 0.85rem;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 0.85rem 1.5rem;
     text-align: right;
   }
   .footer-link {

@@ -1,0 +1,41 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import RegistryPageHero from "../components/RegistryPageHero.astro";
+import { siteConfig } from "../data/site";
+---
+
+<BaseLayout title={`Newsletter | ${siteConfig.title}`}>
+  <RegistryPageHero
+    title="NEWSLETTER_STREAM"
+    objectType="OBJECT_TYPE"
+    objectValue="QUIET_SUBSCRIPTION_PATH"
+    lead="A future stream for essays, field notes, protocol updates, and proof-chain progress."
+  />
+
+  <div class="zone-b page-body" style="padding: 6rem 0;">
+    <section class="shell">
+      <article class="registry-chassis appendix-panel">
+        <div class="registry-annotation" style="margin-bottom: 1rem;">
+          <span class="registry-key">STATUS</span>: <span class="registry-value">PLACEHOLDER_ONLY</span>
+        </div>
+        <p class="appendix-body">
+          The newsletter route exists now as a stable subscription destination, but the delivery
+          mechanism remains intentionally lightweight in this static-first release.
+        </p>
+      </article>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .appendix-panel {
+    padding: 2.5rem;
+  }
+  .appendix-body {
+    max-width: 62ch;
+    margin: 0;
+    color: var(--current-muted);
+    line-height: 1.7;
+    font-size: 1.05rem;
+  }
+</style>

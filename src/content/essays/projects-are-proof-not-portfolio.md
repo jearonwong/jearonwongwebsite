@@ -1,18 +1,18 @@
 ---
-title: Projects Are Proof, Not Portfolio
-description: Projects should demonstrate what the underlying theory can do instead of acting as generic signals of activity.
+title: Protocol Engineering for Reliable Agent Work
+description: Reliable AI agent work depends on lifecycle rules and evidence, not just better prompts.
 publishDate: 2026-04-22
-cluster: proof-over-positioning
-projectProof: Legibility Scorecards
+cluster: protocol-engineering
+projectProof: MPLP
 featured: true
 ---
 
-Portfolio language often asks a project to do too many jobs at once. It should impress, summarize, market, and imply competence in a single glance. The result is usually a list that says very little.
+Prompt Engineering matters because it shapes expression. Context Engineering matters because it shapes what the model sees. Harness Engineering matters because it shapes the working conditions around the model. The missing question is what shapes reliable work delivery across the whole lifecycle.
 
-A proof-oriented project page is narrower and more useful. It explains what claim the project is meant to support. If an essay argues that public artifacts can improve governance, then the relevant project is one that makes governance visible through artifacts.
+That is the gap Protocol Engineering tries to address. A protocol is not just a format or a naming convention. It is a set of lifecycle rules that says what state the work is in, what evidence exists, what handoff is expected next, and what human or automated checks have already taken place.
 
-This keeps the site honest. Instead of implying a sweeping capability, each project offers a bounded piece of evidence. Readers can decide whether the proof is persuasive without being asked to trust an oversized brand statement.
+This is why Protocol Engineering sits downstream of prompt quality. A strong prompt can improve an answer, but it cannot by itself tell us whether the work was grounded in repo truth, whether the right approvals happened, or whether the final output can be traced back to evidence.
 
-The same discipline protects the writing. Essays no longer need to overclaim because the project list can carry some of the evidentiary weight. In return, projects stop being decorative case studies and become part of the argument itself.
+In practice, this is where an idea like MPLP becomes useful. The value is not that it claims official status. The value is that it offers a lifecycle vocabulary for Context, Plan, Confirm, Trace, governance, and evidence so that systems can talk about work in a more disciplined way.
 
-The healthiest portfolio may not be a portfolio at all. It may be a set of proof points arranged clearly enough that the reader can evaluate the underlying theory on its own terms.
+Reliable agent work is therefore not a single trick. It is the result of several layers working together. Prompting controls expression. Context controls visibility. Harnesses control conditions. Protocols control whether the work can travel through a lifecycle in a way that humans can actually trust.

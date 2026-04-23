@@ -1,53 +1,44 @@
 ---
-import { siteConfig } from "../data/site";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import SiteHeader from "../components/SiteHeader.astro";
+import RegistryPageHero from "../components/RegistryPageHero.astro";
+import { aboutSpecs, siteConfig } from "../data/site";
 ---
 
-<BaseLayout title={`Spec | ${siteConfig.title}`}>
-  <div class="zone-a registry-grid" style="padding-top: 10rem; padding-bottom: 6rem; border-bottom: 1px solid var(--border-registry);">
-    <SiteHeader />
-    <div class="shell">
-      <div class="registry-annotation" style="margin-bottom: 1rem;">
-        <span class="registry-key">OBJECT_TYPE</span>: <span class="registry-value">IDENTITY_SPECIFICATION</span>
-      </div>
-      <h1 class="hero-title-inner">JEARON WANG</h1>
-      <div class="registry-annotation" style="font-size: 1.15rem; margin-bottom: 2.5rem; color: var(--accent-signal); font-weight: 700;">
-        <span class="registry-key">ROLE</span>: <span class="registry-value">PROTOCOL_ARCHITECT</span>
-      </div>
-      <p class="lead hero-lead-inner">Defining how AI agents reliably deliver real work through architectural constraints.</p>
-    </div>
-  </div>
+<BaseLayout title={`About | ${siteConfig.title}`}>
+  <RegistryPageHero
+    title="IDENTITY_SPECIFICATION"
+    objectType="OBJECT_TYPE"
+    objectValue="PROTOCOL_ARCHITECT_PROFILE"
+    lead="A concise identity sheet for the person, thesis, category, and proof chain behind this site."
+  />
 
   <div class="zone-b page-body" style="padding: 6rem 0;">
     <section class="shell">
-      <div class="registry-chassis spec-container" style="padding: 4rem; background-color: white;">
-        <div class="registry-annotation" style="margin-bottom: 3rem;">
-          <span class="registry-key">SPEC_VERSION</span>: <span class="registry-value">2026.04</span>
-        </div>
-        
+      <div class="registry-chassis spec-sheet">
         <div class="spec-grid">
-          <div class="spec-section">
-            <h3 class="spec-label">CORE_THESIS</h3>
-            <p style="font-size: 1.25rem; font-weight: 700; line-height: 1.5;">AI agents must transition from "stochastic capabilities" to "deterministic work delivery" via protocol-level constraints.</p>
-          </div>
-          
-          <div class="spec-section">
-            <h3 class="spec-label">DOMAIN_AUTHORITY</h3>
-            <ul class="spec-list">
-              <li>Protocol Engineering</li>
-              <li>Agent Governance</li>
-              <li>Cognitive OS Architecture</li>
-              <li>Validation Systems</li>
-            </ul>
-          </div>
+          {aboutSpecs.map((item) => (
+            <div class="spec-line">
+              <p class="spec-label">{item.label}</p>
+              <p class="spec-value">{item.value}</p>
+            </div>
+          ))}
         </div>
 
-        <div class="narrative-section" style="margin-top: 4rem; padding-top: 4rem; border-top: 1px solid var(--current-line);">
-          <h3 class="spec-label">OPERATIONAL_CONTEXT</h3>
-          <div class="prose" style="font-size: 1.15rem; line-height: 1.7; color: var(--current-muted); max-width: 65ch;">
-            <p>I build the infrastructure that allows autonomous systems to be audited, governed, and relied upon. My work centers on the intersection of system thinking and agentic execution.</p>
-            <p style="margin-top: 1.5rem;">The industry has spent the last two years solving for capability. We have models that can reason, tools that can execute, and agents that can plan. But we do not yet have reliability.</p>
+        <div class="spec-narrative">
+          <div class="registry-annotation" style="margin-bottom: 1rem;">
+            <span class="registry-key">OPERATIONAL_CONTEXT</span>: <span class="registry-value">PUBLIC_HEADQUARTERS</span>
+          </div>
+          <div class="prose">
+            <p>
+              I work on the missing systems layer between model capability and real-world delivery:
+              the protocols, governance structures, and runtime constraints that make agent work
+              legible, reviewable, and reliable.
+            </p>
+            <p>
+              This site is designed as a public headquarters for that thesis. The proof chain is
+              explicit, the frameworks are inspectable, and the writing exists to support a category
+              definition rather than a generic personal brand story.
+            </p>
           </div>
         </div>
       </div>
@@ -56,50 +47,55 @@ import SiteHeader from "../components/SiteHeader.astro";
 </BaseLayout>
 
 <style>
-  .hero-title-inner {
-    font-size: clamp(3rem, 10vw, 6rem);
-    font-weight: 900;
-    letter-spacing: -0.05em;
-    line-height: 0.9;
-    margin-bottom: 1.5rem;
-    text-transform: uppercase;
-  }
-  .hero-lead-inner {
-    max-width: 45ch;
-    font-size: 1.35rem;
-    font-weight: 500;
-    color: var(--text-registry-muted);
-    border-left: 2px solid var(--border-registry);
-    padding-left: 1.5rem;
-  }
-  .spec-label {
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: var(--accent-signal);
-    margin-bottom: 1.5rem;
-    text-transform: uppercase;
+  .spec-sheet {
+    padding: 4rem;
+    background: white;
   }
   .spec-grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 4rem;
+    gap: 1.4rem;
   }
-  .spec-list {
-    list-style: none;
-    padding: 0;
+  .spec-line {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 2rem;
+    padding-bottom: 1.4rem;
+    border-bottom: 1px solid var(--current-line);
+  }
+  .spec-label {
     margin: 0;
-  }
-  .spec-list li {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    color: var(--accent-signal);
     font-weight: 700;
-    margin-bottom: 0.8rem;
-    padding-left: 1rem;
-    border-left: 2px solid var(--current-line);
+    letter-spacing: 0.06em;
+  }
+  .spec-value {
+    margin: 0;
+    font-size: 1.15rem;
+    line-height: 1.6;
     color: var(--current-text);
+    font-weight: 600;
+  }
+  .spec-narrative {
+    margin-top: 4rem;
+    padding-top: 4rem;
+    border-top: 1px solid var(--current-line);
+  }
+  .spec-narrative .prose {
+    max-width: 64ch;
+    font-size: 1.12rem;
+    line-height: 1.7;
+    color: var(--current-muted);
   }
   @media (max-width: 768px) {
-    .spec-grid {
+    .spec-sheet {
+      padding: 2rem;
+    }
+    .spec-line {
       grid-template-columns: 1fr;
+      gap: 0.5rem;
     }
   }
 </style>
