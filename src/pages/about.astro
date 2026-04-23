@@ -1,99 +1,105 @@
 ---
+import { siteConfig } from "../data/site";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 ---
 
-<BaseLayout title="About">
-  <div class="zone-a">
+<BaseLayout title={`About | ${siteConfig.title}`}>
+  <div class="zone-a genesis-stage" style="padding-top: 8rem; padding-bottom: 6rem;">
     <SiteHeader />
-    <section class="shell page-header">
-      <span class="eyebrow">About Jearon Wang</span>
-      <h1 class="page-title">Architecting the Agent Era.</h1>
-    </section>
+    <div class="shell">
+      <h1 class="text-gradient">Architectural Profile</h1>
+      <p class="lead" style="max-width: 60ch;">Writing and building at the intersection of Protocol Engineering, Agent Governance, and AI-native software delivery.</p>
+    </div>
   </div>
-  <div class="zone-b page-body">
-    <section class="shell section-rhythm">
-      <div class="about-split">
-        <div class="about-specs">
-          <div class="spec-row">
-            <span class="spec-label">Identity</span>
-            <span class="spec-value">Protocol Architect</span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-label">Domain</span>
-            <span class="spec-value">Agent Systems</span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-label">Focus</span>
-            <span class="spec-value">Reliable Work Delivery</span>
-          </div>
+
+  <div class="zone-b page-body" style="padding: 6rem 0;">
+    <div class="shell about-split">
+      <!-- Left: Specs -->
+      <aside class="about-specs">
+        <div class="glass-panel-light" style="padding: 2.5rem; position: sticky; top: 8rem;">
+          <span class="eyebrow">Specifications</span>
+          <dl class="spec-list">
+            <div>
+              <dt>Identity</dt>
+              <dd>Jearon Wang</dd>
+            </div>
+            <div>
+              <dt>Role</dt>
+              <dd>Protocol Architect</dd>
+            </div>
+            <div>
+              <dt>Focus</dt>
+              <dd>Agent Runtimes // Cognitive OS</dd>
+            </div>
+            <div>
+              <dt>Location</dt>
+              <dd>Remote // Async-Native</dd>
+            </div>
+          </dl>
         </div>
-        <div class="about-narrative">
-          <p class="lead" style="color: var(--zone-b-text); font-size: 1.35rem; font-weight: 500; margin-bottom: 2rem;">
-            Jearon Wang is a Protocol Architect focusing on AI agent systems. 
-            His work exists at the intersection of Protocol Engineering, Agent Governance, and AI-native software delivery.
-          </p>
-          <p class="body-text" style="color: var(--zone-b-muted); font-size: 1.1rem; max-width: 65ch;">
-            The industry has spent years focusing on prompts, wrappers, and context windows. The critical missing layer is the protocol — the deterministic framework that governs how autonomous agents operate, interact, and deliver verifiable results in production.
-          </p>
-          <div style="margin-top: 4rem; display: flex; gap: 1rem;">
-            <a href="/essays" class="button button-outline" style="border-color: var(--zone-b-border); color: var(--zone-b-text);">Read Essays</a>
-            <a href="/projects" class="button button-primary" style="background-color: var(--zone-b-text); color: var(--zone-b-surface);">View Projects</a>
-          </div>
-        </div>
-      </div>
-    </section>
+      </aside>
+
+      <!-- Right: Narrative -->
+      <article class="about-narrative">
+        <section class="narrative-section">
+          <h2>The Thesis</h2>
+          <p>The industry has spent the last two years solving for <em>capability</em>. We have models that can reason, tools that can execute, and agents that can plan. But we do not yet have <em>reliability</em>.</p>
+          <p>My work focuses on the protocol layer—the invisible structures that ensure autonomous work is auditable, governable, and bit-identical in its proof of delivery.</p>
+        </section>
+
+        <section class="narrative-section" style="margin-top: 4rem;">
+          <h2>Background</h2>
+          <p>I operate as a Protocol Architect. This means I don't just build agents; I build the runtimes that bound them. From the Machine Priority Legibility Protocol (MPLP) to the SoloCrew implementation apparatus, my focus is on the "how" of reliable delivery.</p>
+        </section>
+      </article>
+    </div>
   </div>
 </BaseLayout>
 
 <style>
-  .page-header {
-    padding-top: 4rem;
-    padding-bottom: 6rem;
-  }
-  .page-title {
-    font-size: clamp(3rem, 6vw, 4.5rem);
-    line-height: 1;
-    margin-bottom: 1.5rem;
-    max-width: 16ch;
-    letter-spacing: -0.04em;
-  }
   .about-split {
     display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 4rem;
-    align-items: start;
+    grid-template-columns: 340px 1fr;
+    gap: 6rem;
   }
-  .about-specs {
+  .spec-list {
+    margin-top: 2rem;
     display: flex;
     flex-direction: column;
-    border-top: 1px solid var(--zone-b-line);
+    gap: 1.5rem;
   }
-  .spec-row {
-    display: flex;
-    flex-direction: column;
-    padding: 1.5rem 0;
-    border-bottom: 1px solid var(--zone-b-line);
-  }
-  .spec-label {
+  .spec-list dt {
     font-family: var(--font-mono);
-    font-size: 0.8rem;
-    font-weight: 600;
+    font-size: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--zone-b-muted);
-    margin-bottom: 0.5rem;
+    color: var(--accent-electric);
+    margin-bottom: 0.25rem;
   }
-  .spec-value {
-    font-family: var(--font-body);
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: var(--zone-b-text);
+  .spec-list dd {
+    margin: 0;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #0f172a;
   }
-  @media (max-width: 768px) {
+  .about-narrative h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #0f172a;
+  }
+  .about-narrative p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: #475569;
+  }
+
+  @media (max-width: 900px) {
     .about-split {
       grid-template-columns: 1fr;
-      gap: 3rem;
+      gap: 4rem;
+    }
+    .about-specs {
+      order: 2;
     }
   }
 </style>

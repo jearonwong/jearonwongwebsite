@@ -2,24 +2,21 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SignatureIdeaCard from "../components/SignatureIdeaCard.astro";
-import { theoryClusters } from "../data/site";
+import { theoryClusters, siteConfig } from "../data/site";
 ---
 
-<BaseLayout title="Ideas & Theory Clusters">
-  <div class="zone-a">
+<BaseLayout title={`Ideas | ${siteConfig.title}`}>
+  <div class="zone-a genesis-stage" style="padding-top: 8rem; padding-bottom: 6rem;">
     <SiteHeader />
-    <section class="shell page-header">
-      <span class="eyebrow">Ideas</span>
-      <h1 class="page-title">Protocol architecture applied.</h1>
-      <p class="lead" style="max-width: 50ch;">
-        Core mental models outlining how we govern, constrain, and direct autonomous agents.
-      </p>
-    </section>
+    <div class="shell">
+      <h1 class="text-gradient">Conceptual Blueprint</h1>
+      <p class="lead" style="max-width: 50ch;">The core framework for autonomous agent work delivery. Three pillars of protocol engineering.</p>
+    </div>
   </div>
 
-  <div class="zone-b page-body">
-    <section class="shell section-rhythm">
-      <div class="stacked-panels" style="display: flex; flex-direction: column; gap: 0;">
+  <div class="zone-b page-body" style="padding: 6rem 0;">
+    <section class="shell">
+      <div class="card-grid">
         {theoryClusters.map(cluster => (
           <SignatureIdeaCard {...cluster} />
         ))}
@@ -29,15 +26,14 @@ import { theoryClusters } from "../data/site";
 </BaseLayout>
 
 <style>
-  .page-header {
-    padding-top: 4rem;
-    padding-bottom: 6rem;
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 3rem;
   }
-  .page-title {
-    font-size: clamp(3rem, 6vw, 4.5rem);
-    line-height: 1;
-    margin-bottom: 1.5rem;
-    max-width: 16ch;
-    letter-spacing: -0.04em;
+  @media (max-width: 768px) {
+    .card-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

@@ -1,69 +1,95 @@
 ---
 import { primaryNav, siteConfig } from "../data/site";
-
-const currentPath =
-  Astro.url.pathname.length > 1 && Astro.url.pathname.endsWith("/")
-    ? Astro.url.pathname.slice(0, -1)
-    : Astro.url.pathname;
 ---
 
-<header class="shell site-header">
-  <div class="site-mark">
-    <a href="/" class="site-title">{siteConfig.title}</a>
-  </div>
-  <nav aria-label="Primary" class="primary-nav">
-    {
-      primaryNav.map((item) => {
-        const normalizedHref =
-          item.href.length > 1 && item.href.endsWith("/") ? item.href.slice(0, -1) : item.href;
-        const isActive = currentPath === normalizedHref;
+<header class="site-header-container">
+  <div class="shell header-shell glass-panel">
+    <div class="logo">
+      <a href="/" class="logo-link">
+        <span class="logo-name">{siteConfig.author.name}</span>
+      </a>
+    </div>
+    
+    <nav class="nav-desktop">
+      <ul class="nav-list">
+        {primaryNav.map(item => (
+          <li class="nav-item">
+            <a href={item.href} class="nav-link">{item.label}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
 
-        return (
-          <a href={item.href} class:list={[{ active: isActive }]}>
-            {item.label}
-          </a>
-        );
-      })
-    }
-  </nav>
+    <div class="nav-actions">
+      <a href="/contact" class="nav-cta">Connect</a>
+    </div>
+  </div>
 </header>
 
 <style>
-  .site-header {
-    padding: 2rem 0;
+  .site-header-container {
+    position: fixed;
+    top: 1.5rem;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+  .header-shell {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
-    z-index: 10;
+    padding: 0.75rem 2rem;
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
-  .site-title {
+  
+  .logo-name {
     font-family: var(--font-display);
+    font-weight: 800;
     font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--current-text);
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
   }
-  .primary-nav {
+
+  .nav-list {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
   }
-  .primary-nav a {
+  
+  .nav-link {
     font-family: var(--font-body);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 500;
-    color: var(--current-muted);
+    color: var(--text-muted);
+    transition: color 0.2s ease;
   }
-  .primary-nav a:hover,
-  .primary-nav a.active {
-    color: var(--current-text);
+  
+  .nav-link:hover {
+    color: var(--accent-kinetic);
   }
-  @media (max-width: 640px) {
-    .site-header {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1rem;
-      padding: 1.5rem 0;
+
+  .nav-cta {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--accent-kinetic);
+    border: 1px solid var(--accent-kinetic);
+    padding: 0.4rem 1rem;
+    border-radius: var(--radius-genesis);
+    transition: all 0.2s ease;
+  }
+  .nav-cta:hover {
+    background: var(--accent-kinetic);
+    color: var(--bg-genesis);
+  }
+
+  @media (max-width: 768px) {
+    .nav-desktop {
+      display: none;
     }
   }
 </style>

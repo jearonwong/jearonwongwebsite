@@ -3,23 +3,21 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import ProjectProofCard from "../components/ProjectProofCard.astro";
 import { projects } from "../data/site";
+import { siteConfig } from "../data/site";
 ---
 
-<BaseLayout title="Projects & Proof">
-  <div class="zone-a">
+<BaseLayout title={`Projects | ${siteConfig.title}`}>
+  <div class="zone-a genesis-stage" style="padding-top: 8rem; padding-bottom: 6rem;">
     <SiteHeader />
-    <section class="shell page-header">
-      <span class="eyebrow">Projects</span>
-      <h1 class="page-title">Evidence of thinking made concrete.</h1>
-      <p class="lead" style="max-width: 50ch;">
-        We do not build portfolios. We build proof that the protocol and cognitive architecture actually work in delivery.
-      </p>
-    </section>
+    <div class="shell">
+      <h1 class="text-gradient">Evidence Ledger</h1>
+      <p class="lead" style="max-width: 50ch;">Artifacts of a thesis made concrete. Each project is a proof point in the protocol engineering chain.</p>
+    </div>
   </div>
 
-  <div class="zone-b page-body">
-    <section class="shell section-rhythm">
-      <div class="stacked-panels proof-panels" style="display: flex; flex-direction: column; gap: 2rem;">
+  <div class="zone-b page-body" style="padding: 6rem 0;">
+    <section class="shell">
+      <div class="card-grid">
         {projects.map(project => (
           <ProjectProofCard {...project} />
         ))}
@@ -29,15 +27,14 @@ import { projects } from "../data/site";
 </BaseLayout>
 
 <style>
-  .page-header {
-    padding-top: 4rem;
-    padding-bottom: 6rem;
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 3rem;
   }
-  .page-title {
-    font-size: clamp(3rem, 6vw, 4.5rem);
-    line-height: 1;
-    margin-bottom: 1.5rem;
-    max-width: 16ch;
-    letter-spacing: -0.04em;
+  @media (max-width: 768px) {
+    .card-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
