@@ -14,6 +14,7 @@ interface Props {
 const {
   title = siteConfig.title,
   description = siteConfig.description,
+  ogType = "website",
   canonicalPath = Astro.url.pathname,
   noindex = false
 } = Astro.props;
@@ -48,7 +49,7 @@ const personJsonLd = JSON.stringify({
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
     <meta name="theme-color" content="#111418" />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />

@@ -9,7 +9,10 @@ import ProjectProofCard from "../components/ProjectProofCard.astro";
 import { homepageActions, siteConfig, theoryClusters, projects } from "../data/site";
 
 const essays = (await getCollection("essays"))
-  .sort((left, right) => right.data.publishDate.getTime() - left.data.publishDate.getTime())
+  .sort((left, right) =>
+    Number(right.data.flagship) - Number(left.data.flagship) ||
+    right.data.publishDate.getTime() - left.data.publishDate.getTime()
+  )
   .slice(0, 3);
 ---
 

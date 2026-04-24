@@ -5,7 +5,9 @@ import { siteConfig } from "../data/site";
 
 export const GET: APIRoute = async (context) => {
   const essays = (await getCollection("essays")).sort(
-    (left, right) => right.data.publishDate.getTime() - left.data.publishDate.getTime()
+    (left, right) =>
+      Number(right.data.flagship) - Number(left.data.flagship) ||
+      right.data.publishDate.getTime() - left.data.publishDate.getTime()
   );
 
   return rss({

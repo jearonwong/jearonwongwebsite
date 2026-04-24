@@ -12,7 +12,7 @@ export const siteConfig = {
 
 export const homepageActions = {
   thesis: {
-    href: "/essays/projects-are-proof-not-portfolio/",
+    href: "/essays/from-prompt-engineering-to-protocol-engineering/",
     label: "Read the Thesis"
   },
   projects: {
@@ -111,19 +111,25 @@ export const theoryClusters = [
     slug: "reliable-ai-agent-work-delivery",
     name: "Reliable AI Agent Work Delivery",
     description: "The core gap between experimental agent runs and production reliability.",
-    prompt: "What must exist for an agent to be trusted out-of-loop?"
+    prompt: "What must exist for an agent to be trusted out-of-loop?",
+    essayPath: "/essays/interface-as-institutional-memory/",
+    essayLabel: "Read the harness essay"
   },
   {
     slug: "protocol-engineering",
     name: "Protocol Engineering",
     description: "Systems thinking applied to autonomous workflows.",
-    prompt: "How do we structurally bound cognitive drift?"
+    prompt: "How do we structurally bound cognitive drift?",
+    essayPath: "/essays/from-prompt-engineering-to-protocol-engineering/",
+    essayLabel: "Start with the flagship essay"
   },
   {
     slug: "agent-governance",
     name: "Agent Governance",
     description: "Frameworks for observability, auditability, and validation.",
-    prompt: "Who signs off on the agent's definition of done?"
+    prompt: "Who signs off on the agent's definition of done?",
+    essayPath: "/essays/governance-before-growth/",
+    essayLabel: "Read the evidence essay"
   }
 ];
 
@@ -134,29 +140,37 @@ export function getTheoryClusterName(slug: string) {
 export const projects = [
   {
     name: "MPLP",
+    slug: "mplp",
     status: "Protocol",
     summary: "Open lifecycle protocol for AI agent systems.",
     proof: "Defines the protocol vocabulary for context, planning, confirmation, trace, and evidence."
   },
   {
     name: "Cognitive OS",
+    slug: "cognitive-os",
     status: "Runtime",
     summary: "Runtime substrate for protocol-aware agent work.",
     proof: "Shows how runtime state and operating constraints enforce reliable delivery."
   },
   {
     name: "SoloCrew",
+    slug: "solocrew",
     status: "Implementation",
     summary: "Personal AI operating loop and product projection.",
     proof: "Applies protocol and runtime ideas to one-person-company AI work."
   },
   {
     name: "Validation Lab",
+    slug: "validation-lab",
     status: "Audit",
     summary: "Evidence-based evaluation surface for lifecycle guarantees.",
     proof: "Evaluates lifecycle guarantees with evidence rather than claims."
   }
 ];
+
+export function getProjectByName(name: string) {
+  return projects.find((project) => project.name === name);
+}
 
 export const aboutSpecs = [
   {

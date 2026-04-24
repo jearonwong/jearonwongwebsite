@@ -3,9 +3,11 @@ interface Props {
   name: string;
   description: string;
   prompt: string;
+  essayPath?: string;
+  essayLabel?: string;
 }
 
-const { name, description, prompt } = Astro.props;
+const { name, description, prompt, essayPath, essayLabel } = Astro.props;
 ---
 
 <article class="registry-chassis system-pillar">
@@ -28,6 +30,10 @@ const { name, description, prompt } = Astro.props;
       </div>
       <p class="focus-text">{prompt}</p>
     </div>
+
+    {essayPath && essayLabel && (
+      <a href={essayPath} class="idea-link">{essayLabel}</a>
+    )}
   </div>
 </article>
 
@@ -71,6 +77,22 @@ const { name, description, prompt } = Astro.props;
     opacity: 0.8;
   }
 
+  .idea-link {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-signal);
+    text-decoration: none;
+  }
+
+  .idea-link:hover {
+    color: var(--current-text);
+  }
+
   @media (max-width: 768px) {
     .system-pillar {
       padding: 1.75rem;
@@ -93,6 +115,10 @@ const { name, description, prompt } = Astro.props;
 
     .focus-text {
       font-size: 0.86rem;
+    }
+
+    .idea-link {
+      font-size: 0.7rem;
     }
   }
 </style>

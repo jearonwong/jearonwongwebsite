@@ -5,7 +5,9 @@ import RegistryPageHero from "../../components/RegistryPageHero.astro";
 import { getTheoryClusterName, pageRegistry } from "../../data/site";
 
 const essays = (await getCollection("essays")).sort(
-  (left, right) => right.data.publishDate.getTime() - left.data.publishDate.getTime()
+  (left, right) =>
+    Number(right.data.flagship) - Number(left.data.flagship) ||
+    right.data.publishDate.getTime() - left.data.publishDate.getTime()
 );
 ---
 
@@ -21,8 +23,13 @@ const essays = (await getCollection("essays")).sort(
     <section class="shell">
       <div class="registry-log">
         {essays.map((essay) => (
-          <article class="log-entry">
+          <article class:list={["log-entry", essay.data.flagship && "is-flagship"]}>
             <div class="log-metadata">
+              {essay.data.flagship && (
+                <div class="registry-annotation log-flagship">
+                  <span class="registry-key">START_HERE</span>: <span class="registry-value">FLAGSHIP ESSAY</span>
+                </div>
+              )}
               <div class="registry-annotation">
                 <span class="registry-key">ENTRY_DATE</span>: <span class="registry-value">{essay.data.publishDate.toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' })}</span>
               </div>
@@ -60,10 +67,16 @@ const essays = (await getCollection("essays")).sort(
   .log-entry:hover {
     background-color: rgba(59, 130, 246, 0.03);
   }
+  .log-entry.is-flagship {
+    border-left: 2px solid var(--accent-signal);
+  }
   .log-metadata {
     display: flex;
     flex-direction: column;
     gap: 0.85rem;
+  }
+  .log-flagship {
+    color: var(--accent-signal);
   }
   .log-title {
     font-size: 1.72rem;

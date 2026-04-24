@@ -7,7 +7,11 @@ export default defineConfig({
   trailingSlash: "always",
   integrations: [
     sitemap({
-      filter: (page) => !page.endsWith("/theory-clusters/") && !page.endsWith("/theory-clusters")
+      filter: (page) =>
+        !page.endsWith("/theory-clusters/") &&
+        !page.endsWith("/theory-clusters") &&
+        !page.endsWith("/essays/projects-are-proof-not-portfolio/") &&
+        !page.endsWith("/essays/projects-are-proof-not-portfolio")
     })
   ],
   server: {

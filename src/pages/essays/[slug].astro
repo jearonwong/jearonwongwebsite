@@ -2,28 +2,54 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import RegistryPageHero from "../../components/RegistryPageHero.astro";
-import { getTheoryClusterName } from "../../data/site";
+import { getProjectByName, getTheoryClusterName } from "../../data/site";
 
 export async function getStaticPaths() {
   const essays = await getCollection("essays");
 
-  return essays.map((essay) => ({
-    params: { slug: essay.slug },
-    props: { essay }
-  }));
+  return essays.flatMap((essay) => {
+    const canonicalSlug = essay.slug;
+    const legacySlugs = essay.data.legacySlugs ?? [];
+
+    return [
+      {
+        params: { slug: canonicalSlug },
+        props: { essay, canonicalSlug, isLegacy: false }
+      },
+      ...legacySlugs.map((legacySlug) => ({
+        params: { slug: legacySlug },
+        props: { essay, canonicalSlug, isLegacy: true }
+      }))
+    ];
+  });
 }
 
 const { essay } = Astro.props;
+const canonicalSlug = Astro.props.canonicalSlug ?? essay.slug;
+const isLegacy = Astro.props.isLegacy ?? false;
 const { Content } = await essay.render();
 const ideaName = getTheoryClusterName(essay.data.cluster);
+const relatedProjects = (essay.data.relatedProjects ?? []).reduce<
+  Array<NonNullable<ReturnType<typeof getProjectByName>>>
+>((acc, name) => {
+  const project = getProjectByName(name);
+  if (project) acc.push(project);
+  return acc;
+}, []);
 ---
 
-<BaseLayout title={essay.data.title} description={essay.data.description}>
+<BaseLayout
+  title={essay.data.title}
+  description={essay.data.description}
+  canonicalPath={`/essays/${canonicalSlug}/`}
+  noindex={isLegacy}
+  ogType="article"
+>
   <RegistryPageHero
     title={essay.data.title}
     objectType="ENTRY_TYPE"
-    objectValue="ESSAY RECORD"
-    lead={essay.data.description}
+    objectValue={essay.data.flagship ? "FLAGSHIP THESIS" : "ESSAY RECORD"}
+    lead={essay.data.summary ?? essay.data.description}
   >
     <div class="article-hero-meta">
       <a href="/essays/" class="article-back-link registry-annotation">
@@ -38,6 +64,11 @@ const ideaName = getTheoryClusterName(essay.data.cluster);
       <div class="registry-annotation">
         <span class="registry-key">PROOF_CHAIN</span>: <span class="registry-value">{essay.data.projectProof.toUpperCase()}</span>
       </div>
+      {isLegacy && (
+        <div class="registry-annotation">
+          <span class="registry-key">CANONICAL_PATH</span>: <span class="registry-value">{canonicalSlug.toUpperCase()}</span>
+        </div>
+      )}
     </div>
   </RegistryPageHero>
 
@@ -60,6 +91,40 @@ const ideaName = getTheoryClusterName(essay.data.cluster);
 
         <div class="article-content prose">
           <Content />
+
+          {(essay.data.relatedIdeas?.length > 0 || relatedProjects.length > 0) && (
+            <section class="registry-chassis chain-block">
+              <div class="registry-annotation" style="margin-bottom: 1rem;">
+                <span class="registry-key">NEXT_STEP</span>: <span class="registry-value">IDEAS_TO_PROOF_CHAIN</span>
+              </div>
+
+              {essay.data.relatedIdeas?.length > 0 && (
+                <div class="chain-group">
+                  <p class="chain-label">Related ideas</p>
+                  <div class="chain-links">
+                    {essay.data.relatedIdeas.map((ideaSlug) => (
+                      <a href={`/theories/#${ideaSlug}`} class="chain-link">
+                        {getTheoryClusterName(ideaSlug)}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {relatedProjects.length > 0 && (
+                <div class="chain-group">
+                  <p class="chain-label">Proof chain</p>
+                  <div class="chain-links">
+                    {relatedProjects.map((project) => (
+                      <a href={`/projects/#${project.slug}`} class="chain-link">
+                        {project.name}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </section>
+          )}
         </div>
       </div>
     </article>
@@ -78,6 +143,34 @@ const ideaName = getTheoryClusterName(essay.data.cluster);
   }
   .article-back-link:hover .registry-value {
     color: var(--accent-signal);
+  }
+  .chain-block {
+    margin-top: 4rem;
+    padding: 1.75rem;
+  }
+  .chain-group + .chain-group {
+    margin-top: 1.5rem;
+  }
+  .chain-label {
+    margin: 0 0 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--current-muted);
+  }
+  .chain-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+  }
+  .chain-link {
+    color: var(--accent-signal);
+    font-size: 0.95rem;
+    text-decoration: none;
+  }
+  .chain-link:hover {
+    color: var(--current-text);
   }
   .article-shell {
     max-width: 1080px;
@@ -159,6 +252,13 @@ const ideaName = getTheoryClusterName(essay.data.cluster);
     }
     .article-content :global(h3) {
       font-size: 1.3rem;
+    }
+    .chain-block {
+      margin-top: 3rem;
+      padding: 1.35rem;
+    }
+    .chain-link {
+      font-size: 0.9rem;
     }
   }
 </style>

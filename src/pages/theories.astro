@@ -17,7 +17,7 @@ import { pageRegistry, theoryClusters } from "../data/site";
     <section class="shell">
       <div class="spec-stack">
         {theoryClusters.map((cluster) => (
-          <div class="spec-panel-wrapper">
+          <div class="spec-panel-wrapper" id={cluster.slug}>
             <SignatureIdeaCard {...cluster} />
           </div>
         ))}

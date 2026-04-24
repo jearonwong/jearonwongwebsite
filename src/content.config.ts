@@ -7,7 +7,12 @@ const essays = defineCollection({
     publishDate: z.coerce.date(),
     cluster: z.string(),
     projectProof: z.string(),
-    featured: z.boolean().default(false)
+    featured: z.boolean().default(false),
+    flagship: z.boolean().default(false),
+    summary: z.string().optional(),
+    legacySlugs: z.array(z.string()).default([]),
+    relatedIdeas: z.array(z.string()).default([]),
+    relatedProjects: z.array(z.string()).default([])
   })
 });
 
