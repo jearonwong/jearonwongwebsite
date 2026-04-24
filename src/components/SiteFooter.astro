@@ -72,12 +72,28 @@ import { secondaryNav, siteConfig } from "../data/site";
   }
   @media (max-width: 640px) {
     .site-footer {
+      padding: 3.5rem 0 0;
       grid-template-columns: 1fr;
       align-items: start;
       gap: 2rem;
     }
+    .footer-title {
+      font-size: 1.1rem;
+    }
+    .footer-meta {
+      margin: 0.45rem 0 1.15rem;
+      font-size: 0.7rem;
+    }
+    .footer-copy {
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
     .secondary-nav {
       text-align: left;
+      gap: 0.7rem 1.1rem;
+    }
+    .footer-link {
+      font-size: 0.75rem;
     }
   }
 </style>

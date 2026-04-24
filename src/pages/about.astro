@@ -92,11 +92,23 @@ import { aboutSpecs, pageRegistry } from "../data/site";
   }
   @media (max-width: 768px) {
     .spec-sheet {
-      padding: 2rem;
+      padding: 1.6rem;
     }
     .spec-line {
       grid-template-columns: 1fr;
-      gap: 0.5rem;
+      gap: 0.45rem;
+      padding-bottom: 1rem;
+    }
+    .spec-value {
+      font-size: 1.02rem;
+    }
+    .spec-narrative {
+      margin-top: 2.5rem;
+      padding-top: 2.5rem;
+    }
+    .spec-narrative .prose {
+      font-size: 1rem;
+      line-height: 1.65;
     }
   }
 </style>

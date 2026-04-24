@@ -76,4 +76,34 @@ const { name, status, summary, proof } = Astro.props;
     margin: 0;
     line-height: 1.5;
   }
+
+  @media (max-width: 768px) {
+    .evidence-record {
+      padding: 1.75rem;
+      gap: 1.35rem;
+    }
+
+    .record-header {
+      flex-wrap: wrap;
+      gap: 0.65rem 1rem;
+    }
+
+    .record-title {
+      font-size: 1.28rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .record-summary {
+      font-size: 0.95rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .proof-block {
+      padding: 1rem;
+    }
+
+    .proof-text {
+      font-size: 0.88rem;
+    }
+  }
 </style>

@@ -138,11 +138,27 @@ const ideaName = getTheoryClusterName(essay.data.cluster);
     text-underline-offset: 4px;
   }
   @media (max-width: 900px) {
+    .article-hero-meta {
+      gap: 0.7rem 0.95rem;
+    }
     .article-grid {
       grid-template-columns: 1fr;
+      gap: 2rem;
     }
     .article-sidebar {
       position: static;
+      padding: 1.35rem;
+    }
+    .article-content {
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+    .article-content :global(h2) {
+      font-size: 1.7rem;
+      margin: 3rem 0 1.2rem;
+    }
+    .article-content :global(h3) {
+      font-size: 1.3rem;
     }
   }
 </style>

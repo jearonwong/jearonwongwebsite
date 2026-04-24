@@ -62,4 +62,32 @@ const className = Astro.props.class ?? "";
     padding-left: 1.2rem;
     line-height: 1.65;
   }
+
+  @media (max-width: 768px) {
+    .registry-page-hero {
+      padding-top: 7.2rem;
+      padding-bottom: 3.6rem;
+    }
+
+    .registry-page-hero__annotation {
+      margin-bottom: 0.8rem;
+    }
+
+    .registry-page-hero__title {
+      font-size: clamp(1.85rem, 8vw, 2.45rem);
+      margin-bottom: 0.65rem;
+      max-width: 14ch;
+    }
+
+    .registry-page-hero__subtitle {
+      margin-bottom: 0.75rem;
+      font-size: clamp(0.95rem, 4vw, 1.12rem);
+    }
+
+    .registry-page-hero__lead {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      padding-left: 1rem;
+    }
+  }
 </style>
