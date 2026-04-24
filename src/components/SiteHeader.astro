@@ -24,9 +24,9 @@ const currentPath =
           <li class="nav-item">
             <a
               href={item.href}
-              class:list={["nav-link", "registry-annotation", currentPath === item.href.slice(0, -1) && "is-active"]}
+              class:list={["nav-link", currentPath === item.href.slice(0, -1) && "is-active"]}
             >
-              <span class="registry-value">{item.label}</span>
+              <span class="nav-label">{item.label}</span>
             </a>
           </li>
         ))}
@@ -34,8 +34,8 @@ const currentPath =
     </nav>
 
     <div class="nav-actions">
-      <a href="/contact/" class="nav-cta registry-annotation">
-        <span class="registry-value">Contact</span>
+      <a href="/contact/" class="nav-cta">
+        <span class="nav-cta-label">Contact</span>
       </a>
     </div>
   </div>
@@ -48,13 +48,14 @@ const currentPath =
     left: 0;
     right: 0;
     z-index: 1000;
-    padding-top: 1rem;
+    padding-top: 0.6rem;
   }
   .monitor-shell {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.75rem 2rem;
+    min-height: 3.75rem;
+    padding: 0.65rem 1.5rem;
     background: rgba(10, 10, 10, 0.72);
     backdrop-filter: blur(12px);
     border: none;
@@ -73,7 +74,7 @@ const currentPath =
   .brand-name {
     color: var(--text-registry-primary);
     font-family: var(--font-display);
-    font-size: 1.02rem;
+    font-size: 1rem;
     font-weight: 700;
     letter-spacing: -0.03em;
   }
@@ -81,7 +82,7 @@ const currentPath =
   .brand-role {
     color: var(--text-registry-muted);
     font-family: var(--font-mono);
-    font-size: 0.66rem;
+    font-size: 0.62rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
   }
@@ -95,8 +96,20 @@ const currentPath =
   }
   
   .nav-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.25rem;
     transition: opacity 0.2s ease;
     text-decoration: none;
+  }
+
+  .nav-label {
+    color: var(--text-registry-muted);
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
   }
   
   .nav-link:hover {
@@ -107,18 +120,31 @@ const currentPath =
     opacity: 1;
   }
 
-  .nav-link.is-active .registry-value {
+  .nav-link.is-active .nav-label {
     color: var(--text-registry-primary);
   }
 
   .nav-cta {
-    padding: 0.35rem 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.25rem;
+    padding: 0.45rem 1rem;
     border: 1px solid var(--border-registry);
     border-radius: var(--radius-module);
     transition: all 0.2s ease;
+    text-decoration: none;
   }
   .nav-cta:hover {
     border-color: var(--accent-signal);
+  }
+
+  .nav-cta-label {
+    color: var(--text-registry-primary);
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
 
   @media (max-width: 900px) {

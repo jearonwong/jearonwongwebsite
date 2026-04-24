@@ -21,15 +21,15 @@ const essays = (await getCollection("essays"))
     <section class="shell hero-section">
       <div class="split-layout">
         <div class="hero-content">
-          <div class="registry-annotation" style="margin-bottom: 2rem;">
+          <div class="registry-annotation hero-sequence">
             <span class="registry-key">INIT_SEQUENCE</span>: <span class="registry-value">PROTOCOL_ARCHITECT_CORE</span>
           </div>
-          <p class="hero-nameplate">{siteConfig.author.name}</p>
-          <h1 class="hero-role">
+          <h1 class="hero-nameplate">{siteConfig.author.name}</h1>
+          <p class="hero-role">
             <span class="firstname">PROTOCOL ARCHITECT</span>
             <span class="surname">FOR THE AGENT ERA</span>
-          </h1>
-          <div class="registry-annotation" style="font-size: 1.25rem; margin-bottom: 3.5rem; color: var(--accent-signal); font-weight: 700;">
+          </p>
+          <div class="registry-annotation hero-proposition">
             <span class="registry-key">PROPOSITION</span>: <span class="registry-value">DEFINING_RELIABLE_WORK_DELIVERY</span>
           </div>
           
@@ -135,64 +135,76 @@ const essays = (await getCollection("essays"))
     overflow: hidden;
   }
   .hero-section {
-    padding-top: 6rem;
-    padding-bottom: 8rem;
+    padding-top: 5.25rem;
+    padding-bottom: 7rem;
+  }
+  .hero-sequence {
+    margin-bottom: 1.25rem;
   }
   .hero-nameplate {
-    font-size: 1.2rem;
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    margin-bottom: 1rem;
+    font-size: clamp(2.5rem, 5.4vw, 4.2rem);
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    line-height: 0.94;
+    margin-bottom: 1.1rem;
     color: var(--text-registry-primary);
-    opacity: 0.95;
+    max-width: 10ch;
   }
   .hero-role {
     text-transform: uppercase;
-    font-size: clamp(4rem, 12vw, 8rem);
-    letter-spacing: -0.09em;
-    line-height: 0.82;
-    margin-bottom: 2.25rem;
-    font-weight: 950;
+    font-size: clamp(1.8rem, 3.9vw, 2.9rem);
+    letter-spacing: -0.05em;
+    line-height: 0.94;
+    margin-bottom: 1.35rem;
+    font-weight: 820;
     display: flex;
     flex-direction: column;
-    filter: drop-shadow(0 0 40px rgba(59, 130, 246, 0.05));
-    max-width: 10ch;
+    gap: 0.15rem;
+    filter: drop-shadow(0 0 40px rgba(59, 130, 246, 0.04));
+    max-width: 13ch;
+    color: var(--current-text);
   }
   .hero-role span {
     display: block;
   }
   .hero-role .surname {
-    color: var(--current-text);
+    color: inherit;
   }
   .hero-role .firstname {
-    color: var(--current-text);
-    opacity: 1;
+    color: inherit;
+  }
+  .hero-proposition {
+    margin-bottom: 1.85rem;
+    color: var(--accent-signal);
+    font-size: 0.78rem;
+    font-weight: 700;
   }
   .hero-lead {
-    max-width: 48ch; 
+    max-width: 40ch; 
     color: var(--current-text); 
     opacity: 1;
-    font-size: 1.4rem;
-    line-height: 1.4;
+    font-size: 1.14rem;
+    line-height: 1.55;
     font-weight: 500;
-    margin-bottom: 4rem;
-    border-left: 3px solid var(--accent-signal);
-    padding-left: 2rem;
+    margin-bottom: 2.75rem;
+    border-left: 2px solid var(--accent-signal);
+    padding-left: 1.25rem;
     background: linear-gradient(90deg, rgba(59, 130, 246, 0.03) 0%, transparent 100%);
   }
   .proof-signal-band {
-    margin-top: 6rem; 
-    padding: 2.5rem; 
+    margin-top: 3.25rem; 
+    padding: 1.7rem 1.8rem; 
     background-color: rgba(10, 10, 10, 0.6);
     backdrop-filter: blur(10px);
     position: relative;
     border: 1px solid var(--border-registry);
     border-left: 3px solid var(--accent-signal);
+    max-width: 37rem;
   }
   .hero-ctas {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.5rem;
+    gap: 1rem;
   }
   
   .section-header h2 {
@@ -247,14 +259,53 @@ const essays = (await getCollection("essays"))
   
   .split-layout {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 8rem;
-    align-items: center;
+    grid-template-columns: minmax(0, 1.18fr) minmax(300px, 0.82fr);
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .hero-visual {
+    justify-self: end;
+    width: min(100%, 23rem);
+    padding-top: 2rem;
   }
 
   @media (max-width: 1024px) {
     .split-layout {
-      gap: 4rem;
+      gap: 3rem;
+      grid-template-columns: 1fr;
+    }
+
+    .hero-visual {
+      justify-self: start;
+      width: min(100%, 21rem);
+      padding-top: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-section {
+      padding-top: 4.5rem;
+      padding-bottom: 5.5rem;
+    }
+
+    .hero-nameplate {
+      font-size: clamp(2.25rem, 10vw, 3.35rem);
+    }
+
+    .hero-role {
+      font-size: clamp(1.55rem, 7.5vw, 2.25rem);
+      max-width: 14ch;
+    }
+
+    .hero-lead {
+      font-size: 1.02rem;
+      max-width: 36ch;
+    }
+
+    .proof-signal-band {
+      margin-top: 2.5rem;
+      padding: 1.4rem 1.25rem;
     }
   }
 
