@@ -1,15 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import RegistryPageHero from "../components/RegistryPageHero.astro";
-import { playbookModules, siteConfig } from "../data/site";
+import { pageRegistry, playbookModules } from "../data/site";
 ---
 
-<BaseLayout title={`Playbooks | ${siteConfig.title}`}>
+<BaseLayout title="Playbooks">
   <RegistryPageHero
-    title="OPERATING_PLAYBOOKS"
-    objectType="OBJECT_TYPE"
-    objectValue="METHODS_APPENDIX"
-    lead="Repeatable methods for directing, verifying, and closing AI agent work."
+    title={pageRegistry.playbooks.title}
+    objectType={pageRegistry.playbooks.objectType}
+    objectValue={pageRegistry.playbooks.objectValue}
+    lead={pageRegistry.playbooks.lead}
   />
 
   <div class="zone-b page-body" style="padding: 6rem 0;">

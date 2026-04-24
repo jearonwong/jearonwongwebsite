@@ -2,15 +2,15 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import RegistryPageHero from "../components/RegistryPageHero.astro";
 import ProjectProofCard from "../components/ProjectProofCard.astro";
-import { projects, siteConfig } from "../data/site";
+import { pageRegistry, projects } from "../data/site";
 ---
 
-<BaseLayout title={`Projects | ${siteConfig.title}`}>
+<BaseLayout title="Projects">
   <RegistryPageHero
-    title="EVIDENCE_LEDGER"
-    objectType="OBJECT_TYPE"
-    objectValue="PROOF_ROOM"
-    lead="The public proof chain. Each record shows a different layer of the architecture made concrete."
+    title={pageRegistry.projects.title}
+    objectType={pageRegistry.projects.objectType}
+    objectValue={pageRegistry.projects.objectValue}
+    lead={pageRegistry.projects.lead}
   />
 
   <div class="zone-b page-body" style="padding: 6rem 0;">

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import RegistryPageHero from "../components/RegistryPageHero.astro";
+import { pageRegistry } from "../data/site";
 ---
 
 <BaseLayout
@@ -10,13 +11,16 @@ import RegistryPageHero from "../components/RegistryPageHero.astro";
   noindex={true}
 >
   <RegistryPageHero
-    title="IDEAS_ROUTE_REDIRECT"
-    objectType="OBJECT_TYPE"
-    objectValue="LEGACY_COMPATIBILITY"
-    lead="The canonical ideas route is now /theories. This compatibility page remains only so older links still have a clear destination."
+    title={pageRegistry.ideasLegacy.title}
+    objectType={pageRegistry.ideasLegacy.objectType}
+    objectValue={pageRegistry.ideasLegacy.objectValue}
+    lead={pageRegistry.ideasLegacy.lead}
   >
     <div class="registry-annotation">
       <span class="registry-key">NEXT_ROUTE</span>: <span class="registry-value">/theories/</span>
+    </div>
+    <div style="margin-top: 1.5rem;">
+      <a href="/theories/" class="button button-outline">Open Ideas</a>
     </div>
   </RegistryPageHero>
 </BaseLayout>

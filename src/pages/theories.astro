@@ -2,15 +2,15 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import RegistryPageHero from "../components/RegistryPageHero.astro";
 import SignatureIdeaCard from "../components/SignatureIdeaCard.astro";
-import { theoryClusters, siteConfig } from "../data/site";
+import { pageRegistry, theoryClusters } from "../data/site";
 ---
 
-<BaseLayout title={`Ideas | ${siteConfig.title}`} canonicalPath="/theories">
+<BaseLayout title="Ideas" canonicalPath="/theories">
   <RegistryPageHero
-    title="CONCEPTUAL_BLUEPRINT"
-    objectType="OBJECT_TYPE"
-    objectValue="IDEAS_REGISTRY"
-    lead="The conceptual library behind reliable AI agent work delivery, Protocol Engineering, and Agent Governance."
+    title={pageRegistry.ideas.title}
+    objectType={pageRegistry.ideas.objectType}
+    objectValue={pageRegistry.ideas.objectValue}
+    lead={pageRegistry.ideas.lead}
   />
 
   <div class="zone-b page-body" style="padding: 6rem 0;">

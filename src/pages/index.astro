@@ -6,7 +6,7 @@ import PortraitAnchor from "../components/PortraitAnchor.astro";
 import ImmediateProofSignal from "../components/ImmediateProofSignal.astro";
 import SignatureIdeaCard from "../components/SignatureIdeaCard.astro";
 import ProjectProofCard from "../components/ProjectProofCard.astro";
-import { siteConfig, theoryClusters, projects } from "../data/site";
+import { homepageActions, siteConfig, theoryClusters, projects } from "../data/site";
 
 const essays = (await getCollection("essays"))
   .sort((left, right) => right.data.publishDate.getTime() - left.data.publishDate.getTime())
@@ -36,8 +36,8 @@ const essays = (await getCollection("essays"))
           <p class="lead hero-lead">{siteConfig.thesis}</p>
           
           <div class="hero-ctas">
-            <a href="#blueprint" class="button button-primary">READ THE THESIS</a>
-            <a href="#ledger" class="button button-outline" style="border: 1px solid var(--border-registry); background: rgba(255,255,255,0.05);">EXPLORE PROJECTS</a>
+            <a href={homepageActions.thesis.href} class="button button-primary">{homepageActions.thesis.label}</a>
+            <a href={homepageActions.projects.href} class="button button-outline" style="border: 1px solid var(--border-registry); background: rgba(255,255,255,0.05);">{homepageActions.projects.label}</a>
           </div>
 
           <div class="registry-chassis proof-signal-band">
@@ -65,6 +65,7 @@ const essays = (await getCollection("essays"))
           <span class="registry-key">MODULE</span>: <span class="registry-value">CONCEPTUAL_FRAMEWORK</span>
         </div>
         <h2 style="max-width: 20ch; font-weight: 800; letter-spacing: -0.03em;">Protocol architecture applied to autonomous agents.</h2>
+        <a href={homepageActions.ideas.href} class="section-link">{homepageActions.ideas.label}</a>
       </div>
       <div class="card-grid">
         {theoryClusters.map(cluster => (
@@ -98,6 +99,7 @@ const essays = (await getCollection("essays"))
           <span class="registry-key">MODULE</span>: <span class="registry-value">EVIDENCE_LEDGER</span>
         </div>
         <h2 style="font-weight: 800; letter-spacing: -0.02em;">Thinking made concrete.</h2>
+        <a href={homepageActions.proof.href} class="section-link">{homepageActions.proof.label}</a>
       </div>
       <div class="card-grid">
         {projects.map(project => (
@@ -112,6 +114,7 @@ const essays = (await getCollection("essays"))
           <span class="registry-key">MODULE</span>: <span class="registry-value">REGISTRY_LOG_SUMMARY</span>
         </div>
         <h2 style="font-weight: 800; letter-spacing: -0.02em;">Arguments about governance, memory, and proof.</h2>
+        <a href={homepageActions.essays.href} class="section-link">{homepageActions.essays.label}</a>
       </div>
       <div class="essay-list">
         {essays.map(essay => (
@@ -211,6 +214,22 @@ const essays = (await getCollection("essays"))
     font-size: clamp(2rem, 5vw, 3.5rem);
     line-height: 1.1;
     letter-spacing: -0.02em;
+  }
+
+  .section-link {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 1.15rem;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-signal);
+    text-decoration: none;
+  }
+
+  .section-link:hover {
+    color: var(--current-text);
   }
 
   .narrative-lead {

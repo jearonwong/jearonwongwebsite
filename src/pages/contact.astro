@@ -1,15 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import RegistryPageHero from "../components/RegistryPageHero.astro";
-import { siteConfig } from "../data/site";
+import { pageRegistry } from "../data/site";
 ---
 
-<BaseLayout title={`Contact | ${siteConfig.title}`}>
+<BaseLayout title="Contact">
   <RegistryPageHero
-    title="CONTACT_PATH"
-    objectType="OBJECT_TYPE"
-    objectValue="QUIET_ENDPOINT"
-    lead="For direct conversations about Protocol Engineering, agent governance, proof systems, or collaboration."
+    title={pageRegistry.contact.title}
+    objectType={pageRegistry.contact.objectType}
+    objectValue={pageRegistry.contact.objectValue}
+    lead={pageRegistry.contact.lead}
   />
 
   <div class="zone-b page-body" style="padding: 6rem 0;">

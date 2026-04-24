@@ -10,6 +10,29 @@ export const siteConfig = {
   }
 };
 
+export const homepageActions = {
+  thesis: {
+    href: "/essays/projects-are-proof-not-portfolio/",
+    label: "Read the Thesis"
+  },
+  projects: {
+    href: "/projects/",
+    label: "Explore Projects"
+  },
+  ideas: {
+    href: "/theories/",
+    label: "Open the ideas registry"
+  },
+  essays: {
+    href: "/essays/",
+    label: "Open the writing log"
+  },
+  proof: {
+    href: "/projects/",
+    label: "Open the proof room"
+  }
+};
+
 export const primaryNav = [
   { href: "/essays/", label: "Essays" },
   { href: "/theories/", label: "Ideas" },
@@ -24,6 +47,64 @@ export const secondaryNav = [
   { href: "/contact/", label: "Contact" },
   { href: "/rss.xml", label: "RSS" }
 ];
+
+export const pageRegistry = {
+  about: {
+    title: "Jearon Wang",
+    subtitle: "Protocol Architect for the Agent Era",
+    objectType: "PAGE_ROLE",
+    objectValue: "IDENTITY SHEET",
+    lead: "A concise identity sheet for the thesis, category, and proof chain behind this site."
+  },
+  projects: {
+    title: "Projects",
+    objectType: "PAGE_ROLE",
+    objectValue: "EVIDENCE LEDGER",
+    lead: "The public proof chain. Each record shows a different layer of the architecture made concrete."
+  },
+  ideas: {
+    title: "Ideas",
+    objectType: "PAGE_ROLE",
+    objectValue: "CONCEPTUAL BLUEPRINT",
+    lead: "The conceptual library behind reliable AI agent work delivery, Protocol Engineering, and Agent Governance."
+  },
+  ideasLegacy: {
+    title: "Ideas",
+    objectType: "ROUTE_STATE",
+    objectValue: "LEGACY COMPATIBILITY",
+    lead: "The canonical ideas route is /theories. This compatibility page remains only so older links still have a clear destination."
+  },
+  essays: {
+    title: "Essays",
+    objectType: "PAGE_ROLE",
+    objectValue: "REGISTRY LOGBOOK",
+    lead: "A chronological registry of arguments, architectural decisions, and public thesis development."
+  },
+  governance: {
+    title: "Governance",
+    objectType: "PAGE_ROLE",
+    objectValue: "SYSTEM APPENDIX",
+    lead: "The governance appendix describes the binding conditions for auditable autonomous work."
+  },
+  playbooks: {
+    title: "Playbooks",
+    objectType: "PAGE_ROLE",
+    objectValue: "METHODS APPENDIX",
+    lead: "Repeatable methods for directing, verifying, and closing AI agent work."
+  },
+  contact: {
+    title: "Contact",
+    objectType: "PAGE_ROLE",
+    objectValue: "QUIET ENDPOINT",
+    lead: "For direct conversations about Protocol Engineering, agent governance, proof systems, or collaboration."
+  },
+  newsletter: {
+    title: "Newsletter",
+    objectType: "PAGE_ROLE",
+    objectValue: "SUBSCRIPTION PATH",
+    lead: "A future stream for essays, field notes, protocol updates, and proof-chain progress."
+  }
+};
 
 export const theoryClusters = [
   {
@@ -45,6 +126,10 @@ export const theoryClusters = [
     prompt: "Who signs off on the agent's definition of done?"
   }
 ];
+
+export function getTheoryClusterName(slug: string) {
+  return theoryClusters.find((cluster) => cluster.slug === slug)?.name ?? slug;
+}
 
 export const projects = [
   {

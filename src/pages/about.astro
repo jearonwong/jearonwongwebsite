@@ -1,15 +1,16 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import RegistryPageHero from "../components/RegistryPageHero.astro";
-import { aboutSpecs, siteConfig } from "../data/site";
+import { aboutSpecs, pageRegistry } from "../data/site";
 ---
 
-<BaseLayout title={`About | ${siteConfig.title}`}>
+<BaseLayout title="About">
   <RegistryPageHero
-    title="IDENTITY_SPECIFICATION"
-    objectType="OBJECT_TYPE"
-    objectValue="PROTOCOL_ARCHITECT_PROFILE"
-    lead="A concise identity sheet for the person, thesis, category, and proof chain behind this site."
+    title={pageRegistry.about.title}
+    subtitle={pageRegistry.about.subtitle}
+    objectType={pageRegistry.about.objectType}
+    objectValue={pageRegistry.about.objectValue}
+    lead={pageRegistry.about.lead}
   />
 
   <div class="zone-b page-body" style="padding: 6rem 0;">

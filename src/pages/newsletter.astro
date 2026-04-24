@@ -1,15 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import RegistryPageHero from "../components/RegistryPageHero.astro";
-import { siteConfig } from "../data/site";
+import { pageRegistry } from "../data/site";
 ---
 
-<BaseLayout title={`Newsletter | ${siteConfig.title}`}>
+<BaseLayout title="Newsletter">
   <RegistryPageHero
-    title="NEWSLETTER_STREAM"
-    objectType="OBJECT_TYPE"
-    objectValue="QUIET_SUBSCRIPTION_PATH"
-    lead="A future stream for essays, field notes, protocol updates, and proof-chain progress."
+    title={pageRegistry.newsletter.title}
+    objectType={pageRegistry.newsletter.objectType}
+    objectValue={pageRegistry.newsletter.objectValue}
+    lead={pageRegistry.newsletter.lead}
   />
 
   <div class="zone-b page-body" style="padding: 6rem 0;">

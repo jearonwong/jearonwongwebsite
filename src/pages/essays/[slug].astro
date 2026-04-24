@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import RegistryPageHero from "../../components/RegistryPageHero.astro";
-import { siteConfig } from "../../data/site";
+import { getTheoryClusterName } from "../../data/site";
 
 export async function getStaticPaths() {
   const essays = await getCollection("essays");
@@ -15,17 +15,29 @@ export async function getStaticPaths() {
 
 const { essay } = Astro.props;
 const { Content } = await essay.render();
+const ideaName = getTheoryClusterName(essay.data.cluster);
 ---
 
-<BaseLayout title={`${essay.data.title} | ${siteConfig.title}`} description={essay.data.description}>
+<BaseLayout title={essay.data.title} description={essay.data.description}>
   <RegistryPageHero
     title={essay.data.title}
-    objectType="ENTRY_ID"
-    objectValue={essay.slug.toUpperCase()}
+    objectType="ENTRY_TYPE"
+    objectValue="ESSAY RECORD"
     lead={essay.data.description}
   >
-    <div class="registry-annotation">
-      <span class="registry-key">DATE</span>: <span class="registry-value">{essay.data.publishDate.toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' })}</span>
+    <div class="article-hero-meta">
+      <a href="/essays/" class="article-back-link registry-annotation">
+        <span class="registry-key">BACK_TO</span>: <span class="registry-value">ESSAYS</span>
+      </a>
+      <div class="registry-annotation">
+        <span class="registry-key">DATE</span>: <span class="registry-value">{essay.data.publishDate.toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' })}</span>
+      </div>
+      <div class="registry-annotation">
+        <span class="registry-key">IDEA</span>: <span class="registry-value">{ideaName.toUpperCase()}</span>
+      </div>
+      <div class="registry-annotation">
+        <span class="registry-key">PROOF_CHAIN</span>: <span class="registry-value">{essay.data.projectProof.toUpperCase()}</span>
+      </div>
     </div>
   </RegistryPageHero>
 
@@ -37,11 +49,11 @@ const { Content } = await essay.render();
             <span class="registry-key">CROSS_REFERENCE</span>
           </div>
           <div class="sidebar-line">
-            <span class="registry-key">CLUSTER</span>
-            <span class="registry-value">{essay.data.cluster}</span>
+            <span class="registry-key">IDEA</span>
+            <span class="registry-value">{ideaName}</span>
           </div>
           <div class="sidebar-line">
-            <span class="registry-key">PROOF</span>
+            <span class="registry-key">PROOF_CHAIN</span>
             <span class="registry-value">{essay.data.projectProof}</span>
           </div>
         </aside>
@@ -55,6 +67,18 @@ const { Content } = await essay.render();
 </BaseLayout>
 
 <style>
+  .article-hero-meta {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 1.35rem;
+  }
+  .article-back-link {
+    text-decoration: none;
+  }
+  .article-back-link:hover .registry-value {
+    color: var(--accent-signal);
+  }
   .article-shell {
     max-width: 1080px;
     margin: 0 auto;

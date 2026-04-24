@@ -1,15 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import RegistryPageHero from "../components/RegistryPageHero.astro";
-import { governanceModules, siteConfig } from "../data/site";
+import { governanceModules, pageRegistry } from "../data/site";
 ---
 
-<BaseLayout title={`Governance | ${siteConfig.title}`}>
+<BaseLayout title="Governance">
   <RegistryPageHero
-    title="SYSTEM_GOVERNANCE"
-    objectType="OBJECT_TYPE"
-    objectValue="SYSTEM_APPENDIX"
-    lead="The governance appendix describes the binding conditions for auditable autonomous work."
+    title={pageRegistry.governance.title}
+    objectType={pageRegistry.governance.objectType}
+    objectValue={pageRegistry.governance.objectValue}
+    lead={pageRegistry.governance.lead}
   />
 
   <div class="zone-b page-body" style="padding: 6rem 0;">
