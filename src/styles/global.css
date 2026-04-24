@@ -13,6 +13,8 @@
   --accent-signal: #3b82f6; /* Registry Blue */
   --accent-proof: #22d3ee;  /* Evidence Cyan */
   --accent-caution: #f59e0b; /* System Amber */
+  --accent-electric: var(--accent-signal);
+  --accent-kinetic: var(--accent-proof);
   
   /* Typography: Technical Precision */
   --font-display: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -38,6 +40,9 @@
   --current-muted: var(--text-registry-muted);
   --current-line: var(--line-registry);
   --current-text: var(--text-registry-primary);
+  --zone-a-text: var(--text-registry-primary);
+  --zone-a-border: var(--border-registry);
+  --zone-a-muted: var(--text-registry-muted);
 }
 
 .zone-b {

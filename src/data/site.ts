@@ -11,17 +11,17 @@ export const siteConfig = {
 };
 
 export const primaryNav = [
-  { href: "/essays", label: "Essays" },
-  { href: "/theories", label: "Ideas" },
-  { href: "/playbooks", label: "Playbooks" },
-  { href: "/projects", label: "Projects" },
-  { href: "/about", label: "About" }
+  { href: "/essays/", label: "Essays" },
+  { href: "/theories/", label: "Ideas" },
+  { href: "/playbooks/", label: "Playbooks" },
+  { href: "/projects/", label: "Projects" },
+  { href: "/about/", label: "About" }
 ];
 
 export const secondaryNav = [
-  { href: "/governance", label: "Governance" },
-  { href: "/newsletter", label: "Newsletter" },
-  { href: "/contact", label: "Contact" }
+  { href: "/governance/", label: "Governance" },
+  { href: "/newsletter/", label: "Newsletter" },
+  { href: "/contact/", label: "Contact" }
 ];
 
 export const theoryClusters = [

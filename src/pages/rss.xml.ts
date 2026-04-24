@@ -10,7 +10,7 @@ export const GET: APIRoute = async (context) => {
 
   return rss({
     title: `${siteConfig.title} Essays`,
-    description: "Essays about governance, interface, and proof-oriented projects.",
+    description: "Essays about protocol engineering, agent governance, and reliable AI agent work delivery.",
     site: context.site ?? siteConfig.siteUrl,
     items: essays.map((essay) => ({
       title: essay.data.title,

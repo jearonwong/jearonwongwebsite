@@ -4,7 +4,12 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: "https://jearonwong.com",
   output: "static",
-  integrations: [sitemap()],
+  trailingSlash: "always",
+  integrations: [
+    sitemap({
+      filter: (page) => !page.endsWith("/theory-clusters/") && !page.endsWith("/theory-clusters")
+    })
+  ],
   server: {
     allowedHosts: true
   },
