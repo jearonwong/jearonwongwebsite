@@ -5,6 +5,7 @@ export const siteConfig = {
   socialImagePath: "/social-card.svg",
   thesis: "Defining reliable delivery for AI agents.", // v1.0 Primary Headline
   supportLine: "While the industry optimizes prompts and contexts, I build protocols, runtime concepts, and products that make agent work plannable, verifiable, and governable.",
+  newsletterEndpoint: "https://buttondown.com/api/emails/embed-subscribe/jearonwong",
   author: {
     name: "Jearon Wang",
     role: "Protocol Architect for the Agent Era", // Secondary role descriptor

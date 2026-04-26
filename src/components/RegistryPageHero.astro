@@ -1,13 +1,25 @@
 ---
 import SiteHeader from "./SiteHeader.astro";
 
-const title = Astro.props.title;
-const subtitle = Astro.props.subtitle;
-const objectType = Astro.props.objectType;
-const objectValue = Astro.props.objectValue;
-const lead = Astro.props.lead;
-const zone = Astro.props.zone ?? "zone-a";
-const className = Astro.props.class ?? "";
+interface Props {
+  title: string;
+  subtitle?: string;
+  objectType?: string;
+  objectValue?: string;
+  lead?: string;
+  zone?: string;
+  class?: string;
+}
+
+const {
+  title,
+  subtitle,
+  objectType,
+  objectValue,
+  lead,
+  zone = "zone-a",
+  class: className = ""
+} = Astro.props;
 ---
 
 <div class:list={[zone, "registry-grid", "registry-page-hero", className]}>

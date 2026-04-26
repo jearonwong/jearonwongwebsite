@@ -30,6 +30,37 @@
   --shadow-registry: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
+/* Accessibility: Skip Link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--accent-signal);
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  z-index: 10000;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Accessibility: Focus Indicators */
+*:focus-visible {
+  outline: 2px solid var(--accent-signal);
+  outline-offset: 2px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline-color: var(--accent-signal);
+}
+
 /* Zone Adaptation: Monolith First */
 .zone-a {
   background-color: var(--bg-monolith);

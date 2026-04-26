@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import RegistryPageHero from "../components/RegistryPageHero.astro";
-import { pageRegistry } from "../data/site";
+import { pageRegistry, siteConfig } from "../data/site";
 ---
 
 <BaseLayout title="Newsletter">
@@ -25,11 +25,12 @@ import { pageRegistry } from "../data/site";
           No filler, no sponsor inserts.
         </p>
         <form
-          action="https://buttondown.com/api/emails/embed-subscribe/jearonwong"
+          action={siteConfig.newsletterEndpoint}
           method="post"
           target="popupwindow"
           class="subscribe-form"
         >
+          <label for="bd-email" class="visually-hidden">Email address</label>
           <input
             type="email"
             name="email"
@@ -59,6 +60,17 @@ import { pageRegistry } from "../data/site";
 </BaseLayout>
 
 <style>
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
   .subscribe-block {
     padding: 2.5rem;
   }
