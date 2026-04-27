@@ -52,7 +52,7 @@ export const homepageActions = {
 export const homepageContent = {
   hero: {
     thesis: "Building the protocol, runtime, and product stack for Agentic Delivery.",
-    role: "Protocol Architect for Agentic Delivery",
+    role: "Architecting production-grade AI agent systems.",
     support:
       "I build protocol, runtime, and product systems that move AI agents from task execution to reliable project delivery."
   },
