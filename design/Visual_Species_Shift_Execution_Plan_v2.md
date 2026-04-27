@@ -15,7 +15,7 @@
 Phase 0.5 proved that structural logic and componentization alone are insufficient. The site can still feel like a polished knowledge site. This execution phase is a **species-shift implementation wave**.
 
 ## 1. Goal Description
-Build a brand surface that can only plausibly belong to **Jearon Wang — Protocol Architect for the Agent Era**.
+Build a brand surface that can only plausibly belong to **Jearon Wong — Protocol Architect for the Agent Era**.
 - person-first, thesis-first, proof-visible
 - protocol-grade, founder-grade, systems-native
 

@@ -1,12 +1,12 @@
-# Jearon Wang Personal Brand Identity Brief v0.1
+# Jearon Wong Personal Brand Identity Brief v0.1
 
-This document defines the ontological and verbal identity of Jearon Wang as a brand. It serves as the foundational constraint for all visual, UI, and UX decisions across the site.
+This document defines the ontological and verbal identity of Jearon Wong as a brand. It serves as the foundational constraint for all visual, UI, and UX decisions across the site.
 
 ## Layer 0 — Brand Ontology (品牌本体)
 
 The core definition of the individual, anchoring all subsequent design and content choices.
 
-- **Person:** Jearon Wang
+- **Person:** Jearon Wong
 - **Role:** Protocol Architect for the Agent Era
 - **Category:** AI systems thinker / protocol architect / founder-editorial voice
 - **Primary Thesis:** "Defining how AI agents reliably deliver real work."
@@ -25,7 +25,7 @@ The core definition of the individual, anchoring all subsequent design and conte
 
 The explicit messaging hierarchy that visitors read. This determines the copywriting tone and structural labeling across the site.
 
-- **Brand Name:** Jearon Wang
+- **Brand Name:** Jearon Wong
 - **Role Line:** Protocol Architect for the Agent Era
 - **Thesis Line:** Defining how AI agents reliably deliver real work
 - **Support Line:** Writing and building at the intersection of Protocol Engineering, Agent Governance, and AI-native software delivery.

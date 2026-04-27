@@ -16,7 +16,7 @@
 ## 0. Canonical Identity Inheritance
 
 This document inherits and does not override the following locked identity constraints:
-- Brand Name: Jearon Wang
+- Brand Name: Jearon Wong
 - Canonical Role Line: Protocol Architect for the Agent Era
 - Canonical Thesis Line: Defining how AI agents reliably deliver real work.
 - Canonical Proof Chain: MPLP, Cognitive OS, SoloCrew, Validation Lab
@@ -176,7 +176,7 @@ An implementation fails if a reasonable viewer could say:
 ---
 
 ## 12. Species Recognition Tests
-12.1 Person Recognition Test: Can the visitor remember Jearon Wang as a distinct person immediately?
+12.1 Person Recognition Test: Can the visitor remember Jearon Wong as a distinct person immediately?
 12.2 Category Recognition Test: Can the visitor identify him as a protocol / systems / AI-era thinker?
 12.3 Thesis Recognition Test: Can the visitor explain what he is defining in one sentence within seconds?
 12.4 Proof Recognition Test: Can the visitor point to at least one proof artifact quickly?

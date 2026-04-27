@@ -9,7 +9,7 @@
 
 ## 0. Canonical Inheritance
 This document inherits the following locked identity constraints:
-- **Brand Name:** Jearon Wang
+- **Brand Name:** Jearon Wong
 - **Canonical Role Line:** Protocol Architect for the Agent Era
 - **Canonical Thesis Line:** Defining how AI agents reliably deliver real work.
 - **Canonical Proof Chain:**
@@ -33,7 +33,7 @@ A new visitor must immediately register:
 
 ### 1.2 Five-Second Outcome
 A new visitor must understand:
-- what Jearon Wang is defining
+- what Jearon Wong is defining
 - that the site is about reliable AI agent work delivery
 - that the core frame is protocol / governance / AI-native delivery
 

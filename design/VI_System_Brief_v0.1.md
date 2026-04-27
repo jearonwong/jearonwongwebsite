@@ -1,6 +1,6 @@
 # JearonWong.com VI & UI/UX System Brief v0.1
 
-This document outlines the visual identity and interface primitives that stem from the Jearon Wang Brand Identity Brief. The goal is to create an aesthetically memorable, structured, and premium AI-era personal brand surface.
+This document outlines the visual identity and interface primitives that stem from the Jearon Wong Brand Identity Brief. The goal is to create an aesthetically memorable, structured, and premium AI-era personal brand surface.
 
 ## Layer 2 — Visual Identity (视觉识别 / VI)
 

@@ -39,7 +39,7 @@ The homepage must satisfy the "Three Truths" in order:
 3. **PROOF**: The Evidence Ledger (The projects as concrete thinking).
 
 ### 3.2 Taxonomy Re-mapping
-- **Identity Spec (About)**: A technical breakdown of Jearon Wang's role, background, and operational philosophy.
+- **Identity Spec (About)**: A technical breakdown of Jearon Wong's role, background, and operational philosophy.
 - **Evidence Ledger (Projects)**: A "Proof Room" where each project is an auditable record of the architect's thinking.
 - **Registry / Logbook (Essays)**: A linear log of thoughts and system updates.
 - **Framework Expansion (Ideas)**: Deep-dives into the core pillars of the protocol.

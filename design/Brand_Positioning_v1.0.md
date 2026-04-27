@@ -7,7 +7,7 @@
 
 ## 0. One-Line Positioning
 
-> **Jearon Wang is defining what reliable delivery means for AI agents.**
+> **Jearon Wong is defining what reliable delivery means for AI agents.**
 
 This replaces "Protocol Architect for the Agent Era" as the primary brand message.
 "Protocol Architect for the Agent Era" survives as a secondary role descriptor, not the lead.
@@ -58,7 +58,7 @@ reliable completion, evidence chains, governance, rollback, confirmation, and de
 
 ## 4. Homepage Narrative Order (Locked)
 
-1. **Person** — Who Jearon Wang is
+1. **Person** — Who Jearon Wong is
 2. **Thesis** — The problem he defines: AI Agent reliable delivery
 3. **Why Now** — Why Prompt / Context is not enough
 4. **Proof Chain** — MPLP → Cognitive OS → SoloCrew → Validation Lab
@@ -143,4 +143,4 @@ TO: `clarity / evidence / reliability / governed delivery`
 
 The market should form this cognition:
 > When others are still discussing Prompt, Context, and Agent Frameworks,
-> Jearon Wang is defining how agent systems reliably complete real work.
+> Jearon Wong is defining how agent systems reliably complete real work.
