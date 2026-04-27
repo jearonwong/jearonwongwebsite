@@ -5,7 +5,7 @@ import SignatureIdeaCard from "../components/SignatureIdeaCard.astro";
 import { homepageActions, pageRegistry, theoryClusters } from "../data/site";
 ---
 
-<BaseLayout title="Ideas" canonicalPath="/theories">
+<BaseLayout title="Ideas" description={pageRegistry.ideas.lead} canonicalPath="/theories">
   <RegistryPageHero
     title={pageRegistry.ideas.title}
     objectType={pageRegistry.ideas.objectType}

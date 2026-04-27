@@ -5,7 +5,7 @@ import ProjectProofCard from "../components/ProjectProofCard.astro";
 import { homepageActions, pageRegistry, projects } from "../data/site";
 ---
 
-<BaseLayout title="Projects">
+<BaseLayout title="Projects" description={pageRegistry.projects.lead}>
   <RegistryPageHero
     title={pageRegistry.projects.title}
     objectType={pageRegistry.projects.objectType}

@@ -4,7 +4,7 @@ import RegistryPageHero from "../components/RegistryPageHero.astro";
 import { pageRegistry, playbookModules } from "../data/site";
 ---
 
-<BaseLayout title="Playbooks">
+<BaseLayout title="Playbooks" description={pageRegistry.playbooks.lead}>
   <RegistryPageHero
     title={pageRegistry.playbooks.title}
     objectType={pageRegistry.playbooks.objectType}

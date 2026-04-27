@@ -4,7 +4,7 @@ import RegistryPageHero from "../components/RegistryPageHero.astro";
 import { aboutSpecs, pageRegistry, socialLinks, siteConfig } from "../data/site";
 ---
 
-<BaseLayout title="About">
+<BaseLayout title="About" description={pageRegistry.about.lead}>
   <RegistryPageHero
     title={pageRegistry.about.title}
     subtitle={pageRegistry.about.subtitle}

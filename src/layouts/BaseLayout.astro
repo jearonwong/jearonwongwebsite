@@ -92,6 +92,9 @@ const personJsonLd = JSON.stringify({
     <meta property="og:site_name" content={siteConfig.title} />
     <meta property="og:image" content={ogImageUrl} />
     <meta property="og:image:alt" content={ogImageAlt} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content={siteConfig.xHandle} />
     <meta name="twitter:creator" content={siteConfig.xHandle} />
@@ -100,6 +103,12 @@ const personJsonLd = JSON.stringify({
     <meta name="twitter:url" content={canonicalUrl} />
     <meta name="twitter:image" content={twitterImageUrl} />
     <meta name="twitter:image:alt" content={ogImageAlt} />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

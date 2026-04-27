@@ -4,7 +4,7 @@ import RegistryPageHero from "../components/RegistryPageHero.astro";
 import { governanceModules, pageRegistry } from "../data/site";
 ---
 
-<BaseLayout title="Governance">
+<BaseLayout title="Governance" description={pageRegistry.governance.lead}>
   <RegistryPageHero
     title={pageRegistry.governance.title}
     objectType={pageRegistry.governance.objectType}

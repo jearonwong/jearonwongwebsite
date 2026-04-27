@@ -4,7 +4,7 @@ import RegistryPageHero from "../components/RegistryPageHero.astro";
 import { pageRegistry, siteConfig } from "../data/site";
 ---
 
-<BaseLayout title="Newsletter">
+<BaseLayout title="Newsletter" description={pageRegistry.newsletter.lead}>
   <RegistryPageHero
     title={pageRegistry.newsletter.title}
     objectType={pageRegistry.newsletter.objectType}

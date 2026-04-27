@@ -4,7 +4,7 @@ import RegistryPageHero from "../components/RegistryPageHero.astro";
 import { pageRegistry, socialLinks, siteConfig } from "../data/site";
 ---
 
-<BaseLayout title="Contact">
+<BaseLayout title="Contact" description={pageRegistry.contact.lead}>
   <RegistryPageHero
     title={pageRegistry.contact.title}
     objectType={pageRegistry.contact.objectType}
