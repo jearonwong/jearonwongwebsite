@@ -39,21 +39,33 @@ const writingTracks = [
 <BaseLayout
   title={siteConfig.title}
   description={siteConfig.description}
-  shareTitle="Jearon Wong — Agentic Delivery"
-  shareDescription="Jearon Wong builds the protocol, runtime, and product stack that moves AI agents from task execution to reliable project delivery."
+  shareTitle="Who Governs the Lifecycle?"
+  shareDescription="AI agents are learning to act, but reliable delivery still needs lifecycle accountability. Jearon Wong writes and builds around Agentic Delivery."
   ogImagePath="/social/jearonwong-og.png"
-  ogImageAlt="Jearon Wong — Agentic Delivery: protocol, runtime, and product stack for production-grade AI agents."
+  ogImageAlt="Who governs the lifecycle? AI agents can act. Reliable delivery still needs accountability."
 >
-  <!-- 1. Person + Thesis (Hero) -->
+  <!-- 1. Problem + Concept + Author Anchor (Hero) -->
   <div class="zone-a registry-grid hero-wrapper" style="border-bottom: 1px solid var(--border-registry);">
     <SiteHeader />
     
     <section class="shell hero-section">
       <div class="split-layout">
         <div class="hero-content">
-          <h1 class="hero-nameplate">{siteConfig.author.name}</h1>
-          <p class="hero-thesis">{homepageContent.hero.thesis}</p>
-          <p class="hero-role-line">{homepageContent.hero.role}</p>
+          <div class="hero-technical-hook registry-annotation">
+            {homepageContent.hero.technicalHookLines.map((line) => (
+              <span>{line}</span>
+            ))}
+          </div>
+          <h1 class="hero-nameplate">
+            {homepageContent.hero.hookLines.map((line) => (
+              <span>{line}</span>
+            ))}
+          </h1>
+          <p class="hero-thesis">{homepageContent.hero.concept}</p>
+          <div class="hero-author-anchor">
+            <span class="hero-author-name">{homepageContent.hero.authorAnchor}</span>
+            <span class="hero-role-line">{homepageContent.hero.role}</span>
+          </div>
           <p class="hero-support">{homepageContent.hero.support}</p>
           
           <div class="hero-ctas">
@@ -208,23 +220,45 @@ const writingTracks = [
     padding-top: 4.85rem;
     padding-bottom: 5.5rem;
   }
+  .hero-technical-hook {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 1.3rem;
+    color: var(--accent-signal);
+  }
   .hero-nameplate {
-    font-size: clamp(2.35rem, 4.8vw, 3rem);
+    font-size: clamp(2.85rem, 5.6vw, 4.45rem);
     font-weight: 820;
     letter-spacing: -0.05em;
-    line-height: 0.96;
-    margin-bottom: 1.5rem;
+    line-height: 0.98;
+    margin: 0 0 1.65rem;
     color: var(--text-registry-primary);
-    max-width: 12ch;
+    max-width: 18ch;
+  }
+  .hero-nameplate span {
+    display: block;
   }
   .hero-thesis {
-    font-size: clamp(1.5rem, 3vw, 2.1rem);
-    font-weight: 750;
-    letter-spacing: -0.03em;
-    line-height: 1.12;
-    margin-bottom: 0.75rem;
+    font-size: clamp(1.18rem, 2.2vw, 1.55rem);
+    font-weight: 650;
+    letter-spacing: -0.01em;
+    line-height: 1.38;
+    margin: 0 0 1.65rem;
+    color: var(--text-registry-muted);
+    max-width: 54ch;
+  }
+  .hero-author-anchor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.85rem;
+    align-items: baseline;
+    margin-bottom: 1rem;
+  }
+  .hero-author-name {
+    font-weight: 800;
     color: var(--text-registry-primary);
-    max-width: 22ch;
+    letter-spacing: -0.01em;
   }
   .hero-role-line {
     font-family: var(--font-mono);
@@ -232,13 +266,11 @@ const writingTracks = [
     text-transform: uppercase;
     letter-spacing: 0.06em;
     color: var(--text-registry-muted);
-    margin-bottom: 1.5rem;
     font-weight: 600;
     line-height: 1.55;
-    max-width: 34ch;
   }
   .hero-support {
-    max-width: 44ch;
+    max-width: 58ch;
     color: var(--text-registry-muted);
     font-size: 1.05rem;
     line-height: 1.65;
@@ -588,10 +620,10 @@ const writingTracks = [
       padding-bottom: 4rem;
     }
     .hero-nameplate {
-      font-size: clamp(2rem, 9vw, 2.7rem);
+      font-size: clamp(2.35rem, 9vw, 3.6rem);
     }
     .hero-thesis {
-      font-size: clamp(1.3rem, 5.5vw, 1.7rem);
+      font-size: clamp(1.08rem, 4.8vw, 1.35rem);
     }
     .hero-role-line {
       max-width: 28ch;

@@ -1,6 +1,6 @@
 export const siteConfig = {
   title: "Jearon Wong",
-  description: "Defining what reliable delivery means for AI agents. Protocols, runtime concepts, and products that make agent work plannable, verifiable, and governable.",
+  description: "Architecting production-grade AI agent systems through protocol, runtime, and product work.",
   siteUrl: "https://jearonwong.com",
   socialImagePath: "/social/jearonwong-og.png",
   xHandle: "@jearonwong",
@@ -52,10 +52,22 @@ export const homepageActions = {
 
 export const homepageContent = {
   hero: {
-    thesis: "Building the protocol, runtime, and product stack for Agentic Delivery.",
+    hookLines: [
+      "AI agents are learning to act.",
+      "They still cannot",
+      "reliably deliver",
+      "accountable work."
+    ],
+    technicalHookLines: [
+      "MCP connects tools. A2A connects agents.",
+      "Who governs the lifecycle?"
+    ],
+    concept:
+      "Agentic Delivery is the shift from task execution to reliable project delivery across a lifecycle.",
+    authorAnchor: "Jearon Wong",
     role: "Architecting production-grade AI agent systems.",
     support:
-      "I build protocol, runtime, and product systems that move AI agents from task execution to reliable project delivery."
+      "I build protocol, runtime, and product systems for Agentic Delivery — moving AI agents from task execution to reliable project delivery across a lifecycle."
   },
   coreThesis: {
     eyebrow: "CORE_THESIS",
