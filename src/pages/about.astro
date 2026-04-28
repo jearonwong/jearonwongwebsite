@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import RegistryPageHero from "../components/RegistryPageHero.astro";
-import { aboutSpecs, pageRegistry, socialLinks, siteConfig } from "../data/site";
+import { aboutSpecs, contentRouteRoles, pageRegistry, siteThesis, socialLinks, siteConfig } from "../data/site";
 ---
 
 <BaseLayout title="About" description={pageRegistry.about.lead}>
@@ -29,16 +29,17 @@ import { aboutSpecs, pageRegistry, socialLinks, siteConfig } from "../data/site"
           <div class="registry-annotation" style="margin-bottom: 1rem;">
             <span class="registry-key">OPERATIONAL_CONTEXT</span>: <span class="registry-value">PUBLIC_HEADQUARTERS</span>
           </div>
+          <div class="registry-annotation route-question">
+            <span class="registry-key">PAGE_QUESTION</span>: <span class="registry-value">{contentRouteRoles.about.question}</span>
+          </div>
           <div class="prose">
             <p>
-              I work on the missing systems layer between model capability and real-world delivery:
-              the protocols, governance structures, and runtime constraints that make agent work
-              legible, reviewable, and reliable.
+              This is not a generic portfolio. It is a public thesis room for {siteThesis.conceptDefinition}
             </p>
             <p>
-              This site is designed as a public headquarters for that thesis. The stack proof is
-              explicit, the frameworks are inspectable, and the writing exists to support a category
-              definition rather than a generic personal brand story.
+              Jearon Wong maintains that thesis through protocol, runtime, product, and evidence
+              surfaces: MPLP, Cognitive OS, SoloCrew, and Validation Lab. The writing defines the
+              category; the stack proof keeps the claim inspectable.
             </p>
           </div>
         </div>
@@ -101,6 +102,9 @@ import { aboutSpecs, pageRegistry, socialLinks, siteConfig } from "../data/site"
     margin-top: 4rem;
     padding-top: 4rem;
     border-top: 1px solid var(--current-line);
+  }
+  .route-question {
+    margin-bottom: 1rem;
   }
   .spec-narrative .prose {
     max-width: 64ch;

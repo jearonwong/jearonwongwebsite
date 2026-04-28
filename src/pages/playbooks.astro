@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import RegistryPageHero from "../components/RegistryPageHero.astro";
-import { pageRegistry, playbookModules } from "../data/site";
+import { contentRouteRoles, pageRegistry, playbookModules, siteThesis } from "../data/site";
 ---
 
 <BaseLayout title="Playbooks" description={pageRegistry.playbooks.lead}>
@@ -14,6 +14,15 @@ import { pageRegistry, playbookModules } from "../data/site";
 
   <div class="zone-b page-body" style="padding: 6rem 0;">
     <section class="shell">
+      <div class="registry-chassis appendix-guidance">
+        <div class="registry-annotation" style="margin-bottom: 0.9rem;">
+          <span class="registry-key">ROUTE_QUESTION</span>: <span class="registry-value">{contentRouteRoles.playbooks.question}</span>
+        </div>
+        <p class="appendix-guidance__copy">
+          {siteThesis.conceptDefinition} These playbooks turn that thesis into operating checks for briefs, gates, evidence, acceptance, and later review.
+        </p>
+      </div>
+
       <div class="appendix-stack">
         {playbookModules.map((item) => (
           <article class="registry-chassis appendix-panel" id={item.id}>
@@ -22,6 +31,11 @@ import { pageRegistry, playbookModules } from "../data/site";
             </div>
             <h2 class="appendix-title">{item.title}</h2>
             <p class="appendix-body">{item.body}</p>
+            {item.steps && (
+              <ul class="method-steps" aria-label={`${item.title} steps`}>
+                {item.steps.map((step) => <li>{step}</li>)}
+              </ul>
+            )}
           </article>
         ))}
       </div>
@@ -30,6 +44,17 @@ import { pageRegistry, playbookModules } from "../data/site";
 </BaseLayout>
 
 <style>
+  .appendix-guidance {
+    padding: 1.75rem;
+    margin-bottom: 2.5rem;
+  }
+  .appendix-guidance__copy {
+    max-width: 66ch;
+    margin: 0;
+    color: var(--current-muted);
+    font-size: 1rem;
+    line-height: 1.65;
+  }
   .appendix-stack {
     display: flex;
     flex-direction: column;
@@ -52,7 +77,28 @@ import { pageRegistry, playbookModules } from "../data/site";
     line-height: 1.7;
     font-size: 1rem;
   }
+  .method-steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin: 1.25rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .method-steps li {
+    padding: 0.42rem 0.62rem;
+    border: 1px solid var(--current-border);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--current-text);
+  }
   @media (max-width: 768px) {
+    .appendix-guidance {
+      padding: 1.4rem;
+      margin-bottom: 2rem;
+    }
     .appendix-stack {
       gap: 1.5rem;
     }

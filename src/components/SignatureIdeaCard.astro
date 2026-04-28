@@ -5,9 +5,11 @@ interface Props {
   prompt: string;
   essayPath?: string;
   essayLabel?: string;
+  proofPath?: string;
+  proofLabel?: string;
 }
 
-const { name, description, prompt, essayPath, essayLabel } = Astro.props;
+const { name, description, prompt, essayPath, essayLabel, proofPath, proofLabel } = Astro.props;
 ---
 
 <article class="registry-chassis system-pillar">
@@ -31,9 +33,14 @@ const { name, description, prompt, essayPath, essayLabel } = Astro.props;
       <p class="focus-text">{prompt}</p>
     </div>
 
-    {essayPath && essayLabel && (
-      <a href={essayPath} class="idea-link">{essayLabel}</a>
-    )}
+    <div class="idea-links">
+      {essayPath && essayLabel && (
+        <a href={essayPath} class="idea-link">{essayLabel}</a>
+      )}
+      {proofPath && proofLabel && (
+        <a href={proofPath} class="idea-link">{proofLabel}</a>
+      )}
+    </div>
   </div>
 </article>
 
@@ -77,10 +84,16 @@ const { name, description, prompt, essayPath, essayLabel } = Astro.props;
     opacity: 0.8;
   }
 
+  .idea-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem 1rem;
+    margin-top: 1rem;
+  }
+
   .idea-link {
     display: inline-flex;
     align-items: center;
-    margin-top: 1rem;
     font-family: var(--font-mono);
     font-size: 0.72rem;
     letter-spacing: 0.08em;

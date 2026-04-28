@@ -120,6 +120,21 @@ const projectJsonLd = {
             ))}
           </div>
         </article>
+
+        {project.relatedEssays && (
+          <article class="registry-chassis proof-panel">
+            <div class="registry-annotation" style="margin-bottom: 0.9rem;">
+              <span class="registry-key">RELATED_ESSAYS</span>
+            </div>
+            <div class="link-stack">
+              {project.relatedEssays.map((essay) => (
+                <a href={essay.href} class="chain-link">
+                  {essay.label}
+                </a>
+              ))}
+            </div>
+          </article>
+        )}
       </section>
 
       <section class="registry-chassis next-step-panel">

@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import RegistryPageHero from "../../components/RegistryPageHero.astro";
-import { getTheoryClusterName, pageRegistry } from "../../data/site";
+import { contentRouteRoles, getTheoryClusterName, pageRegistry } from "../../data/site";
 
 const essays = (await getCollection("essays")).sort(
   (left, right) =>
@@ -21,6 +21,28 @@ const essays = (await getCollection("essays")).sort(
 
   <div class="zone-b page-body" style="padding: 6rem 0;">
     <section class="shell">
+      <div class="registry-chassis start-here-block">
+        <div class="registry-annotation" style="margin-bottom: 1rem;">
+          <span class="registry-key">READING_PATH</span>: <span class="registry-value">{contentRouteRoles.essays.question}</span>
+        </div>
+        <div class="start-here-links">
+          <a href="/essays/mcp-connects-tools-a2a-connects-agents-who-governs-the-lifecycle/" class="start-link">
+            <span class="start-index">01</span>
+            <span class="start-copy">
+              <strong>Lifecycle governance / MCP-A2A gap</strong>
+              <span>Start with the protocol-stack question: tool access and agent coordination still need lifecycle authority.</span>
+            </span>
+          </a>
+          <a href="/essays/agentic-ai-inflection-point-project-delivery/" class="start-link">
+            <span class="start-index">02</span>
+            <span class="start-copy">
+              <strong>Agentic Delivery / project delivery</strong>
+              <span>Then read the category argument: agent systems must move from task execution to reliable project delivery.</span>
+            </span>
+          </a>
+        </div>
+      </div>
+
       <div class="registry-log">
         {essays.map((essay) => (
           <article class:list={["log-entry", essay.data.flagship && "is-flagship"]}>
@@ -49,6 +71,51 @@ const essays = (await getCollection("essays")).sort(
 </BaseLayout>
 
 <style>
+  .start-here-block {
+    margin-bottom: 2rem;
+    padding: 2rem;
+  }
+  .start-here-links {
+    display: grid;
+    gap: 0.85rem;
+  }
+  .start-link {
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    gap: 1rem;
+    padding: 1rem 0;
+    color: var(--current-text);
+    text-decoration: none;
+    border-top: 1px solid var(--current-line);
+  }
+  .start-link:last-child {
+    border-bottom: 1px solid var(--current-line);
+  }
+  .start-link:hover strong {
+    color: var(--accent-signal);
+  }
+  .start-index {
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    font-weight: 800;
+    color: var(--accent-signal);
+    letter-spacing: 0.06em;
+  }
+  .start-copy {
+    display: grid;
+    gap: 0.35rem;
+  }
+  .start-copy strong {
+    font-size: 1rem;
+    line-height: 1.3;
+    transition: color 0.2s ease;
+  }
+  .start-copy span {
+    max-width: 68ch;
+    font-size: 0.94rem;
+    line-height: 1.6;
+    color: var(--current-muted);
+  }
   .registry-log {
     display: flex;
     flex-direction: column;
@@ -100,6 +167,13 @@ const essays = (await getCollection("essays")).sort(
     margin: 0;
   }
   @media (max-width: 900px) {
+    .start-here-block {
+      padding: 1.5rem;
+    }
+    .start-link {
+      grid-template-columns: 1fr;
+      gap: 0.4rem;
+    }
     .log-entry {
       grid-template-columns: 1fr;
       gap: 1.1rem;

@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import RegistryPageHero from "../components/RegistryPageHero.astro";
-import { governanceModules, pageRegistry } from "../data/site";
+import { contentRouteRoles, governanceModules, pageRegistry, siteThesis } from "../data/site";
 ---
 
 <BaseLayout title="Governance" description={pageRegistry.governance.lead}>
@@ -14,6 +14,15 @@ import { governanceModules, pageRegistry } from "../data/site";
 
   <div class="zone-b page-body" style="padding: 6rem 0;">
     <section class="shell">
+      <div class="registry-chassis appendix-guidance">
+        <div class="registry-annotation" style="margin-bottom: 0.9rem;">
+          <span class="registry-key">ROUTE_QUESTION</span>: <span class="registry-value">{contentRouteRoles.governance.question}</span>
+        </div>
+        <p class="appendix-guidance__copy">
+          {siteThesis.technicalGap} This appendix names the lifecycle conditions that make delegated agent work accountable without turning governance into generic AI safety language.
+        </p>
+      </div>
+
       <div class="appendix-stack">
         {governanceModules.map((item) => (
           <article class="registry-chassis appendix-panel" id={item.id}>
@@ -22,6 +31,12 @@ import { governanceModules, pageRegistry } from "../data/site";
             </div>
             <h2 class="appendix-title">{item.title}</h2>
             <p class="appendix-body">{item.body}</p>
+            {(item.relatedConcept || item.relatedEssay) && (
+              <div class="appendix-links">
+                {item.relatedConcept && <span class="appendix-link-note">Concept: {item.relatedConcept}</span>}
+                {item.relatedEssay && <a href={item.relatedEssay} class="appendix-link">Read related essay</a>}
+              </div>
+            )}
           </article>
         ))}
       </div>
@@ -30,6 +45,17 @@ import { governanceModules, pageRegistry } from "../data/site";
 </BaseLayout>
 
 <style>
+  .appendix-guidance {
+    padding: 1.75rem;
+    margin-bottom: 2.5rem;
+  }
+  .appendix-guidance__copy {
+    max-width: 66ch;
+    margin: 0;
+    color: var(--current-muted);
+    font-size: 1rem;
+    line-height: 1.65;
+  }
   .appendix-stack {
     display: flex;
     flex-direction: column;
@@ -52,7 +78,31 @@ import { governanceModules, pageRegistry } from "../data/site";
     line-height: 1.7;
     font-size: 1rem;
   }
+  .appendix-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+    margin-top: 1.25rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .appendix-link-note {
+    color: var(--current-muted);
+  }
+  .appendix-link {
+    color: var(--accent-signal);
+    text-decoration: none;
+  }
+  .appendix-link:hover {
+    color: var(--current-text);
+  }
   @media (max-width: 768px) {
+    .appendix-guidance {
+      padding: 1.4rem;
+      margin-bottom: 2rem;
+    }
     .appendix-stack {
       gap: 1.5rem;
     }

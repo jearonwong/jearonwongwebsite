@@ -23,6 +23,92 @@ export const socialLinks = [
   { platform: "Medium", href: "https://medium.com/@jearonwong", label: "medium.com/@jearonwong" }
 ];
 
+export const siteThesis = {
+  universalProblem:
+    "AI agents are learning to act, but cannot yet reliably deliver accountable work.",
+  conceptDefinition:
+    "Agentic Delivery is the shift from task execution to reliable project delivery across a lifecycle.",
+  technicalGap:
+    "MCP connects tools. A2A connects agents. The missing layer is lifecycle governance.",
+  stackProof: [
+    { name: "MPLP", role: "Protocol Layer" },
+    { name: "Cognitive OS", role: "Runtime Foundation" },
+    { name: "SoloCrew", role: "Product Proof" },
+    { name: "Validation Lab", role: "Evidence Surface" }
+  ]
+};
+
+export const contentRouteRoles = {
+  homepage: {
+    question: "What is the thesis?",
+    job: "State the problem, define the concept, and route into stack proof."
+  },
+  essays: {
+    question: "Why is the thesis true?",
+    job: "Develop the public arguments behind Agentic Delivery and lifecycle governance."
+  },
+  ideas: {
+    question: "What concepts make the thesis legible?",
+    job: "Define the conceptual map behind reliable AI agent work delivery."
+  },
+  projects: {
+    question: "What proves the thesis?",
+    job: "Show the proof surfaces that make the thesis buildable."
+  },
+  governance: {
+    question: "What conditions make agent work accountable?",
+    job: "Explain the binding conditions for lifecycle authority, evidence, and oversight."
+  },
+  playbooks: {
+    question: "How do you operate according to the thesis?",
+    job: "Translate Agentic Delivery into repeatable operating methods."
+  },
+  about: {
+    question: "Who is maintaining this thesis and stack?",
+    job: "Anchor the maintainer to the thesis, terminology, and proof stack."
+  },
+  newsletter: {
+    question: "What ongoing signal will readers receive?",
+    job: "State the publication promise for essays, frameworks, and proof updates."
+  },
+  contact: {
+    question: "How can someone reach the maintainer?",
+    job: "Provide a quiet endpoint for direct conversations."
+  }
+};
+
+export const contentUpdateProtocol = {
+  whenNewFlagshipEssay: {
+    update: [
+      "homepage reading path",
+      "ideas concept mapping",
+      "governance modules when authority, risk, or accountability changes",
+      "playbooks when the essay introduces a method, test, or checklist",
+      "newsletter promise when the topic stream changes",
+      "projects when proof framing changes"
+    ]
+  },
+  whenNewProjectOrProjectShift: {
+    update: [
+      "projects data",
+      "homepage stack map if the change is major",
+      "proof graph order if a role changes",
+      "related ideas",
+      "newsletter description if public updates become relevant"
+    ]
+  },
+  whenHomepageThesisChanges: {
+    update: [
+      "pageRegistry leads",
+      "about narrative",
+      "ideas guidance",
+      "governance lead and modules",
+      "playbooks lead and modules",
+      "newsletter promise"
+    ]
+  }
+};
+
 export const homepageActions = {
   thesis: {
     href: "/essays/mcp-connects-tools-a2a-connects-agents-who-governs-the-lifecycle/",
@@ -160,7 +246,7 @@ export const pageRegistry = {
     title: "Ideas",
     objectType: "PAGE_ROLE",
     objectValue: "CONCEPTUAL BLUEPRINT",
-    lead: "The conceptual library behind reliable AI agent work delivery, Protocol Engineering, and Agent Governance. Use it as a map, then move into the flagship essay and proof pages."
+    lead: "A conceptual map for Agentic Delivery: the shift from task execution toward lifecycle-governed, accountable work."
   },
   ideasLegacy: {
     title: "Ideas",
@@ -172,19 +258,19 @@ export const pageRegistry = {
     title: "Essays",
     objectType: "PAGE_ROLE",
     objectValue: "REGISTRY LOGBOOK",
-    lead: "A chronological registry of arguments, architectural decisions, and public thesis development."
+    lead: "The public arguments behind Agentic Delivery, lifecycle governance, and the stack proof."
   },
   governance: {
     title: "Governance",
     objectType: "PAGE_ROLE",
     objectValue: "SYSTEM APPENDIX",
-    lead: "The governance appendix describes the binding conditions for auditable autonomous work."
+    lead: "The binding conditions that make delegated agent work accountable across a lifecycle."
   },
   playbooks: {
     title: "Playbooks",
     objectType: "PAGE_ROLE",
     objectValue: "METHODS APPENDIX",
-    lead: "Repeatable methods for directing, verifying, and closing AI agent work."
+    lead: "Repeatable methods for turning Agentic Delivery from a thesis into an operating discipline."
   },
   contact: {
     title: "Contact",
@@ -196,39 +282,80 @@ export const pageRegistry = {
     title: "Newsletter",
     objectType: "PAGE_ROLE",
     objectValue: "SUBSCRIPTION PATH",
-    lead: "A future stream for essays, field notes, protocol updates, and proof-surface progress."
+    lead: "A low-noise stream on Agentic Delivery, lifecycle governance, and protocol-grade AI agent systems."
   }
 };
 
 export const theoryClusters = [
   {
-    slug: "reliable-ai-agent-work-delivery",
-    name: "Reliable AI Agent Work Delivery",
-    description: "The core gap between experimental agent runs and production reliability.",
-    prompt: "What must exist for an agent to be trusted out-of-loop?",
+    slug: "agentic-delivery",
+    name: "Agentic Delivery",
+    description: "The shift from isolated task execution to reliable project delivery across a lifecycle.",
+    prompt: "Can the system carry work from human intent to accepted outcome?",
     essayPath: "/essays/agentic-ai-inflection-point-project-delivery/",
-    essayLabel: "Read the project delivery essay"
+    essayLabel: "Read the project delivery essay",
+    proofPath: "/projects/",
+    proofLabel: "Inspect the stack proof"
+  },
+  {
+    slug: "project-lifecycle-vs-task-execution",
+    name: "Project Lifecycle vs Task Execution",
+    description: "The distinction between completing a run and preserving intent, constraints, evidence, and acceptance over time.",
+    prompt: "Is the system optimizing the run, or preserving the work?",
+    essayPath: "/essays/agentic-ai-inflection-point-project-delivery/",
+    essayLabel: "Read the lifecycle argument",
+    proofPath: "/projects/cognitive-os/",
+    proofLabel: "Open the runtime proof"
   },
   {
     slug: "protocol-engineering",
     name: "Protocol Engineering",
-    description: "Systems thinking applied to autonomous workflows.",
-    prompt: "How do we structurally bound cognitive drift?",
+    description: "A systems discipline for making intent, plans, confirmations, traces, and evidence explicit.",
+    prompt: "What must be represented before agents are allowed to act?",
     essayPath: "/essays/mcp-connects-tools-a2a-connects-agents-who-governs-the-lifecycle/",
-    essayLabel: "Start with the core essay"
+    essayLabel: "Start with the lifecycle governance essay",
+    proofPath: "/projects/mplp/",
+    proofLabel: "Open the protocol proof"
   },
   {
-    slug: "agent-governance",
-    name: "Agent Governance",
-    description: "Frameworks for observability, auditability, and validation.",
-    prompt: "Who signs off on the agent's definition of done?",
+    slug: "lifecycle-governance",
+    name: "Lifecycle Governance",
+    description: "The missing layer above tool access and agent coordination: authority, constraints, confirmation, trace, and closure.",
+    prompt: "Who governs the lifecycle before, during, and after agent action?",
     essayPath: "/essays/mcp-connects-tools-a2a-connects-agents-who-governs-the-lifecycle/",
-    essayLabel: "Read the core essay"
+    essayLabel: "Read the governance essay",
+    proofPath: "/projects/mplp/",
+    proofLabel: "Open MPLP"
+  },
+  {
+    slug: "evidence-accepted-outcome",
+    name: "Evidence / Accepted Outcome",
+    description: "A delivery claim is not complete until evidence can be inspected and the outcome can be accepted against intent.",
+    prompt: "What proves that the work stayed legitimate and finished correctly?",
+    essayPath: "/essays/agentic-ai-inflection-point-project-delivery/",
+    essayLabel: "Read the delivery essay",
+    proofPath: "/projects/validation-lab/",
+    proofLabel: "Open the evidence surface"
+  },
+  {
+    slug: "accountable-work",
+    name: "Accountable Work",
+    description: "Work that remains tied to intent, authority, responsibility, evidence, and review instead of ending as an unaudited output.",
+    prompt: "Can someone reconstruct why the agent acted and why the result should be trusted?",
+    essayPath: "/essays/mcp-connects-tools-a2a-connects-agents-who-governs-the-lifecycle/",
+    essayLabel: "Read the accountability argument",
+    proofPath: "/projects/solocrew/",
+    proofLabel: "Open the product proof"
   }
 ];
 
+export const theoryClusterAliases: Record<string, string> = {
+  "reliable-ai-agent-work-delivery": "Agentic Delivery",
+  "agent-governance": "Lifecycle Governance"
+};
+
 export function getTheoryClusterName(slug: string) {
-  return theoryClusters.find((cluster) => cluster.slug === slug)?.name ?? slug;
+  return theoryClusters.find((cluster) => cluster.slug === slug)?.name ?? theoryClusterAliases[slug] ?? slug;
 }
 
 export const projects = [
@@ -247,7 +374,13 @@ export const projects = [
       "MPLP proves that reliable work delivery needs a protocol layer, not just a better prompt layer. Without a lifecycle grammar, governance and traceability stay vague.",
     shareDescription:
       "MPLP is the protocol-layer proof surface in the thesis chain. It shows why reliable AI work needs a lifecycle vocabulary for context, planning, confirmation, trace, governance, and evidence.",
-    relatedIdeas: ["protocol-engineering", "agent-governance"],
+    relatedIdeas: ["protocol-engineering", "lifecycle-governance", "accountable-work"],
+    relatedEssays: [
+      {
+        href: "/essays/mcp-connects-tools-a2a-connects-agents-who-governs-the-lifecycle/",
+        label: "MCP/A2A lifecycle governance essay"
+      }
+    ],
     adjacentProofs: ["cognitive-os", "validation-lab"],
     evidence: {
       repo: "https://github.com/Coregentis/MPLP-Protocol",
@@ -271,7 +404,13 @@ export const projects = [
       "Cognitive OS proves that reliable delivery needs a runtime foundation that enforces conditions, not just a conceptual model that describes them.",
     shareDescription:
       "Cognitive OS is the runtime-foundation proof surface in the thesis chain. It shows how state, permissions, and operating constraints make protocol-aware work real.",
-    relatedIdeas: ["reliable-ai-agent-work-delivery", "protocol-engineering"],
+    relatedIdeas: ["agentic-delivery", "project-lifecycle-vs-task-execution", "protocol-engineering"],
+    relatedEssays: [
+      {
+        href: "/essays/agentic-ai-inflection-point-project-delivery/",
+        label: "Agentic Delivery project lifecycle essay"
+      }
+    ],
     adjacentProofs: ["mplp", "solocrew"],
     evidence: {
       repo: "https://github.com/Coregentis/Cognitive_OS",
@@ -293,7 +432,13 @@ export const projects = [
       "SoloCrew proves that protocol-aware work can move from theory into a concrete product/application surface without collapsing back into generic AI tooling.",
     shareDescription:
       "SoloCrew is the product-proof surface in the thesis chain. It shows how protocol and runtime ideas become a concrete operating loop rather than a generic AI tool.",
-    relatedIdeas: ["reliable-ai-agent-work-delivery", "protocol-engineering"],
+    relatedIdeas: ["agentic-delivery", "accountable-work", "protocol-engineering"],
+    relatedEssays: [
+      {
+        href: "/essays/agentic-ai-inflection-point-project-delivery/",
+        label: "Agentic Delivery project lifecycle essay"
+      }
+    ],
     adjacentProofs: ["cognitive-os", "validation-lab"],
     evidence: {
       repo: "https://github.com/Coregentis/SoloCrew",
@@ -315,7 +460,17 @@ export const projects = [
       "Validation Lab verifies that reliable work delivery ultimately needs evidence surfaces, not just architectural language. Proof must be inspectable.",
     shareDescription:
       "Validation Lab is the evidence-surface proof page in the thesis chain. It shows why lifecycle claims need inspectable evidence instead of abstract assurance language.",
-    relatedIdeas: ["agent-governance", "reliable-ai-agent-work-delivery"],
+    relatedIdeas: ["lifecycle-governance", "evidence-accepted-outcome", "accountable-work"],
+    relatedEssays: [
+      {
+        href: "/essays/mcp-connects-tools-a2a-connects-agents-who-governs-the-lifecycle/",
+        label: "Lifecycle governance essay"
+      },
+      {
+        href: "/essays/agentic-ai-inflection-point-project-delivery/",
+        label: "Agentic Delivery project lifecycle essay"
+      }
+    ],
     adjacentProofs: ["mplp", "solocrew"],
     evidence: {
       repo: "https://github.com/Coregentis/MPLP-Validation-Lab",
@@ -361,55 +516,129 @@ export const aboutSpecs = [
     value: "AI systems thinker / protocol architect / founder-editorial voice"
   },
   {
-    label: "PROOF_CHAIN",
+    label: "STACK_PROOF",
     value: "MPLP / Cognitive OS / SoloCrew / Validation Lab"
   }
 ];
 
 export const governanceModules = [
   {
-    id: "agent-governance",
-    label: "AGENT_GOVERNANCE",
-    title: "Agent governance sets the binding conditions for autonomous work.",
+    id: "lifecycle-authority",
+    label: "LIFECYCLE_AUTHORITY",
+    title: "Authority must travel with the work, not disappear after the prompt.",
     body:
-      "Governance defines how agents are constrained, how state changes are reviewed, and how delivery remains auditable when execution is delegated."
+      "A lifecycle-governed agent system preserves who authorized the work, under what intent, with which constraints, and how those conditions remain visible as execution moves across tools or agents.",
+    relatedConcept: "Lifecycle Governance",
+    relatedEssay: "/essays/mcp-connects-tools-a2a-connects-agents-who-governs-the-lifecycle/"
+  },
+  {
+    id: "confirmation-boundary",
+    label: "CONFIRMATION_BOUNDARY",
+    title: "A confirmation boundary turns permission into governable authorization.",
+    body:
+      "Before consequential action, the system should know what plan is being approved, which scope is covered, what remains out of bounds, and how that approval links back to the originating intent.",
+    relatedConcept: "Protocol Engineering",
+    relatedEssay: "/essays/mcp-connects-tools-a2a-connects-agents-who-governs-the-lifecycle/"
   },
   {
     id: "auditability",
     label: "AUDITABILITY",
-    title: "Evidence matters more than abstract safety language.",
+    title: "Auditability means the delivery path can be reconstructed.",
     body:
-      "Reliable systems must produce traceable artifacts: what changed, who approved it, and what evidence supports the claim of completion."
+      "Reliable agent work should leave structured artifacts for intent, plan, confirmation, trace, evidence, review, and acceptance instead of relying on a loose pile of logs.",
+    relatedConcept: "Evidence / Accepted Outcome",
+    relatedEssay: "/essays/agentic-ai-inflection-point-project-delivery/"
+  },
+  {
+    id: "evidence-chain",
+    label: "EVIDENCE_CHAIN",
+    title: "Evidence has to survive execution.",
+    body:
+      "A claim of completion is weak unless the supporting evidence remains inspectable after the run: what changed, why it changed, who approved it, and what proves the outcome satisfies the original intent.",
+    relatedConcept: "Accountable Work",
+    relatedEssay: "/essays/agentic-ai-inflection-point-project-delivery/"
   },
   {
     id: "human-oversight",
-    label: "HUMAN_OVERSIGHT",
-    title: "The human stays in the loop as architect, reviewer, and escalation boundary.",
+    label: "HUMAN_AUTHORITY_BOUNDARY",
+    title: "Human oversight is an authority boundary, not a decorative checkpoint.",
     body:
-      "Governance is not anti-agent. It is the structure that makes delegation legible and keeps authority aligned with responsibility."
+      "The human stays in the loop as architect, reviewer, and escalation boundary where intent, risk, or acceptance cannot be safely delegated.",
+    relatedConcept: "Lifecycle Governance",
+    relatedEssay: "/essays/mcp-connects-tools-a2a-connects-agents-who-governs-the-lifecycle/"
+  },
+  {
+    id: "accepted-outcome",
+    label: "ACCEPTED_OUTCOME",
+    title: "The endpoint is accepted outcome, not output generation.",
+    body:
+      "Agent work is accountable when the result can be reviewed against intent, constraints, evidence, and delivery criteria. Output alone is not closure.",
+    relatedConcept: "Evidence / Accepted Outcome",
+    relatedEssay: "/essays/agentic-ai-inflection-point-project-delivery/"
   }
 ];
 
 export const playbookModules = [
   {
-    id: "remote-truth-first",
-    label: "REMOTE_TRUTH_FIRST",
-    title: "Begin with repo truth before touching implementation.",
+    id: "agentic-delivery-test",
+    label: "AGENTIC_DELIVERY_TEST",
+    title: "Ask whether the system can explain the path from intent to accepted outcome.",
     body:
-      "Verify branch, remote, current HEAD, and acceptance gates before an agent starts coding. The working environment is part of the protocol."
+      "A production-grade agent system should be able to explain original intent, active constraints, plan, authorization, evidence, acceptance, and replayability.",
+    steps: ["Intent", "Constraints", "Plan", "Authorization", "Evidence", "Acceptance", "Replayability"]
   },
   {
-    id: "three-repo-flow",
-    label: "THREE_REPO_FLOW",
-    title: "Separate experiment, delivery, and reference surfaces.",
+    id: "lifecycle-first-brief",
+    label: "LIFECYCLE_FIRST_BRIEF",
+    title: "Start with lifecycle state before asking for execution.",
     body:
-      "Use bounded working trees so proof, risk, and release discipline stay understandable instead of collapsing into one vague task surface."
+      "A good agent brief captures objective, constraints, authority, expected evidence, review criteria, and closure conditions before the agent begins work.",
+    steps: ["Objective", "Constraints", "Authority", "Evidence", "Review", "Closure"]
   },
   {
-    id: "verification-discipline",
-    label: "VERIFICATION_DISCIPLINE",
-    title: "Build, typecheck, lint, audit, and remote equality are part of the work.",
+    id: "confirmation-gate",
+    label: "CONFIRMATION_GATE",
+    title: "Place confirmation gates before consequential action.",
     body:
-      "Agent output is not done when the code exists. It is done when truth, verification, and delivery closure agree."
+      "Confirmation should be tied to a concrete plan and scope. It should record what is being authorized, what remains excluded, and when the agent must return for review.",
+    steps: ["Plan", "Scope", "Exclusions", "Approval", "Return condition"]
+  },
+  {
+    id: "evidence-checklist",
+    label: "EVIDENCE_CHECKLIST",
+    title: "Require evidence that survives the run.",
+    body:
+      "A delivery claim should include inspectable evidence: changed artifacts, verification results, unresolved risks, and the link back to original intent.",
+    steps: ["Changed artifacts", "Verification", "Risks", "Intent link"]
+  },
+  {
+    id: "acceptance-closure",
+    label: "ACCEPTANCE_CLOSURE",
+    title: "Close work only when the outcome is accepted against intent.",
+    body:
+      "The endpoint is not that an agent produced output. The endpoint is that the result has been reviewed against the brief and accepted as satisfying the intended outcome.",
+    steps: ["Review", "Compare to brief", "Accept or revise", "Record closure"]
+  },
+  {
+    id: "replay-audit-path",
+    label: "REPLAY_AUDIT_PATH",
+    title: "Keep the path replayable enough for later review.",
+    body:
+      "A reliable system should let a reviewer reconstruct the major decisions, confirmations, evidence, and acceptance state without mining raw logs by hand.",
+    steps: ["Decision path", "Confirmations", "Evidence", "Acceptance state"]
   }
 ];
+
+export const newsletterPromise = {
+  headline:
+    "Follow the public development of Agentic Delivery, lifecycle governance, and protocol-grade AI agent systems.",
+  cadence:
+    "New notes go out when there is a real thesis, framework, proof update, or evidence surface to report.",
+  topics: [
+    "Agentic Delivery and project lifecycle design",
+    "lifecycle governance above MCP and A2A",
+    "protocol, runtime, product, and evidence surfaces",
+    "field notes from MPLP, Cognitive OS, SoloCrew, and Validation Lab"
+  ],
+  boundary: "No generic marketing drip, sponsor inserts, or forced cadence."
+};

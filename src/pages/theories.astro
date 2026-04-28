@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import RegistryPageHero from "../components/RegistryPageHero.astro";
 import SignatureIdeaCard from "../components/SignatureIdeaCard.astro";
-import { homepageActions, pageRegistry, theoryClusters } from "../data/site";
+import { contentRouteRoles, homepageActions, pageRegistry, siteThesis, theoryClusters } from "../data/site";
 ---
 
 <BaseLayout title="Ideas" description={pageRegistry.ideas.lead} canonicalPath="/theories">
@@ -20,7 +20,8 @@ import { homepageActions, pageRegistry, theoryClusters } from "../data/site";
           <span class="registry-key">START_HERE</span>: <span class="registry-value">IDEAS_TO_ESSAY_TO_PROOF</span>
         </div>
         <p class="ideas-guidance__copy">
-          These ideas explain the map. The flagship essay makes the main argument. The proof room shows how that argument becomes evidence.
+          {contentRouteRoles.ideas.question} These concepts make the homepage thesis legible: {siteThesis.conceptDefinition}
+          The essays develop the argument; the proof room shows how the concept becomes protocol, runtime, product, and evidence surfaces.
         </p>
         <div class="ideas-guidance__links">
           <a href={homepageActions.startHere.href} class="ideas-guidance__link">{homepageActions.startHere.label}</a>
