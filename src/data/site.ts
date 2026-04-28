@@ -53,8 +53,8 @@ export const homepageActions = {
 export const homepageContent = {
   hero: {
     hookLines: [
-      "AI agents are learning to act.",
-      "They still cannot",
+      "AI agents are learning",
+      "to act. They still cannot",
       "reliably deliver",
       "accountable work."
     ],
