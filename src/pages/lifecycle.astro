@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import RegistryPageHero from "../components/RegistryPageHero.astro";
-import { aiAgentLifecycleColumn, pageRegistry } from "../data/site";
+import { aiAgentLifecycleColumn, getConceptBySlug, pageRegistry } from "../data/site";
 
 const essays = await getCollection("essays");
 const essaysBySlug = new Map(essays.map((essay) => [essay.slug, essay]));
@@ -15,6 +15,9 @@ const preludeEntries = aiAgentLifecycleColumn.preludeEssays
   .filter((entry): entry is NonNullable<typeof entry> => Boolean(entry));
 const firstEssayCover = firstEssay?.data.images?.[0]?.url ?? aiAgentLifecycleColumn.coverImage;
 const firstEssayCoverAlt = firstEssay?.data.images?.[0]?.alt ?? aiAgentLifecycleColumn.coverImageAlt;
+const lifecycleConceptLinks = ["ai-agent-lifecycle", "intent-drift", "lifecycle-evidence"]
+  .map((conceptSlug) => getConceptBySlug(conceptSlug))
+  .filter((concept): concept is NonNullable<typeof concept> => Boolean(concept));
 ---
 
 <BaseLayout title={pageRegistry.lifecycle.title} description={aiAgentLifecycleColumn.categoryStatement}>
@@ -50,6 +53,25 @@ const firstEssayCoverAlt = firstEssay?.data.images?.[0]?.alt ?? aiAgentLifecycle
             <p>{aiAgentLifecycleColumn.relationToAgenticDelivery}</p>
             <p>{aiAgentLifecycleColumn.categoryBridge}</p>
             <p>{aiAgentLifecycleColumn.relationToMPLP}</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="registry-chassis lifecycle-concepts">
+        <div class="registry-annotation" style="margin-bottom: 1rem;">
+          <span class="registry-key">CANONICAL_DEFINITIONS</span>: <span class="registry-value">CONCEPT MAP</span>
+        </div>
+        <div class="opening-grid">
+          <div>
+            <h2>Definitions live in the Concepts map.</h2>
+            <p>
+              This page remains the category entry for the AI Agent Lifecycle column. The concise canonical definitions now live under Concepts so the category, essays, and proof surfaces can point to the same source of meaning.
+            </p>
+          </div>
+          <div class="concept-link-stack">
+            {lifecycleConceptLinks.map((concept) => (
+              <a href={`/concepts/${concept.slug}/`} class="lifecycle-text-link">{concept.term}</a>
+            ))}
           </div>
         </div>
       </section>
@@ -192,9 +214,14 @@ const firstEssayCoverAlt = firstEssay?.data.images?.[0]?.alt ?? aiAgentLifecycle
   }
 
   .lifecycle-opening,
+  .lifecycle-concepts,
   .newsletter-cta,
   .first-essay-panel {
     padding: 2.25rem;
+  }
+
+  .lifecycle-concepts {
+    border-left: 2px solid var(--accent-proof);
   }
 
   .first-essay-panel {
@@ -251,6 +278,17 @@ const firstEssayCoverAlt = firstEssay?.data.images?.[0]?.alt ?? aiAgentLifecycle
 
   .lifecycle-text-link:hover {
     color: var(--current-text);
+  }
+
+  .concept-link-stack {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: start;
+    gap: 0.8rem 1rem;
+  }
+
+  .concept-link-stack .lifecycle-text-link {
+    margin-top: 0;
   }
 
   .opening-grid {

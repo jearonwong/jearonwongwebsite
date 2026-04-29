@@ -57,6 +57,7 @@ const firstEssayCoverAlt = firstEssay?.data.images?.[0]?.alt ?? aiAgentLifecycle
             </a>
           )}
           <a href={aiAgentLifecycleColumn.href} class="column-link">Open the AI Agent Lifecycle entry</a>
+          <a href="/concepts/" class="column-link column-link--secondary">Open the Concepts map behind the series</a>
         </div>
         <form
           action={siteConfig.newsletterEndpoint}
@@ -192,6 +193,7 @@ const firstEssayCoverAlt = firstEssay?.data.images?.[0]?.alt ?? aiAgentLifecycle
   .column-link {
     display: inline-flex;
     margin-top: 0.85rem;
+    margin-right: 1rem;
     color: var(--accent-signal);
     font-family: var(--font-mono);
     font-size: 0.72rem;
@@ -201,6 +203,9 @@ const firstEssayCoverAlt = firstEssay?.data.images?.[0]?.alt ?? aiAgentLifecycle
     text-decoration: none;
   }
   .column-link:hover {
+    color: var(--current-text);
+  }
+  .column-link--secondary {
     color: var(--current-text);
   }
   .subscribe-form {

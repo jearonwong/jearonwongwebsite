@@ -1,0 +1,234 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import RegistryPageHero from "../../components/RegistryPageHero.astro";
+import { aiAgentLifecycleColumn, concepts, pageRegistry, siteConfig } from "../../data/site";
+
+const conceptSetJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "DefinedTermSet",
+  "@id": `${siteConfig.siteUrl}/concepts/#defined-term-set`,
+  name: pageRegistry.concepts.title,
+  description: pageRegistry.concepts.lead,
+  url: `${siteConfig.siteUrl}/concepts/`,
+  creator: {
+    "@id": `${siteConfig.siteUrl}#person`
+  },
+  hasDefinedTerm: concepts.map((concept) => ({
+    "@type": "DefinedTerm",
+    name: concept.term,
+    description: concept.definition,
+    url: `${siteConfig.siteUrl}/concepts/${concept.slug}/`
+  }))
+};
+---
+
+<BaseLayout
+  title={pageRegistry.concepts.title}
+  description={pageRegistry.concepts.lead}
+  canonicalPath="/concepts/"
+  jsonLd={[conceptSetJsonLd]}
+>
+  <RegistryPageHero
+    title={pageRegistry.concepts.title}
+    objectType={pageRegistry.concepts.objectType}
+    objectValue={pageRegistry.concepts.objectValue}
+    lead={pageRegistry.concepts.lead}
+  >
+    <div class="concepts-hero-links">
+      <a href="/lifecycle/" class="registry-annotation concepts-hero-link">
+        <span class="registry-key">CATEGORY</span>: <span class="registry-value">AI AGENT LIFECYCLE</span>
+      </a>
+      <a href="/projects/mplp/" class="registry-annotation concepts-hero-link">
+        <span class="registry-key">PROOF</span>: <span class="registry-value">MPLP</span>
+      </a>
+    </div>
+  </RegistryPageHero>
+
+  <div class="zone-b page-body" style="padding: 6rem 0;">
+    <section class="shell concepts-shell">
+      <section class="concept-opening">
+        <div class="registry-annotation" style="margin-bottom: 1rem;">
+          <span class="registry-key">CONCEPT_MAP</span>: <span class="registry-value">WORK_CONTINUITY_LAYER</span>
+        </div>
+        <p class="concept-opening__lead">
+          These concepts define the work-continuity layer of AI agent systems: how intent, context, roles, confirmation, execution, evidence, learning, and accepted outcomes remain continuous over time.
+        </p>
+        <p class="concept-opening__copy">
+          This is not a glossary dump. It is a route map for the terms that make Agentic Delivery and AI Agent Lifecycle inspectable: what each term names, which failure boundary it clarifies, and where the public essays or proof surfaces continue the thread.
+        </p>
+      </section>
+
+      <section class="concept-path registry-chassis">
+        <div class="registry-annotation" style="margin-bottom: 1rem;">
+          <span class="registry-key">READING_PATH</span>: <span class="registry-value">CONCEPT_TO_EVIDENCE</span>
+        </div>
+        <div class="concept-path__grid">
+          <div>
+            <h2>Start with the lifecycle category.</h2>
+            <p>{aiAgentLifecycleColumn.categoryStatement}</p>
+          </div>
+          <div class="concept-path__links">
+            <a href="/concepts/ai-agent-lifecycle/">AI Agent Lifecycle definition</a>
+            <a href="/concepts/agentic-delivery/">Agentic Delivery definition</a>
+            <a href="/essays/ai-agent-lifecycle-it-was-not-designed-it-grew/">Origin essay</a>
+            <a href="/projects/mplp/">MPLP proof surface</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="concept-grid" aria-label="AI Agent Lifecycle concept map">
+        {concepts.map((concept, index) => (
+          <article class="registry-chassis concept-card">
+            <div class="registry-annotation" style="margin-bottom: 0.75rem;">
+              <span class="registry-key">TERM_{String(index + 1).padStart(2, "0")}</span>
+            </div>
+            <h2><a href={`/concepts/${concept.slug}/`}>{concept.term}</a></h2>
+            <p>{concept.seoDescription}</p>
+            <a href={`/concepts/${concept.slug}/`} class="concept-card__link">Open definition</a>
+          </article>
+        ))}
+      </section>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .concepts-hero-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem 1.2rem;
+    margin-top: 1.4rem;
+  }
+
+  .concepts-hero-link {
+    text-decoration: none;
+  }
+
+  .concepts-hero-link:hover .registry-value {
+    color: var(--accent-signal);
+  }
+
+  .concepts-shell {
+    display: grid;
+    gap: 2.5rem;
+  }
+
+  .concept-opening {
+    max-width: 78ch;
+  }
+
+  .concept-opening__lead {
+    margin: 0;
+    font-size: clamp(1.25rem, 2vw, 1.65rem);
+    line-height: 1.48;
+    color: var(--current-text);
+    font-weight: 650;
+    letter-spacing: -0.015em;
+  }
+
+  .concept-opening__copy {
+    margin: 1rem 0 0;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--current-muted);
+  }
+
+  .concept-path {
+    padding: 2rem;
+    border-left: 2px solid var(--accent-proof);
+  }
+
+  .concept-path__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(240px, 0.46fr);
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .concept-path h2 {
+    margin: 0 0 0.8rem;
+    font-size: 1.4rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--current-text);
+  }
+
+  .concept-path p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--current-muted);
+  }
+
+  .concept-path__links {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .concept-path__links a,
+  .concept-card__link {
+    color: var(--accent-signal);
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .concept-path__links a:hover,
+  .concept-card__link:hover,
+  .concept-card h2 a:hover {
+    color: var(--current-text);
+  }
+
+  .concept-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .concept-card {
+    padding: 1.75rem;
+    display: grid;
+    gap: 0.9rem;
+    align-content: start;
+  }
+
+  .concept-card h2 {
+    margin: 0;
+    font-size: 1.35rem;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  .concept-card h2 a {
+    color: var(--current-text);
+    text-decoration: none;
+  }
+
+  .concept-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.62;
+    color: var(--current-muted);
+  }
+
+  @media (max-width: 860px) {
+    .concept-path__grid,
+    .concept-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .concepts-shell {
+      gap: 2rem;
+    }
+
+    .concept-path,
+    .concept-card {
+      padding: 1.4rem;
+    }
+  }
+</style>

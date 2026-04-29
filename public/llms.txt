@@ -1,0 +1,38 @@
+# Jearon Wong
+
+Site: https://www.jearonwong.com/
+
+Jearon Wong writes and builds around Agentic Delivery, AI Agent Lifecycle, AI Agent Governance, Protocol Engineering, and proof surfaces for trustworthy multi-agent systems. This file is a concise content map for AI crawlers and readers. It does not guarantee ranking, citation, or inclusion by any AI system.
+
+## Start Here
+
+- Homepage: https://www.jearonwong.com/
+- AI Agent Lifecycle category: https://www.jearonwong.com/lifecycle/
+- Concepts map: https://www.jearonwong.com/concepts/
+- Essays registry: https://www.jearonwong.com/essays/
+- Projects proof room: https://www.jearonwong.com/projects/
+- About: https://www.jearonwong.com/about/
+
+## Core Concepts
+
+- AI Agent Lifecycle: https://www.jearonwong.com/concepts/ai-agent-lifecycle/
+- Intent Drift: https://www.jearonwong.com/concepts/intent-drift/
+- Context Drift: https://www.jearonwong.com/concepts/context-drift/
+- Agentic Delivery: https://www.jearonwong.com/concepts/agentic-delivery/
+- AI Agent Governance: https://www.jearonwong.com/concepts/ai-agent-governance/
+- Lifecycle Evidence: https://www.jearonwong.com/concepts/lifecycle-evidence/
+- Confirmation Boundary: https://www.jearonwong.com/concepts/confirmation-boundary/
+- Protocol Engineering: https://www.jearonwong.com/concepts/protocol-engineering/
+
+## Flagship Essays
+
+- AI Agent Lifecycle: It Was Not Designed. It Grew.: https://www.jearonwong.com/essays/ai-agent-lifecycle-it-was-not-designed-it-grew/
+- MCP Connects Tools. A2A Connects Agents. Who Governs the Lifecycle?: https://www.jearonwong.com/essays/mcp-connects-tools-a2a-connects-agents-who-governs-the-lifecycle/
+- The Agentic AI Inflection Point: Project Delivery: https://www.jearonwong.com/essays/agentic-ai-inflection-point-project-delivery/
+
+## Project Proof Surfaces
+
+- MPLP: https://www.jearonwong.com/projects/mplp/
+- Cognitive OS: https://www.jearonwong.com/projects/cognitive-os/
+- SoloCrew: https://www.jearonwong.com/projects/solocrew/
+- Validation Lab: https://www.jearonwong.com/projects/validation-lab/

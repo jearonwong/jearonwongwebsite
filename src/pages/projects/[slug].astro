@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import RegistryPageHero from "../../components/RegistryPageHero.astro";
-import { getProjectBySlug, getProjectGraphPosition, getTheoryClusterName, homepageActions, siteConfig } from "../../data/site";
+import { getConceptBySlug, getProjectBySlug, getProjectGraphPosition, getTheoryClusterName, homepageActions, siteConfig } from "../../data/site";
 
 export async function getStaticPaths() {
   return ["mplp", "cognitive-os", "solocrew", "validation-lab"].map((slug) => ({
@@ -23,6 +23,9 @@ const adjacentProofs = (project.adjacentProofs ?? []).reduce<
   if (adjacent) acc.push(adjacent);
   return acc;
 }, []);
+const relatedConcepts = (project.relatedConcepts ?? [])
+  .map((conceptSlug) => getConceptBySlug(conceptSlug))
+  .filter((concept): concept is NonNullable<typeof concept> => Boolean(concept));
 const graphPosition = getProjectGraphPosition(project.slug);
 const previousProof = graphPosition.previous;
 const nextProof = graphPosition.next;
@@ -107,6 +110,21 @@ const projectJsonLd = {
             ))}
           </div>
         </article>
+
+        {relatedConcepts.length > 0 && (
+          <article class="registry-chassis proof-panel">
+            <div class="registry-annotation" style="margin-bottom: 0.9rem;">
+              <span class="registry-key">RELATED_CONCEPTS</span>
+            </div>
+            <div class="link-stack">
+              {relatedConcepts.map((concept) => (
+                <a href={`/concepts/${concept.slug}/`} class="chain-link">
+                  {concept.term}
+                </a>
+              ))}
+            </div>
+          </article>
+        )}
 
         <article class="registry-chassis proof-panel">
           <div class="registry-annotation" style="margin-bottom: 0.9rem;">
