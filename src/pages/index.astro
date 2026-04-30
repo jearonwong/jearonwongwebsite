@@ -5,7 +5,15 @@ import SiteHeader from "../components/SiteHeader.astro";
 import PortraitAnchor from "../components/PortraitAnchor.astro";
 import ProjectProofCard from "../components/ProjectProofCard.astro";
 import CoreArchitectureMap from "../components/CoreArchitectureMap.astro";
-import { aiAgentLifecycleColumn, homepageActions, homepageContent, siteConfig, projects, socialLinks } from "../data/site";
+import {
+  aiAgentLifecycleColumn,
+  homepageActions,
+  homepageContent,
+  siteConfig,
+  projects,
+  siteSemanticBaseline,
+  socialLinks
+} from "../data/site";
 
 const allEssays = (await getCollection("essays"))
   .sort((left, right) =>
@@ -38,10 +46,10 @@ const writingTracks = [
 <BaseLayout
   title={siteConfig.title}
   description={siteConfig.description}
-  shareTitle="Who Governs the Lifecycle?"
-  shareDescription="AI agents are learning to act, but reliable delivery still needs lifecycle accountability. Jearon Wong writes and builds around Agentic Delivery."
+  shareTitle={siteSemanticBaseline.identityAnchor}
+  shareDescription={`${siteSemanticBaseline.agenticDeliveryDefinition} ${siteSemanticBaseline.agenticDeliveryStackDefinition}`}
   ogImagePath="/social/jearonwong-og.png"
-  ogImageAlt="Who governs the lifecycle? AI agents can act. Reliable delivery still needs accountability."
+  ogImageAlt={`${siteSemanticBaseline.identityAnchor}: Agentic Delivery and accountable outcomes.`}
 >
   <!-- 1. Problem + Concept + Author Anchor (Hero) -->
   <div class="zone-a registry-grid hero-wrapper" style="border-bottom: 1px solid var(--border-registry);">
@@ -156,7 +164,7 @@ const writingTracks = [
     <section id="proof" class="shell section-rhythm">
       <div class="section-header">
         <h2>Proof Surfaces</h2>
-        <p class="section-desc">These projects express Agentic Delivery through a concrete reference path, without closing the category.</p>
+        <p class="section-desc">{siteSemanticBaseline.referencePathDefinition}</p>
         <a href={homepageActions.proof.href} class="section-link">{homepageActions.proof.label}</a>
       </div>
       <div class="card-grid">

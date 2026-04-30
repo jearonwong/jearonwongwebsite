@@ -1,7 +1,15 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import RegistryPageHero from "../../components/RegistryPageHero.astro";
-import { getConceptBySlug, getProjectBySlug, getProjectGraphPosition, getTheoryClusterName, homepageActions, siteConfig } from "../../data/site";
+import {
+  getConceptBySlug,
+  getProjectBySlug,
+  getProjectGraphPosition,
+  getTheoryClusterName,
+  homepageActions,
+  siteConfig,
+  siteSemanticBaseline
+} from "../../data/site";
 
 export async function getStaticPaths() {
   return ["mplp", "cognitive-os", "solocrew", "validation-lab"].map((slug) => ({
@@ -36,23 +44,28 @@ const projectJsonLd = {
   name: project.name,
   description: projectMetaDescription,
   url: `${siteConfig.siteUrl}/projects/${project.slug}/`,
+  isPartOf: {
+    "@type": "CreativeWork",
+    name: "Agentic Delivery concrete reference path",
+    description: siteSemanticBaseline.referencePathDefinition
+  },
   author: {
     "@type": "Person",
     name: siteConfig.author.name,
     jobTitle: siteConfig.author.role
   },
-  about: [project.proofRole, ...(project.relatedIdeas ?? [])]
+  about: [project.status, "Agentic Delivery", "Agentic Delivery Stack", ...(project.relatedIdeas ?? [])]
 };
 ---
 
 <BaseLayout
-  title={`${project.name} | ${project.proofRole}`}
+  title={`${project.name} | ${project.status}`}
   description={projectMetaDescription}
-  shareTitle={`${project.name} — ${project.proofRole}`}
+  shareTitle={`${project.name} — ${project.status}`}
   shareDescription={project.shareDescription ?? projectMetaDescription}
   jsonLd={[projectJsonLd]}
   ogImagePath="/social/jearonwong-og.png"
-  ogImageAlt={`${project.name} — ${project.proofRole} in the Agentic Delivery reference architecture`}
+  ogImageAlt={`${project.name} — ${project.status} in the Agentic Delivery concrete reference path`}
 >
   <RegistryPageHero
     title={project.name}

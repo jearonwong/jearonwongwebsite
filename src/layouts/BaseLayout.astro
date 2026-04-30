@@ -1,7 +1,7 @@
 ---
 import "../styles/global.css";
 import SiteFooter from "../components/SiteFooter.astro";
-import { siteConfig, socialLinks } from "../data/site";
+import { siteConfig, siteSemanticBaseline, socialLinks } from "../data/site";
 
 interface Props {
   title?: string;
@@ -60,17 +60,24 @@ const personJsonLd = JSON.stringify({
   url: siteConfig.siteUrl,
   jobTitle: siteConfig.author.role,
   image: new URL(siteConfig.author.image, siteConfig.siteUrl).toString(),
-  description: siteConfig.thesis,
+  description: `${siteSemanticBaseline.identityAnchor}. ${siteSemanticBaseline.agenticDeliveryDefinition}`,
   knowsAbout: [
-    "AI agent reliability",
-    "reliable AI agent delivery",
+    "Agentic Delivery",
+    "Agentic Delivery Stack",
+    "AI Agent Lifecycle",
+    "lifecycle protocol",
+    "MPLP",
+    "Multi-Agent Lifecycle Protocol",
+    "Cognitive OS",
+    "SoloCrew",
+    "Validation Lab",
+    "evidence adjudication",
+    "accountable outcomes",
+    "reference architecture",
     "protocol engineering",
     "agent governance",
-    "verifiable AI agents",
-    "agent evidence chain",
-    "AI Agent Lifecycle",
-    "AI agent lifecycle protocol",
-    "governable agent systems"
+    "production-grade AI agents",
+    "trustworthy multi-agent systems"
   ],
   sameAs: socialLinks.map(l => l.href)
 });

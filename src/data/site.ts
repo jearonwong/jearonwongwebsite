@@ -1,11 +1,68 @@
+export const siteSemanticBaseline = {
+  identityAnchor: "Jearon Wong — Protocol Architect for the Agent Era",
+  problemStatement: "AI agents can execute, but execution is not delivery.",
+  agenticDeliveryDefinition:
+    "Agentic Delivery names the missing layer between agent execution and accountable outcomes.",
+  agenticDeliveryStackDefinition:
+    "The Agentic Delivery Stack is a reference architecture for turning agent execution into scoped, authorized, traceable, reviewable, and accepted outcomes.",
+  mplpDefinition:
+    "MPLP is a vendor-neutral lifecycle protocol designed to make Agentic Delivery explicit, governable, and auditable.",
+  cognitiveOSDefinition:
+    "Cognitive OS is a protocol-native runtime path for state, activation, projection, constraints, and evidence capture.",
+  soloCrewDefinition:
+    "SoloCrew is a delivery proof path for applying Agentic Delivery to one-person company operations.",
+  validationLabDefinition:
+    "Validation Lab is an MPLP evidence adjudication surface for evaluating evidence packs under versioned rulesets.",
+  referencePathDefinition:
+    "MPLP, Cognitive OS, SoloCrew, and Validation Lab form a concrete reference path through Agentic Delivery, without closing the category.",
+  projectRoles: {
+    mplp: "Lifecycle Protocol",
+    cognitiveOS: "Runtime Path",
+    soloCrew: "Delivery Proof Path",
+    validationLab: "Evidence Adjudication"
+  },
+  architectureSurfaces: [
+    "Lifecycle Protocol",
+    "Execution Runtime",
+    "Delivery Surface",
+    "Evidence / Adjudication Surface"
+  ],
+  primaryTerms: [
+    "Protocol Architect for the Agent Era",
+    "Agentic Delivery",
+    "Agentic Delivery Stack",
+    "AI Agent Lifecycle",
+    "MPLP",
+    "Multi-Agent Lifecycle Protocol",
+    "lifecycle protocol",
+    "accountable outcomes",
+    "reference architecture",
+    "concrete reference path",
+    "evidence adjudication"
+  ],
+  avoidedTerms: [
+    "AIG",
+    "Agentic Intelligence Governance",
+    "first reference path",
+    "certification",
+    "certifies",
+    "universal protocol",
+    "only protocol",
+    "complete stack",
+    "closed stack"
+  ]
+};
+
 export const siteConfig = {
-  title: "Jearon Wong",
-  description: "Architecting production-grade AI agent systems through protocol, runtime, and product work.",
+  title: "Jearon Wong — Protocol Architect for the Agent Era",
+  description:
+    "Jearon Wong defines Agentic Delivery and the Agentic Delivery Stack: a reference architecture for turning agent execution into accountable outcomes.",
   siteUrl: "https://www.jearonwong.com",
   socialImagePath: "/social/jearonwong-og.png",
   xHandle: "@jearonwong",
-  thesis: "Defining reliable delivery for AI agents.", // v1.0 Primary Headline
-  supportLine: "While the industry optimizes prompts and contexts, I build protocols, runtime concepts, and products that make agent work plannable, verifiable, and governable.",
+  thesis: siteSemanticBaseline.agenticDeliveryDefinition,
+  supportLine:
+    "AI agents can execute, but execution is not delivery. I define the lifecycle protocol, runtime path, delivery surface, and evidence adjudication layer behind accountable outcomes.",
   newsletterEndpoint: "https://buttondown.com/api/emails/embed-subscribe/jearonwong",
   author: {
     name: "Jearon Wong",
@@ -24,17 +81,16 @@ export const socialLinks = [
 ];
 
 export const siteThesis = {
-  universalProblem:
-    "AI agents are learning to act, but cannot yet reliably deliver accountable work.",
-  conceptDefinition:
-    "Agentic Delivery is the shift from task execution to reliable project delivery across a lifecycle.",
+  universalProblem: siteSemanticBaseline.problemStatement,
+  conceptDefinition: siteSemanticBaseline.agenticDeliveryDefinition,
+  stackDefinition: siteSemanticBaseline.agenticDeliveryStackDefinition,
   technicalGap:
-    "MCP connects tools. A2A connects agents. The missing layer is lifecycle governance.",
+    "MCP connects tools. A2A connects agents. Agentic Delivery names the missing layer between execution and accountable outcomes.",
   stackProof: [
-    { name: "MPLP", role: "Protocol Layer" },
-    { name: "Cognitive OS", role: "Runtime Foundation" },
-    { name: "SoloCrew", role: "Product Proof" },
-    { name: "Validation Lab", role: "Evidence Surface" }
+    { name: "MPLP", role: siteSemanticBaseline.projectRoles.mplp },
+    { name: "Cognitive OS", role: siteSemanticBaseline.projectRoles.cognitiveOS },
+    { name: "SoloCrew", role: siteSemanticBaseline.projectRoles.soloCrew },
+    { name: "Validation Lab", role: siteSemanticBaseline.projectRoles.validationLab }
   ]
 };
 
@@ -49,9 +105,9 @@ export const aiAgentLifecycleColumn = {
   purpose:
     "This column defines AI Agent Lifecycle as the continuity of intent, context, role, plan, confirmation, execution, evidence, learning, and accepted outcome across agent activation, engineering process, project, and cross-project dimensions.",
   relationToAgenticDelivery:
-    "Agentic Delivery names the shift. AI Agent Lifecycle explains the work-continuity layer. MPLP later expresses the protocol structure.",
+    "Agentic Delivery names the missing layer between agent execution and accountable outcomes. AI Agent Lifecycle explains the work-continuity layer. The Agentic Delivery Stack gives that layer a reference architecture.",
   relationToMPLP:
-    "MPLP is the later protocol abstraction that grew from these lifecycle failure boundaries; it is not the subject of the first origin essay.",
+    "MPLP is the lifecycle protocol foundation that grew from these lifecycle failure boundaries; it is not the subject of the first origin essay.",
   categoryBridge:
     "Prompt Engineering improves a response. Context Engineering improves what the model sees. Harness Engineering improves execution. AI Agent Lifecycle asks what remains continuous after execution.",
   href: "/lifecycle/",
@@ -136,7 +192,7 @@ export const aiAgentLifecycleColumn = {
 export const contentRouteRoles = {
   homepage: {
     question: "What is the thesis?",
-    job: "State the problem, define the concept, and route into stack proof."
+    job: "State the problem, define the concept, and route from the Agentic Delivery Stack into the concrete reference path."
   },
   essays: {
     question: "Why is the thesis true?",
@@ -148,7 +204,7 @@ export const contentRouteRoles = {
   },
   projects: {
     question: "What proves the thesis?",
-    job: "Show the proof surfaces that make the thesis buildable."
+    job: "Show the concrete reference path that makes the thesis inspectable without closing the category."
   },
   governance: {
     question: "What conditions make agent work accountable?",
@@ -160,7 +216,7 @@ export const contentRouteRoles = {
   },
   about: {
     question: "Who is maintaining this thesis and stack?",
-    job: "Anchor the maintainer to the thesis, terminology, and proof stack."
+    job: "Anchor the maintainer to the thesis, terminology, Agentic Delivery Stack, and concrete reference path."
   },
   newsletter: {
     question: "What ongoing signal will readers receive?",
@@ -252,15 +308,15 @@ export const homepageContent = {
       "accountable work."
     ],
     technicalHookLines: [
-      "MCP connects tools. A2A connects agents.",
-      "Who governs the lifecycle?"
+      siteSemanticBaseline.problemStatement,
+      "MCP connects tools. A2A connects agents."
     ],
     concept:
-      "Agentic Delivery is the shift from task execution to reliable project delivery across a lifecycle.",
+      siteSemanticBaseline.agenticDeliveryDefinition,
     authorAnchor: "Jearon Wong",
     role: "Architecting production-grade AI agent systems.",
     support:
-      "I turn that thesis into protocol, runtime, product, and evidence surfaces: MPLP, Cognitive OS, SoloCrew, and Validation Lab."
+      "I turn that thesis into the Agentic Delivery Stack: lifecycle protocol, execution runtime, delivery surface, and evidence adjudication."
   },
   coreThesis: {
     eyebrow: "CORE_THESIS",
@@ -275,12 +331,10 @@ export const homepageContent = {
     agenticDeliveryFlow: ["Intent", "Context", "Plan", "Confirm", "Execute", "Evidence", "Accepted Outcome"]
   },
   stackMap: {
-    eyebrow: "AGENTIC_DELIVERY",
-    headline: "From Agent Execution to Accountable Outcomes",
-    summary:
-      "Agentic Delivery names the missing layer between agent execution and accountable outcomes.",
-    detail:
-      "It is not a product bundle. It is a reference architecture for making agent work scoped, authorized, traceable, reviewable, and accepted.",
+    eyebrow: "AGENTIC_DELIVERY_STACK",
+    headline: "Agentic Delivery Stack",
+    summary: siteSemanticBaseline.agenticDeliveryDefinition,
+    detail: siteSemanticBaseline.agenticDeliveryStackDefinition,
     closingLine: "MPLP sits at the center as the lifecycle protocol.",
     core: {
       label: "CORE THESIS",
@@ -290,29 +344,28 @@ export const homepageContent = {
     },
     layers: [
       {
-        projectSlug: "mplp",
         stackLabel: "LIFECYCLE PROTOCOL",
         verb: "Protocol",
-        description: "A vendor-neutral lifecycle protocol for making agent work explicit, governable, and auditable."
+        title: "Lifecycle Protocol",
+        description: "Shared lifecycle semantics for context, plan, confirmation, responsibility boundary, and trace."
       },
       {
-        projectSlug: "cognitive-os",
-        stackLabel: "RUNTIME PATH",
-        verb: "Runtime path",
-        description:
-          "A protocol-native runtime direction for state, activation, projection, and evidence capture."
+        stackLabel: "EXECUTION RUNTIME",
+        verb: "Runtime",
+        title: "Execution Runtime",
+        description: "State, activation, constraints, projection, and runtime evidence capture."
       },
       {
-        projectSlug: "solocrew",
-        stackLabel: "DELIVERY PROOF PATH",
-        verb: "Proof path",
-        description: "A product proof path for applying Agentic Delivery to one-person company operations."
+        stackLabel: "DELIVERY SURFACE",
+        verb: "Delivery",
+        title: "Delivery Surface",
+        description: "The surface where agent activity becomes user-facing or organization-facing deliverables."
       },
       {
-        projectSlug: "validation-lab",
-        stackLabel: "EVIDENCE ADJUDICATION",
-        verb: "Evidence",
-        description: "An MPLP evidence adjudication surface for evaluating evidence packs under versioned rulesets."
+        stackLabel: "EVIDENCE / ADJUDICATION",
+        verb: "Adjudication",
+        title: "Evidence / Adjudication Surface",
+        description: "Evidence packs, review, challenge, comparison, and ruleset-based adjudication."
       }
     ]
   },
@@ -346,9 +399,9 @@ export const concepts = [
     whyExistingApproachesAreNotEnough:
       "Prompt engineering can make one request clearer. Context engineering can improve what the model sees. Orchestration can make execution repeatable. Observability can record what happened. None of those alone defines what must remain valid before, during, and after execution. A lifecycle needs a grammar for continuity: what state is active, what has expired, what has been confirmed, which evidence is required, and when an outcome is accepted.",
     relationToLifecycle:
-      "AI Agent Lifecycle is the category that sits beneath Agentic Delivery and above isolated execution. Agentic Delivery names the shift from task execution to reliable project delivery; AI Agent Lifecycle explains what has to stay continuous for that shift to be real. MPLP is one proof surface for expressing this lifecycle as protocol vocabulary, while Cognitive OS, SoloCrew, and Validation Lab explore runtime, product, and evidence surfaces.",
+      "AI Agent Lifecycle is the category that sits beneath Agentic Delivery and above isolated execution. Agentic Delivery names the missing layer between agent execution and accountable outcomes; AI Agent Lifecycle explains what has to stay continuous for that shift to be real. MPLP is the lifecycle protocol proof route, while Cognitive OS, SoloCrew, and Validation Lab continue the concrete reference path through runtime, delivery, and evidence adjudication.",
     evidenceRoute:
-      "The evidence route starts with the origin essay, because it explains why the category grew out of real engineering failure boundaries. From there, the MPLP proof surface shows how lifecycle concepts can become protocol records, while Validation Lab keeps the delivery claim tied to inspectable evidence. The route is intentionally modest: it shows a thesis, a vocabulary, and proof surfaces, not market adoption.",
+      "The evidence route starts with the origin essay, because it explains why the category grew out of real engineering failure boundaries. From there, MPLP shows how lifecycle concepts can become protocol records, while Validation Lab keeps the delivery claim tied to inspectable evidence. The route is intentionally modest: it shows a thesis, a vocabulary, and proof surfaces, not market adoption.",
     relatedEssays: [
       "ai-agent-lifecycle-it-was-not-designed-it-grew",
       "mcp-connects-tools-a2a-connects-agents-who-governs-the-lifecycle",
@@ -407,9 +460,9 @@ export const concepts = [
     whyExistingApproachesAreNotEnough:
       "Retrieval, memory, and long-context models help agents access more information, but access is not the same as authority. A retrieved note may be outdated. A rule file may conflict with a newer decision. A summary may preserve a conclusion while losing the trade-off that made the conclusion valid. Without lifecycle semantics, the system has no reliable way to distinguish current context from stale context, background context, or nonbinding history.",
     relationToLifecycle:
-      "AI Agent Lifecycle treats context as a stateful layer that must be loaded, updated, invalidated, and evidenced as work moves forward. Context Drift is closely tied to Intent Drift: once context stops representing the real project state, intent becomes easier to reinterpret incorrectly. Cognitive OS is the runtime proof surface for this concern, while Lifecycle Evidence and MPLP show why context needs traceable links to plans, confirmations, and outcomes.",
+      "AI Agent Lifecycle treats context as a stateful layer that must be loaded, updated, invalidated, and evidenced as work moves forward. Context Drift is closely tied to Intent Drift: once context stops representing the real project state, intent becomes easier to reinterpret incorrectly. Cognitive OS is the runtime path for this concern, while Lifecycle Evidence and MPLP show why context needs traceable links to plans, confirmations, and outcomes.",
     evidenceRoute:
-      "The evidence route for Context Drift starts in the origin essay's discussion of summaries, rule files, and stale project state. It continues through Cognitive OS as the runtime proof surface: the place where context has to become active state, not background reading. Validation Lab matters because context validity eventually has to be checked against evidence, especially when the same work resumes across sessions or agents.",
+      "The evidence route for Context Drift starts in the origin essay's discussion of summaries, rule files, and stale project state. It continues through Cognitive OS as the runtime path: the place where context has to become active state, not background reading. Validation Lab matters because context validity eventually has to be checked against evidence, especially when the same work resumes across sessions or agents.",
     relatedEssays: [
       "ai-agent-lifecycle-it-was-not-designed-it-grew",
       "agentic-ai-inflection-point-project-delivery"
@@ -429,17 +482,17 @@ export const concepts = [
     term: "Agentic Delivery",
     seoTitle: "Agentic Delivery Definition",
     seoDescription:
-      "Agentic Delivery is the shift from isolated AI agent task execution to reliable project delivery across a lifecycle.",
+      siteSemanticBaseline.agenticDeliveryDefinition,
     definition:
-      "Agentic Delivery is the shift from asking whether an agent can execute a task to asking whether an agent system can deliver real work. Delivery means carrying human intent through context, planning, confirmation, execution, evidence, review, and accepted outcome. It is a project-level concept, not a prompt-level compliment. An agent that can act is useful; an agent system that can deliver must preserve meaning, authority, and evidence across time.",
+      `${siteSemanticBaseline.agenticDeliveryDefinition} Delivery means carrying human intent through context, planning, confirmation, execution, evidence, review, and accepted outcome. It is a project-level concept, not a prompt-level compliment. An agent that can act is useful; an agent system that can deliver must preserve meaning, authority, and evidence across time.`,
     problem:
       "The problem it names is the industry's habit of measuring the wrong unit. Tool calls, workflow runs, latency, traces, and evaluation scores matter, but they mostly describe execution. Real work is judged at the level of projects and outcomes. A system can score well on local execution while failing to carry the original objective, maintain accountability, recover from change, or prove why the final result should be accepted.",
     whyExistingApproachesAreNotEnough:
       "Execution frameworks make agents runnable. AgentOps makes behavior more observable. Evals make selected outputs measurable. These are necessary foundations, but they do not automatically create delivery. Delivery requires an architecture that binds intent to plan, plan to confirmation, confirmation to action, action to evidence, and evidence to acceptance. Without that chain, the system may be operationally impressive but still weak as a work-delivery environment.",
     relationToLifecycle:
-      "Agentic Delivery is the broader thesis; AI Agent Lifecycle is the work-continuity layer that makes the thesis legible. If Agentic Delivery asks whether AI agents can deliver projects, the lifecycle asks what must stay continuous for delivery to be trustworthy. MPLP defines protocol language for the chain. SoloCrew explores the product proof of a governed operating loop. Validation Lab examines whether delivery claims can be checked against evidence.",
+      "Agentic Delivery is the broader thesis; AI Agent Lifecycle is the work-continuity layer that makes the thesis legible. If Agentic Delivery asks whether AI agents can deliver accountable outcomes, the lifecycle asks what must stay continuous for delivery to be trustworthy. The Agentic Delivery Stack is the reference architecture for that chain. MPLP supplies lifecycle protocol language, SoloCrew explores the delivery proof path, and Validation Lab examines whether delivery claims can be checked against evidence.",
     evidenceRoute:
-      "The evidence route begins with the Agentic Delivery essay, where the unit of analysis moves from task execution to project delivery. The lifecycle page then gives the category entry for what must remain continuous. SoloCrew is the product proof route because it asks whether a governed operating loop can make that thesis usable. Validation Lab is the evidence route because delivery claims need more than fluent outputs.",
+      "The evidence route begins with the Agentic Delivery essay, where the unit of analysis moves from task execution to accountable outcomes. The lifecycle page then gives the category entry for what must remain continuous. SoloCrew is the delivery proof path because it asks whether a governed operating loop can make that thesis usable. Validation Lab is the evidence adjudication route because delivery claims need more than fluent outputs.",
     relatedEssays: [
       "agentic-ai-inflection-point-project-delivery",
       "ai-agent-lifecycle-it-was-not-designed-it-grew",
@@ -529,9 +582,9 @@ export const concepts = [
     whyExistingApproachesAreNotEnough:
       "Human-in-the-loop design is necessary but often underspecified. A human can be present and still lack the information needed to authorize responsibly. Access controls can block categories of action, but they do not define when a specific plan is acceptable. Logs can show that approval happened, but not necessarily what was approved. A Confirmation Boundary makes the approved scope and its lifecycle links explicit.",
     relationToLifecycle:
-      "Within AI Agent Lifecycle, Confirmation Boundary sits between plan and execution. It is one of the points where human authority enters the lifecycle in a structured way. Protocol Engineering can model the boundary as a record rather than a chat message. AI Agent Governance uses it to preserve accountability. SoloCrew is the product proof surface where confirmation boundaries matter as part of an operating loop.",
+      "Within AI Agent Lifecycle, Confirmation Boundary sits between plan and execution. It is one of the points where human authority enters the lifecycle in a structured way. Protocol Engineering can model the boundary as a record rather than a chat message. AI Agent Governance uses it to preserve accountability. SoloCrew is the delivery proof path where confirmation boundaries matter as part of an operating loop.",
     evidenceRoute:
-      "The evidence route for Confirmation Boundary starts with the lifecycle governance essay, where confirmation is treated as a protocol primitive rather than a decorative checkpoint. SoloCrew is the most concrete product route because confirmation boundaries have to feel usable inside a working loop. MPLP provides the protocol vocabulary, and Validation Lab asks whether the resulting approval record is enough for later review. The boundary should explain the approved plan, the excluded scope, the expected evidence, and the return condition before the agent continues. That makes approval durable enough to audit rather than merely visible in a UI at execution time.",
+      "The evidence route for Confirmation Boundary starts with the lifecycle governance essay, where confirmation is treated as a protocol primitive rather than a decorative checkpoint. SoloCrew is the most concrete delivery route because confirmation boundaries have to feel usable inside a working loop. MPLP provides the protocol vocabulary, and Validation Lab asks whether the resulting approval record is enough for later review. The boundary should explain the approved plan, the excluded scope, the expected evidence, and the return condition before the agent continues. That makes approval durable enough to audit rather than merely visible in a UI at execution time.",
     relatedEssays: [
       "mcp-connects-tools-a2a-connects-agents-who-governs-the-lifecycle",
       "agentic-ai-inflection-point-project-delivery"
@@ -607,13 +660,13 @@ export const pageRegistry = {
     subtitle: "Protocol Architect for the Agent Era",
     objectType: "PAGE_ROLE",
     objectValue: "IDENTITY SHEET",
-    lead: "A concise identity sheet for the thesis, category, and stack proof behind this site."
+    lead: "A concise identity sheet for the thesis, category, Agentic Delivery Stack, and concrete reference path behind this site."
   },
   projects: {
     title: "Projects",
     objectType: "PAGE_ROLE",
     objectValue: "EVIDENCE LEDGER",
-    lead: "The public proof surfaces. Start with the thesis, then use this room to inspect how each proof object carries a different architectural claim."
+    lead: "The project proof ledger for the concrete reference path through Agentic Delivery, with each proof object kept inside its maturity boundary."
   },
   ideas: {
     title: "Ideas",
@@ -631,7 +684,7 @@ export const pageRegistry = {
     title: "Essays",
     objectType: "PAGE_ROLE",
     objectValue: "REGISTRY LOGBOOK",
-    lead: "The public arguments behind Agentic Delivery, AI Agent Lifecycle, lifecycle governance, and the stack proof."
+    lead: "The public arguments behind Agentic Delivery, AI Agent Lifecycle, lifecycle governance, and the Agentic Delivery Stack."
   },
   lifecycle: {
     title: "AI Agent Lifecycle",
@@ -687,12 +740,12 @@ export const theoryClusters = [
   {
     slug: "agentic-delivery",
     name: "Agentic Delivery",
-    description: "The shift from isolated task execution to reliable project delivery across a lifecycle.",
+    description: siteSemanticBaseline.agenticDeliveryDefinition,
     prompt: "Can the system carry work from human intent to accepted outcome?",
     essayPath: "/essays/agentic-ai-inflection-point-project-delivery/",
     essayLabel: "Read the project delivery essay",
     proofPath: "/projects/",
-    proofLabel: "Inspect the stack proof"
+    proofLabel: "Inspect the concrete reference path"
   },
   {
     slug: "project-lifecycle-vs-task-execution",
@@ -732,7 +785,7 @@ export const theoryClusters = [
     essayPath: "/essays/agentic-ai-inflection-point-project-delivery/",
     essayLabel: "Read the delivery essay",
     proofPath: "/projects/validation-lab/",
-    proofLabel: "Open the evidence surface"
+    proofLabel: "Open evidence adjudication"
   },
   {
     slug: "accountable-work",
@@ -742,7 +795,7 @@ export const theoryClusters = [
     essayPath: "/essays/mcp-connects-tools-a2a-connects-agents-who-governs-the-lifecycle/",
     essayLabel: "Read the accountability argument",
     proofPath: "/projects/solocrew/",
-    proofLabel: "Open the product proof"
+    proofLabel: "Open the delivery proof path"
   }
 ];
 
@@ -759,18 +812,16 @@ export const projects = [
   {
     name: "MPLP",
     slug: "mplp",
-    status: "Protocol",
-    summary: "Vendor-neutral lifecycle protocol for AI agent systems.",
-    proof: "Provides the lifecycle protocol foundation for context, planning, confirmation, trace, and evidence.",
+    status: "Lifecycle Protocol",
+    summary: "Vendor-neutral lifecycle protocol for Agentic Delivery.",
+    proof: siteSemanticBaseline.mplpDefinition,
     proofRole: "LIFECYCLE PROTOCOL",
-    whatItIs:
-      "MPLP is a vendor-neutral lifecycle protocol for AI agent systems. It gives teams a shared vocabulary for context, plan, confirm, trace, governance, and evidence.",
+    whatItIs: siteSemanticBaseline.mplpDefinition,
     problem:
       "Most agent systems still move from prompt to output without a disciplined way to describe lifecycle state, handoff boundaries, or completion artifacts.",
     proves:
-      "MPLP proves that reliable work delivery needs a protocol layer, not just a better prompt layer. Without a lifecycle grammar, governance and traceability stay vague.",
-    shareDescription:
-      "MPLP is the protocol-layer proof surface in the thesis chain. It shows why reliable AI work needs a lifecycle vocabulary for context, planning, confirmation, trace, governance, and evidence.",
+      "MPLP anchors the protocol foundation for context, planning, confirmation, trace, governance, and evidence so Agentic Delivery can be explicit, governable, and auditable.",
+    shareDescription: siteSemanticBaseline.mplpDefinition,
     relatedIdeas: ["protocol-engineering", "lifecycle-governance", "accountable-work"],
     relatedConcepts: ["ai-agent-lifecycle", "protocol-engineering", "lifecycle-evidence"],
     relatedEssays: [
@@ -794,18 +845,16 @@ export const projects = [
   {
     name: "Cognitive OS",
     slug: "cognitive-os",
-    status: "Runtime",
+    status: "Runtime Path",
     summary: "Runtime path for protocol-native agent work.",
-    proof: "Explores a protocol-native runtime path for state, activation, projection, constraints, and evidence capture.",
+    proof: siteSemanticBaseline.cognitiveOSDefinition,
     proofRole: "RUNTIME PATH",
-    whatItIs:
-      "Cognitive OS is the runtime foundation for protocol-aware work. It focuses on the operating surface where delegated work is actually executed.",
+    whatItIs: siteSemanticBaseline.cognitiveOSDefinition,
     problem:
       "A protocol vocabulary alone does not keep agent work reliable if runtime state, permissions, and working conditions are still implicit or weakly controlled.",
     proves:
-      "Cognitive OS proves that reliable delivery needs a runtime foundation that enforces conditions, not just a conceptual model that describes them.",
-    shareDescription:
-      "Cognitive OS is the runtime-foundation proof surface in the thesis chain. It shows how state, permissions, and operating constraints make protocol-aware work real.",
+      "Cognitive OS keeps the runtime claim bounded: it explores how state, activation, projection, constraints, and evidence capture can make protocol-native work operational.",
+    shareDescription: siteSemanticBaseline.cognitiveOSDefinition,
     relatedIdeas: ["agentic-delivery", "project-lifecycle-vs-task-execution", "protocol-engineering"],
     relatedConcepts: ["context-drift", "lifecycle-evidence"],
     relatedEssays: [
@@ -823,18 +872,16 @@ export const projects = [
   {
     name: "SoloCrew",
     slug: "solocrew",
-    status: "Product",
+    status: "Delivery Proof Path",
     summary: "Delivery proof path for one-person-company AI operations.",
-    proof: "Serves as a delivery proof path for one-person-company AI operations.",
+    proof: siteSemanticBaseline.soloCrewDefinition,
     proofRole: "DELIVERY PROOF PATH",
-    whatItIs:
-      "SoloCrew is the product proof of the protocol/runtime thesis in one-person-company AI work.",
+    whatItIs: siteSemanticBaseline.soloCrewDefinition,
     problem:
       "Systems ideas can remain abstract unless they show up inside a real operating loop that someone can use, inspect, and iterate on day to day.",
     proves:
-      "SoloCrew proves that protocol-aware work can move from theory into a concrete product/application surface without collapsing back into generic AI tooling.",
-    shareDescription:
-      "SoloCrew is the product-proof surface in the thesis chain. It shows how protocol and runtime ideas become a concrete operating loop rather than a generic AI tool.",
+      "SoloCrew tests how Agentic Delivery can become a concrete operating path for one-person-company work without claiming the category is closed or commercially proven.",
+    shareDescription: siteSemanticBaseline.soloCrewDefinition,
     relatedIdeas: ["agentic-delivery", "accountable-work", "protocol-engineering"],
     relatedConcepts: ["agentic-delivery", "confirmation-boundary"],
     relatedEssays: [
@@ -852,18 +899,16 @@ export const projects = [
   {
     name: "Validation Lab",
     slug: "validation-lab",
-    status: "Evidence",
+    status: "Evidence Adjudication",
     summary: "MPLP evidence adjudication surface.",
-    proof: "Adjudicates MPLP evidence packs under versioned rulesets, evaluating evidence rather than claims.",
+    proof: siteSemanticBaseline.validationLabDefinition,
     proofRole: "EVIDENCE ADJUDICATION",
-    whatItIs:
-      "Validation Lab is an MPLP evidence adjudication surface for evaluating evidence packs under versioned rulesets.",
+    whatItIs: siteSemanticBaseline.validationLabDefinition,
     problem:
       "Agent systems often make large claims about governance, reliability, or safety without offering a visible surface for checking what evidence supports those claims.",
     proves:
       "Validation Lab shows that reliable work delivery needs evidence adjudication, not just architectural language. Proof must be inspectable.",
-    shareDescription:
-      "Validation Lab is the MPLP evidence adjudication proof page in the thesis chain. It shows why lifecycle claims need inspectable evidence instead of abstract assurance language.",
+    shareDescription: siteSemanticBaseline.validationLabDefinition,
     relatedIdeas: ["lifecycle-governance", "evidence-accepted-outcome", "accountable-work"],
     relatedConcepts: ["lifecycle-evidence", "ai-agent-governance"],
     relatedEssays: [
@@ -914,14 +959,14 @@ export const aboutSpecs = [
   },
   {
     label: "THESIS_LINE",
-    value: "Defining how AI agents reliably deliver real work."
+    value: "AI agents can execute, but execution is not delivery."
   },
   {
     label: "CATEGORY",
     value: "AI systems thinker / protocol architect / founder-editorial voice"
   },
   {
-    label: "STACK_PROOF",
+    label: "REFERENCE_PATH",
     value: "MPLP / Cognitive OS / SoloCrew / Validation Lab"
   }
 ];
@@ -1038,13 +1083,13 @@ export const newsletterPromise = {
   headline:
     "Follow the public development of Agentic Delivery, Define The AI Agent Lifecycle, lifecycle governance, and protocol-grade AI agent systems.",
   cadence:
-    "New notes go out when there is a real thesis, column essay, framework, proof update, or evidence surface to report.",
+    "New notes go out when there is a real thesis, column essay, framework, proof update, or evidence adjudication surface to report.",
   topics: [
     "Agentic Delivery and project lifecycle design",
     "Define The AI Agent Lifecycle, starting from the published origin essay",
     "the upcoming four-layer AI Agent Lifecycle definition",
     "lifecycle governance above MCP and A2A",
-    "protocol, runtime, product, and evidence surfaces",
+    "lifecycle protocol, runtime path, delivery proof path, and evidence adjudication",
     "field notes from MPLP, Cognitive OS, SoloCrew, and Validation Lab"
   ],
   boundary: "No generic marketing drip, sponsor inserts, or forced cadence."

@@ -1,14 +1,9 @@
 ---
-import { getProjectBySlug, homepageContent } from "../data/site";
+import { homepageContent } from "../data/site";
 // Immediate Proof Signal
 // Implements a strict architectural signal strip inside the first fold
 
-const signals = homepageContent.stackMap.layers
-  .map((layer) => {
-    const project = getProjectBySlug(layer.projectSlug);
-    return project ? { ...layer, project } : null;
-  })
-  .filter((layer): layer is NonNullable<typeof layer> => Boolean(layer));
+const signals = homepageContent.stackMap.layers;
 ---
 
 <div class="proof-signal">
@@ -16,8 +11,8 @@ const signals = homepageContent.stackMap.layers
   <div class="proof-grid">
     {signals.map((signal) => (
       <div class="proof-item">
-        <span class="proof-name">{signal.project.name}</span>
-        <span class="proof-role">[{signal.project.status}]</span>
+        <span class="proof-name">{signal.title}</span>
+        <span class="proof-role">[{signal.stackLabel}]</span>
       </div>
     ))}
   </div>

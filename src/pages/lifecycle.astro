@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import RegistryPageHero from "../components/RegistryPageHero.astro";
-import { aiAgentLifecycleColumn, getConceptBySlug, getProjectBySlug, pageRegistry } from "../data/site";
+import { aiAgentLifecycleColumn, getConceptBySlug, getProjectBySlug, pageRegistry, siteSemanticBaseline } from "../data/site";
 
 const essays = await getCollection("essays");
 const essaysBySlug = new Map(essays.map((essay) => [essay.slug, essay]));
@@ -26,7 +26,7 @@ const relationshipMap = [
   {
     label: "Agentic Delivery",
     role: "Outcome thesis",
-    body: "The shift from isolated task execution to reliable project delivery across a lifecycle."
+    body: siteSemanticBaseline.agenticDeliveryDefinition
   },
   {
     label: "AI Agent Lifecycle",
@@ -34,14 +34,19 @@ const relationshipMap = [
     body: "The layer that keeps intent, context, role, plan, confirmation, execution, evidence, learning, and acceptance continuous."
   },
   {
+    label: "Agentic Delivery Stack",
+    role: "Reference architecture",
+    body: siteSemanticBaseline.agenticDeliveryStackDefinition
+  },
+  {
     label: "MPLP",
-    role: "Protocol expression / proof surface",
-    body: "The later protocol vocabulary for expressing lifecycle records, boundaries, trace, governance, and evidence."
+    role: "Lifecycle protocol",
+    body: siteSemanticBaseline.mplpDefinition
   },
   {
     label: "Cognitive OS / SoloCrew / Validation Lab",
-    role: "Runtime / product / evidence proof surfaces",
-    body: "The proof surfaces that run, apply, and verify lifecycle semantics without changing the proof stack order."
+    role: "Concrete reference path",
+    body: "Together with MPLP, these proof objects form a concrete reference path through Agentic Delivery without closing the category."
   }
 ];
 ---
@@ -59,7 +64,7 @@ const relationshipMap = [
         <span class="registry-key">ESSAYS</span>: <span class="registry-value">PUBLIC ARGUMENTS</span>
       </a>
       <a href="/projects/mplp/" class="registry-annotation lifecycle-hero-link">
-        <span class="registry-key">MPLP</span>: <span class="registry-value">LATER PROTOCOL EXPRESSION</span>
+        <span class="registry-key">MPLP</span>: <span class="registry-value">LIFECYCLE PROTOCOL</span>
       </a>
     </div>
   </RegistryPageHero>
@@ -89,7 +94,7 @@ const relationshipMap = [
             <span class="registry-key">RELATIONSHIP_MAP</span>: <span class="registry-value">THESIS_TO_PROOF</span>
           </div>
           <h2>The spine of the site.</h2>
-          <p class="section-desc">Jearon Wong defines AI Agent Lifecycle, explains Agentic Delivery, names the failure modes, and routes the proof through MPLP, Cognitive OS, SoloCrew, and Validation Lab.</p>
+          <p class="section-desc">Jearon Wong defines AI Agent Lifecycle, explains Agentic Delivery and the Agentic Delivery Stack, names the failure modes, and routes the proof through MPLP, Cognitive OS, SoloCrew, and Validation Lab.</p>
         </div>
         <div class="relationship-grid">
           {relationshipMap.map((item) => (
@@ -164,7 +169,7 @@ const relationshipMap = [
             <span class="registry-key">PROOF_STACK</span>: <span class="registry-value">LEDGER ROUTE</span>
           </div>
           <h2>Proof stack route.</h2>
-          <p class="section-desc">The proof stack stays in order: protocol, runtime foundation, product proof, evidence surface.</p>
+          <p class="section-desc">The proof stack stays in order: lifecycle protocol, runtime path, delivery proof path, evidence adjudication.</p>
           <a href="/projects/" class="lifecycle-text-link">Open Projects proof ledger</a>
         </div>
         <div class="proof-route-grid">

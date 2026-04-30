@@ -2,7 +2,14 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import RegistryPageHero from "../components/RegistryPageHero.astro";
 import ProjectProofCard from "../components/ProjectProofCard.astro";
-import { homepageActions, pageRegistry, projects } from "../data/site";
+import { homepageActions, pageRegistry, projects, siteSemanticBaseline } from "../data/site";
+
+const projectBoundaryNotes = [
+  "MPLP is the central lifecycle protocol foundation.",
+  "Cognitive OS is a runtime path, not a completed universal runtime.",
+  "SoloCrew is a delivery proof path, not finished commercial proof.",
+  "Validation Lab is MPLP evidence adjudication, not certification or general validation."
+];
 ---
 
 <BaseLayout title="Projects" description={pageRegistry.projects.lead}>
@@ -20,8 +27,13 @@ import { homepageActions, pageRegistry, projects } from "../data/site";
           <span class="registry-key">READING_PATH</span>: <span class="registry-value">THESIS_TO_PROOF</span>
         </div>
         <p class="proof-room-guidance__copy">
-          This is the proof ledger for the AI Agent Lifecycle mainline, not a generic portfolio. My current work expresses Agentic Delivery through a concrete reference path: MPLP as the lifecycle protocol, Cognitive OS as the runtime path, SoloCrew as the delivery proof path, and Validation Lab as the MPLP evidence adjudication surface.
+          This is the proof ledger for the AI Agent Lifecycle mainline, not a generic portfolio. {siteSemanticBaseline.referencePathDefinition}
         </p>
+        <ul class="boundary-list" aria-label="Project maturity boundaries">
+          {projectBoundaryNotes.map((note) => (
+            <li>{note}</li>
+          ))}
+        </ul>
         <div class="proof-room-guidance__links">
           <a href="/lifecycle/" class="proof-room-link">Start with AI Agent Lifecycle</a>
           <a href="/essays/" class="proof-room-link">{homepageActions.essays.label}</a>
@@ -55,6 +67,17 @@ import { homepageActions, pageRegistry, projects } from "../data/site";
     font-size: 1rem;
     line-height: 1.65;
     color: var(--current-muted);
+  }
+
+  .boundary-list {
+    display: grid;
+    gap: 0.45rem;
+    margin: 1.15rem 0 0;
+    padding-left: 1.1rem;
+    max-width: 64ch;
+    color: var(--current-muted);
+    font-size: 0.92rem;
+    line-height: 1.55;
   }
 
   .proof-room-guidance__links {
@@ -98,6 +121,9 @@ import { homepageActions, pageRegistry, projects } from "../data/site";
     }
     .proof-room-guidance__copy {
       font-size: 0.95rem;
+    }
+    .boundary-list {
+      font-size: 0.88rem;
     }
     .proof-room-link {
       font-size: 0.76rem;

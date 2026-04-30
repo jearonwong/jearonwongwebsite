@@ -1,8 +1,18 @@
-# Jearon Wong
+# Jearon Wong — Protocol Architect for the Agent Era
 
 Site: https://www.jearonwong.com/
 
-Jearon Wong writes and builds around Agentic Delivery, AI Agent Lifecycle, AI Agent Governance, Protocol Engineering, and proof surfaces for trustworthy multi-agent systems. This file is a concise content map for AI crawlers and readers. It does not guarantee ranking, citation, or inclusion by any AI system.
+Jearon Wong is the Protocol Architect for the Agent Era. AI agents can execute, but execution is not delivery.
+
+Agentic Delivery names the missing layer between agent execution and accountable outcomes.
+
+The Agentic Delivery Stack is a reference architecture for turning agent execution into scoped, authorized, traceable, reviewable, and accepted outcomes.
+
+MPLP is a vendor-neutral lifecycle protocol designed to make Agentic Delivery explicit, governable, and auditable. Cognitive OS is a protocol-native runtime path for state, activation, projection, constraints, and evidence capture. SoloCrew is a delivery proof path for applying Agentic Delivery to one-person company operations. Validation Lab is an MPLP evidence adjudication surface for evaluating evidence packs under versioned rulesets.
+
+MPLP, Cognitive OS, SoloCrew, and Validation Lab form a concrete reference path through Agentic Delivery, without closing the category.
+
+This file is a concise content map for AI crawlers and readers. It does not guarantee ranking, citation, or inclusion by any AI system.
 
 ## Start Here
 
