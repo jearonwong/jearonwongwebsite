@@ -275,38 +275,46 @@ export const homepageContent = {
     agenticDeliveryFlow: ["Intent", "Context", "Plan", "Confirm", "Execute", "Evidence", "Accepted Outcome"]
   },
   stackMap: {
-    headline: "The Stack Behind Agentic Delivery",
+    eyebrow: "AGENTIC_DELIVERY",
+    headline: "From Agent Execution to Accountable Outcomes",
     summary:
-      "Agentic Delivery is not one product. It is a stack: protocol, runtime, product proof, and evidence.",
+      "Agentic Delivery names the missing layer between agent execution and accountable outcomes.",
+    detail:
+      "It is not a product bundle. It is a reference architecture for making agent work scoped, authorized, traceable, reviewable, and accepted.",
+    closingLine: "MPLP sits at the center as the lifecycle protocol.",
     core: {
       label: "CORE THESIS",
-      title: "Project lifecycle, not isolated execution",
-      description: "Agentic AI must move from task execution to project delivery."
+      title: "Delivery, not isolated execution",
+      description:
+        "AI agents do not become infrastructure because they can act. They become infrastructure when their work can be scoped, authorized, traced, reviewed, and accepted."
     },
     layers: [
       {
         projectSlug: "mplp",
-        verb: "Defines",
-        description: "Defines the lifecycle language."
+        stackLabel: "LIFECYCLE PROTOCOL",
+        verb: "Protocol",
+        description: "A vendor-neutral lifecycle protocol for making agent work explicit, governable, and auditable."
       },
       {
         projectSlug: "cognitive-os",
-        verb: "Runs",
+        stackLabel: "RUNTIME PATH",
+        verb: "Runtime path",
         description:
-          "Turns lifecycle semantics into runtime state, memory, evidence, and orchestration."
+          "A protocol-native runtime direction for state, activation, projection, and evidence capture."
       },
       {
         projectSlug: "solocrew",
-        verb: "Proves",
-        description: "Applies the stack to one-person company work."
+        stackLabel: "DELIVERY PROOF PATH",
+        verb: "Proof path",
+        description: "A product proof path for applying Agentic Delivery to one-person company operations."
       },
       {
         projectSlug: "validation-lab",
-        verb: "Verifies",
-        description: "Verifies lifecycle evidence and adjudication."
+        stackLabel: "EVIDENCE ADJUDICATION",
+        verb: "Evidence",
+        description: "An MPLP evidence adjudication surface for evaluating evidence packs under versioned rulesets."
       }
-    ],
-    closingLine: "MPLP defines it. Cognitive OS runs it. SoloCrew proves it. Validation Lab verifies it."
+    ]
   },
   readingPath: [
     {
@@ -549,7 +557,7 @@ export const concepts = [
     problem:
       "The problem it names is that agent systems often depend on implicit agreements. The human assumes the agent understood the intent. The runtime assumes permissions are enough. The orchestrator assumes the plan is valid. The log assumes history is evidence. These assumptions may hold in small demos, but they become brittle when work crosses multiple agents, vendors, tools, or review cycles.",
     whyExistingApproachesAreNotEnough:
-      "Application logic can encode local rules, but those rules often stay trapped inside one product. Prompt rules can guide behavior, but they are hard to validate across systems. Observability can expose events, but it may not define their meaning. Protocol Engineering gives teams a way to name the objects and transitions that must survive beyond one interface or runtime, without claiming that every team must adopt the same implementation.",
+      "Application logic can encode local rules, but those rules often stay trapped inside one application. Prompt rules can guide behavior, but they are hard to validate across systems. Observability can expose events, but it may not define their meaning. Protocol Engineering gives teams a way to name the objects and transitions that must survive beyond one interface or runtime, without claiming that every team must adopt the same implementation.",
     relationToLifecycle:
       "AI Agent Lifecycle supplies the conceptual boundary for Protocol Engineering in this site architecture. It identifies what has to remain continuous; Protocol Engineering turns that continuity into explicit records, modules, and interfaces. MPLP is the protocol proof surface for this work. AI Agent Governance, Confirmation Boundary, and Lifecycle Evidence are examples of lifecycle concepts that become more useful when expressed as protocol primitives.",
     evidenceRoute:
@@ -753,8 +761,8 @@ export const projects = [
     slug: "mplp",
     status: "Protocol",
     summary: "Vendor-neutral lifecycle protocol for AI agent systems.",
-    proof: "Defines the protocol vocabulary for context, planning, confirmation, trace, and evidence.",
-    proofRole: "PROTOCOL LAYER",
+    proof: "Provides the lifecycle protocol foundation for context, planning, confirmation, trace, and evidence.",
+    proofRole: "LIFECYCLE PROTOCOL",
     whatItIs:
       "MPLP is a vendor-neutral lifecycle protocol for AI agent systems. It gives teams a shared vocabulary for context, plan, confirm, trace, governance, and evidence.",
     problem:
@@ -787,9 +795,9 @@ export const projects = [
     name: "Cognitive OS",
     slug: "cognitive-os",
     status: "Runtime",
-    summary: "Runtime foundation for protocol-aware agent work.",
-    proof: "Shows how runtime state and operating constraints enforce reliable delivery.",
-    proofRole: "RUNTIME FOUNDATION",
+    summary: "Runtime path for protocol-native agent work.",
+    proof: "Explores a protocol-native runtime path for state, activation, projection, constraints, and evidence capture.",
+    proofRole: "RUNTIME PATH",
     whatItIs:
       "Cognitive OS is the runtime foundation for protocol-aware work. It focuses on the operating surface where delegated work is actually executed.",
     problem:
@@ -816,9 +824,9 @@ export const projects = [
     name: "SoloCrew",
     slug: "solocrew",
     status: "Product",
-    summary: "Personal AI operating loop and product proof.",
-    proof: "Applies protocol and runtime ideas to one-person-company AI work.",
-    proofRole: "PRODUCT PROOF",
+    summary: "Delivery proof path for one-person-company AI operations.",
+    proof: "Serves as a delivery proof path for one-person-company AI operations.",
+    proofRole: "DELIVERY PROOF PATH",
     whatItIs:
       "SoloCrew is the product proof of the protocol/runtime thesis in one-person-company AI work.",
     problem:
@@ -845,17 +853,17 @@ export const projects = [
     name: "Validation Lab",
     slug: "validation-lab",
     status: "Evidence",
-    summary: "Evidence-based evaluation surface for lifecycle guarantees.",
-    proof: "Evaluates lifecycle guarantees with evidence rather than claims.",
-    proofRole: "EVIDENCE SURFACE",
+    summary: "MPLP evidence adjudication surface.",
+    proof: "Adjudicates MPLP evidence packs under versioned rulesets, evaluating evidence rather than claims.",
+    proofRole: "EVIDENCE ADJUDICATION",
     whatItIs:
-      "Validation Lab is the evaluation and adjudication surface for lifecycle guarantees. It is where claims about reliability are tested against evidence.",
+      "Validation Lab is an MPLP evidence adjudication surface for evaluating evidence packs under versioned rulesets.",
     problem:
       "Agent systems often make large claims about governance, reliability, or safety without offering a visible surface for checking what evidence supports those claims.",
     proves:
-      "Validation Lab verifies that reliable work delivery ultimately needs evidence surfaces, not just architectural language. Proof must be inspectable.",
+      "Validation Lab shows that reliable work delivery needs evidence adjudication, not just architectural language. Proof must be inspectable.",
     shareDescription:
-      "Validation Lab is the evidence-surface proof page in the thesis chain. It shows why lifecycle claims need inspectable evidence instead of abstract assurance language.",
+      "Validation Lab is the MPLP evidence adjudication proof page in the thesis chain. It shows why lifecycle claims need inspectable evidence instead of abstract assurance language.",
     relatedIdeas: ["lifecycle-governance", "evidence-accepted-outcome", "accountable-work"],
     relatedConcepts: ["lifecycle-evidence", "ai-agent-governance"],
     relatedEssays: [

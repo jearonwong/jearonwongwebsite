@@ -13,14 +13,15 @@ const stackLayers = homepageContent.stackMap.layers
   <div class="stack-map-layout">
     <div class="stack-map-intro">
       <div class="registry-annotation stack-map-eyebrow">
-        <span class="registry-key">SYSTEM_MAP</span>: <span class="registry-value">AGENTIC_DELIVERY_STACK</span>
+        <span class="registry-key">SYSTEM_MAP</span>: <span class="registry-value">{homepageContent.stackMap.eyebrow}</span>
       </div>
       <h2 id="stack-map-title">{homepageContent.stackMap.headline}</h2>
       <p>{homepageContent.stackMap.summary}</p>
+      {homepageContent.stackMap.detail && <p>{homepageContent.stackMap.detail}</p>}
       <p class="stack-map-close">{homepageContent.stackMap.closingLine}</p>
     </div>
 
-    <div class="stack-map-diagram" aria-label="Agentic Delivery stack">
+    <div class="stack-map-diagram" aria-label="Agentic Delivery reference architecture">
       <article class="stack-node stack-node--core">
         <span class="stack-node-label">{homepageContent.stackMap.core.label}</span>
         <h3>{homepageContent.stackMap.core.title}</h3>
@@ -32,7 +33,7 @@ const stackLayers = homepageContent.stackMap.layers
       {stackLayers.map((layer) => (
         <article class="stack-node">
           <div class="stack-node-topline">
-            <span class="stack-node-label">{layer.project.proofRole}</span>
+            <span class="stack-node-label">{layer.stackLabel ?? layer.project.proofRole}</span>
             <span class="stack-node-verb">{layer.verb}</span>
           </div>
           <h3>{layer.project.name}</h3>
