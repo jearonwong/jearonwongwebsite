@@ -23,7 +23,7 @@ const {
   proof,
   proofRole,
   href,
-  linkLabel = "Open proof record",
+  linkLabel = "Open project record",
   evidence,
   compact = false
 } = Astro.props;
@@ -42,7 +42,7 @@ const {
   <div class="record-content">
     {proofRole && (
       <div class="registry-annotation stack-layer-line">
-        <span class="registry-key">PROOF_ROLE</span>: <span class="registry-value">{proofRole}</span>
+        <span class="registry-key">PATH_ROLE</span>: <span class="registry-value">{proofRole}</span>
       </div>
     )}
     <h3 class="record-title">{name}</h3>
@@ -51,7 +51,7 @@ const {
     <div class="proof-block">
       <div class="registry-annotation" style="margin-bottom: 0.75rem;">
         <span class="proof-signal-dot"></span>
-        <span class="registry-key">RECORD_PROOF</span>
+        <span class="registry-key">RECORD_CLAIM</span>
       </div>
       <p class="proof-text">{proof}</p>
     </div>

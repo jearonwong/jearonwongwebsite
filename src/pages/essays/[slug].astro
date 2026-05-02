@@ -120,7 +120,7 @@ const articleJsonLd = {
         <span class="registry-key">IDEA</span>: <span class="registry-value">{ideaName.toUpperCase()}</span>
       </div>
       <div class="registry-annotation">
-        <span class="registry-key">PROOF_CHAIN</span>: <span class="registry-value">{essay.data.projectProof.toUpperCase()}</span>
+        <span class="registry-key">PROOF_PATH</span>: <span class="registry-value">{essay.data.projectProof.toUpperCase()}</span>
       </div>
       {essay.data.series && (
         <div class="registry-annotation">
@@ -147,7 +147,7 @@ const articleJsonLd = {
             <span class="registry-value">{ideaName}</span>
           </div>
           <div class="sidebar-line">
-            <span class="registry-key">PROOF_CHAIN</span>
+            <span class="registry-key">PROOF_PATH</span>
             {proofProject ? (
               <a href={`/projects/${proofProject.slug}/`} class="sidebar-link">{essay.data.projectProof}</a>
             ) : (
@@ -180,7 +180,7 @@ const articleJsonLd = {
           {(essay.data.relatedIdeas?.length > 0 || relatedProjects.length > 0) && (
             <section class="registry-chassis chain-block">
               <div class="registry-annotation" style="margin-bottom: 1rem;">
-                <span class="registry-key">NEXT_STEP</span>: <span class="registry-value">IDEAS_TO_PROOF_CHAIN</span>
+                <span class="registry-key">NEXT_STEP</span>: <span class="registry-value">IDEAS_TO_PROOF_PATH</span>
               </div>
 
               {essay.data.relatedIdeas?.length > 0 && (

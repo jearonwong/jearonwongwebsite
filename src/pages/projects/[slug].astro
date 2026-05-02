@@ -21,7 +21,7 @@ const { slug } = Astro.params;
 const project = slug ? getProjectBySlug(slug) : undefined;
 
 if (!project) {
-  throw new Error(`Unknown project proof surface: ${slug}`);
+  throw new Error(`Unknown project record: ${slug}`);
 }
 
 const adjacentProofs = (project.adjacentProofs ?? []).reduce<
@@ -46,7 +46,7 @@ const projectJsonLd = {
   url: `${siteConfig.siteUrl}/projects/${project.slug}/`,
   isPartOf: {
     "@type": "CreativeWork",
-    name: "Agentic Delivery concrete reference path",
+    name: "Agentic Delivery protocol path and proof path",
     description: siteSemanticBaseline.referencePathDefinition
   },
   author: {
@@ -54,7 +54,7 @@ const projectJsonLd = {
     name: siteConfig.author.name,
     jobTitle: siteConfig.author.role
   },
-  about: [project.status, "Agentic Delivery", "Agentic Delivery Stack", ...(project.relatedIdeas ?? [])]
+  about: [project.status, "AI Agent Lifecycle", "Agentic Delivery", "MPLP", ...(project.relatedIdeas ?? [])]
 };
 ---
 
@@ -65,7 +65,7 @@ const projectJsonLd = {
   shareDescription={project.shareDescription ?? projectMetaDescription}
   jsonLd={[projectJsonLd]}
   ogImagePath="/social/jearonwong-og.png"
-  ogImageAlt={`${project.name} — ${project.status} in the Agentic Delivery concrete reference path`}
+  ogImageAlt={`${project.name} — ${project.status} in the Agentic Delivery protocol path and proof path`}
 >
   <RegistryPageHero
     title={project.name}
