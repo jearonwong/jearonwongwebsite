@@ -164,6 +164,32 @@ button:focus-visible {
   z-index: 1;
 }
 
+.shell--narrow {
+  max-width: 800px;
+}
+
+.shell--reading {
+  max-width: 700px;
+}
+
+/* Page content stack: use on the primary content container inside page-body */
+.page-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.page-stack--tight {
+  gap: 2rem;
+}
+
+.page-stack--standard {
+  gap: var(--space-6);
+}
+
+.page-stack--loose {
+  gap: var(--space-8);
+}
+
 .section-rhythm {
   padding: var(--space-section-y) 0; /* Expanded rhythm for hierarchy shocks */
 }
