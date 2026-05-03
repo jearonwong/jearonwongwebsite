@@ -14,6 +14,7 @@ interface Props {
     docs?: string;
   };
   compact?: boolean;
+  variant?: "standard" | "protocol" | "ledger-row";
 }
 
 const {
@@ -25,28 +26,55 @@ const {
   href,
   linkLabel = "Open project record",
   evidence,
-  compact = false
+  compact = false,
+  variant = "standard"
 } = Astro.props;
 ---
 
-<article class:list={["registry-chassis evidence-record", compact && "evidence-record--compact"]}>
+<article class:list={[
+  "registry-chassis evidence-record",
+  compact && "evidence-record--compact",
+  variant === "protocol" && "variant-protocol",
+  variant === "ledger-row" && "variant-ledger-row"
+]}>
   <div class="record-header">
-    <div class="registry-annotation">
-      <span class="registry-key">PROJECT_ID</span>: <span class="registry-value">{name.toUpperCase()}</span>
-    </div>
-    <div class="registry-annotation">
-      <span class="registry-key">STATUS</span>: <span class="registry-value">{status.toUpperCase()}</span>
-    </div>
+    {variant === "protocol" ? (
+      <>
+        <div class="registry-annotation">
+          <span class="registry-key">PATH_ROLE</span>: <span class="registry-value">PROTOCOL_PATH</span>
+        </div>
+        <div class="registry-annotation">
+          <span class="registry-key">LAYER</span>: <span class="registry-value">LIFECYCLE_PROTOCOL</span>
+        </div>
+        <div class="registry-annotation">
+          <span class="registry-key">FUNCTION</span>: <span class="registry-value">MAKES_AGENTIC_DELIVERY_GOVERNABLE</span>
+        </div>
+      </>
+    ) : (
+      <>
+        <div class="registry-annotation">
+          <span class="registry-key">PROJECT_ID</span>: <span class="registry-value">{name.toUpperCase()}</span>
+        </div>
+        {proofRole && (
+          <div class="registry-annotation stack-layer-line">
+            <span class="registry-key">PATH_ROLE</span>: <span class="registry-value">{proofRole}</span>
+          </div>
+        )}
+        <div class="registry-annotation">
+          <span class="registry-key">STATUS</span>: <span class="registry-value">{status.toUpperCase()}</span>
+        </div>
+        {variant === "ledger-row" && (
+          <div class="registry-annotation">
+            <span class="registry-key">EVIDENCE_FUNCTION</span>: <span class="registry-value">{summary}</span>
+          </div>
+        )}
+      </>
+    )}
   </div>
   
   <div class="record-content">
-    {proofRole && (
-      <div class="registry-annotation stack-layer-line">
-        <span class="registry-key">PATH_ROLE</span>: <span class="registry-value">{proofRole}</span>
-      </div>
-    )}
     <h3 class="record-title">{name}</h3>
-    <p class="record-summary">{summary}</p>
+    {variant !== "ledger-row" && <p class="record-summary">{summary}</p>}
     
     <div class="proof-block">
       <div class="registry-annotation" style="margin-bottom: 0.75rem;">
@@ -307,5 +335,109 @@ const {
   }
   .evidence-pill-value {
     min-width: 0;
+  }
+
+  /* Variant: Protocol Monolith */
+  .variant-protocol {
+    background-color: var(--bg-monolith);
+    border: 1px solid var(--current-line);
+    padding: var(--registry-panel-padding-lg);
+  }
+  .variant-protocol .record-header {
+    display: flex;
+    gap: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--current-line);
+    margin-bottom: 2rem;
+  }
+  .variant-protocol .record-title {
+    font-size: clamp(2.8rem, 5vw, 4rem);
+    letter-spacing: -0.03em;
+    color: var(--text-registry-primary);
+    margin-bottom: 1.5rem;
+  }
+  .variant-protocol .record-summary {
+    font-size: 1.25rem;
+    max-width: var(--lead-measure);
+    color: var(--text-registry-primary);
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+  }
+  .variant-protocol .proof-block {
+    background: transparent;
+    border: none;
+    border-top: 1px solid var(--current-line);
+    border-radius: 0;
+    padding: 2rem 0 0 0;
+    margin-top: 2rem;
+  }
+
+  /* Variant: Ledger Row */
+  .variant-ledger-row {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 4rem;
+    padding: 1.5rem 0;
+    border: none;
+    background-color: transparent;
+    border-radius: 0;
+  }
+  .variant-ledger-row .record-header {
+    flex-direction: column;
+    width: 16rem;
+    flex-shrink: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+    gap: 1rem;
+  }
+  .variant-ledger-row .record-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .variant-ledger-row .record-title {
+    font-size: 1.35rem;
+    margin-bottom: 1.5rem;
+  }
+  .variant-ledger-row .proof-block {
+    background: transparent;
+    border: none;
+    border-left: 2px solid var(--accent-proof);
+    border-radius: 0;
+    padding: 0 0 0 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .variant-ledger-row .evidence-surface {
+    margin-top: 0;
+    padding: 1rem 0 0 0;
+    border-left: none;
+    background: transparent;
+    border-top: 1px dashed var(--current-line);
+    border-radius: 0;
+  }
+
+  @media (max-width: 1024px) {
+    .variant-ledger-row {
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .variant-ledger-row .record-header {
+      width: 100%;
+      flex-direction: row;
+      flex-wrap: wrap;
+      border-bottom: 1px solid var(--current-line);
+      padding-bottom: 1.25rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .variant-protocol .record-header {
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    .variant-ledger-row .record-header {
+      flex-direction: column;
+      gap: 0.8rem;
+    }
   }
 </style>
