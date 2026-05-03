@@ -8,6 +8,8 @@ Execution is not Delivery.
 
 AI agents will not become real infrastructure until execution becomes accountable delivery.
 
+AI agent governance, multi-agent accountability, and production AI agent delivery require more than execution frameworks. AI Agent Lifecycle names the missing governance layer. Agentic Delivery defines the standard. MPLP is the protocol path.
+
 AI Agent Lifecycle defines the accountable lifecycle of agent work from intent to accepted outcome.
 
 Agentic Delivery names the missing layer between agent execution and accountable outcomes.

@@ -51,7 +51,14 @@ export const siteSemanticBaseline = {
     "Semantic Loss",
     "lifecycle protocol",
     "accountable outcomes",
-    "accountable delivery"
+    "accountable delivery",
+    "AI agents",
+    "multi-agent systems",
+    "AI agent governance",
+    "agent orchestration",
+    "AI agent infrastructure",
+    "production AI agent systems",
+    "AI agent accountability"
   ],
   avoidedTerms: [
     "AIG",
@@ -71,7 +78,7 @@ export const siteSemanticBaseline = {
 export const siteConfig = {
   title: "Jearon Wong — Protocol Architect for the Agent Era",
   description:
-    "Jearon Wong works from AI Agent Lifecycle, Agentic Delivery, and MPLP: a protocol path for accountable agent work from intent to accepted outcome.",
+    "Jearon Wong defines AI Agent Lifecycle and Agentic Delivery: governance and delivery architecture for production AI agents, multi-agent systems, and accountable work from intent to accepted outcome.",
   siteUrl: "https://www.jearonwong.com",
   socialImagePath: "/social/jearonwong-og.png",
   xHandle: "@jearonwong",
