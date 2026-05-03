@@ -360,6 +360,89 @@ export const deliveryStandardPageContent = {
   }
 };
 
+export const aiAgentGovernancePageContent = {
+  hero: {
+    title: "AI Agent Governance is not permission management. It is lifecycle accountability.",
+    lead: "Governance for AI agents is not access control, monitoring, or human presence. It is the lifecycle accountability layer that keeps delegated work tied to intent, authority, evidence, review, and accepted outcome."
+  },
+  claim: {
+    title: "The industry named the wrong thing.",
+    body: [
+      "The industry built access control, monitoring, and human checkpoints for AI agents. None of those is governance.",
+      "AI Agent Governance is lifecycle accountability: who authorized the work, under which intent, with what constraints, through which plan, and against what evidence the result is accepted.",
+      "Governance is not a layer you add after the agent runs. It is part of the lifecycle itself."
+    ]
+  },
+  governanceGoverns: [
+    {
+      name: "Intent",
+      definition: "Who defined the objective and what constraints bind execution? Governance begins before the agent acts."
+    },
+    {
+      name: "Authority",
+      definition: "Who authorized the plan and what scope was confirmed? Authority must be attached to the work, not inferred from it."
+    },
+    {
+      name: "Confirmation",
+      definition: "Where did human authority enter the lifecycle, and what was formally approved? The confirmation must be recorded and traceable."
+    },
+    {
+      name: "Evidence",
+      definition: "What proof exists that the work stayed legitimate and within scope? Evidence is not raw logs. It is structured support for a delivery claim."
+    },
+    {
+      name: "Accepted Outcome",
+      definition: "How was the result accepted, rejected, or escalated? Acceptance is not inferred from task completion. It is formally stated."
+    }
+  ],
+  existingApproaches: [
+    {
+      name: "RBAC / Access Control",
+      limitation: "Says what a system can reach. Does not govern accountability."
+    },
+    {
+      name: "Monitoring / Observability",
+      limitation: "Says what happened. Does not prove legitimacy."
+    },
+    {
+      name: "HITL Checkpoints",
+      limitation: "Adds human presence. Does not guarantee informed authorization."
+    }
+  ],
+  lifecycleGovernance: {
+    title: "Lifecycle gives governance a place to live.",
+    body: [
+      "AI Agent Lifecycle gives governance a place to live. Governance is not a compliance layer placed around an agent after it runs.",
+      "It is bound to the path from intent to accepted outcome. That binding is what makes governance inspectable after the agent has already acted and after memory has faded."
+    ]
+  },
+  governancePrimitives: [
+    {
+      name: "Confirmation Boundary",
+      definition: siteSemanticBaseline.confirmationBoundaryDefinition,
+      definitionHref: "/definitions/#confirmation-boundary",
+      conceptHref: "/concepts/confirmation-boundary/"
+    },
+    {
+      name: "Evidence Chain",
+      definition: siteSemanticBaseline.evidenceChainDefinition,
+      definitionHref: "/definitions/#evidence-chain",
+      conceptHref: "/concepts/lifecycle-evidence/"
+    }
+  ],
+  multiAgentForm: {
+    title: "The multi-agent form.",
+    body: [
+      "In multi-agent systems, governance must cross agents, roles, projects, and lifecycle stages.",
+      "Multi-Agent Lifecycle Governance governs responsibility, authorization, evidence, and accepted outcome across that system. Multi-agent is not headcount. It is responsibility architecture."
+    ]
+  },
+  protocolPath: {
+    title: "Protocol path.",
+    body: "MPLP makes AI Agent Governance explicit, governable, and auditable. Governance conditions are not post-hoc requirements in MPLP. They are lifecycle stages."
+  }
+};
+
 export const contentRouteRoles = {
   homepage: {
     question: "What is the thesis?",
@@ -1014,6 +1097,12 @@ export const pageRegistry = {
     objectType: "PAGE_ROLE",
     objectValue: "DELIVERY DEFINITION",
     lead: "The Delivery Standard defines the six conditions under which AI agent work counts as accountable delivery: scope, authority, evidence, review, accepted outcome, and responsibility traceability."
+  },
+  aiAgentGovernance: {
+    title: "AI Agent Governance",
+    objectType: "FIELD",
+    objectValue: "AI AGENT GOVERNANCE",
+    lead: "AI Agent Governance is the lifecycle accountability layer that makes delegated agent work authorizable, traceable, and reviewable from intent to accepted outcome. Not RBAC. Not monitoring. Not HITL."
   }
 };
 

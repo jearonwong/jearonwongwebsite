@@ -1,0 +1,647 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import RegistryPageHero from "../components/RegistryPageHero.astro";
+import SocialShare from "../components/SocialShare.astro";
+import {
+  aiAgentGovernancePageContent,
+  pageRegistry,
+  siteConfig
+} from "../data/site";
+
+const canonicalPath = "/ai-agent-governance/";
+const pageUrl = new URL(canonicalPath, siteConfig.siteUrl).toString();
+
+const webPageJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${siteConfig.siteUrl}/ai-agent-governance/#webpage`,
+  url: pageUrl,
+  name: pageRegistry.aiAgentGovernance.title,
+  headline:
+    "AI Agent Governance is not permission management. It is lifecycle accountability.",
+  description: pageRegistry.aiAgentGovernance.lead,
+  author: {
+    "@id": `${siteConfig.siteUrl}#person`
+  },
+  about: [
+    "AI Agent Governance",
+    "AI Agent Lifecycle",
+    "Agentic Delivery",
+    "multi-agent governance",
+    "lifecycle accountability",
+    "Confirmation Boundary",
+    "Evidence Chain",
+    "production AI agents",
+    "accountable delivery",
+    "AI agent accountability",
+    "AI agent systems"
+  ]
+};
+
+const definedTermJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "@id": `${siteConfig.siteUrl}/definitions/#ai-agent-governance`,
+  name: "AI Agent Governance",
+  description:
+    "AI Agent Governance is the set of authority, boundary, confirmation, evidence, and review conditions that make delegated agent work accountable.",
+  inDefinedTermSet: {
+    "@type": "DefinedTermSet",
+    "@id": `${siteConfig.siteUrl}/definitions/#defined-term-set`,
+    name: "Definitions for the Agent Era"
+  },
+  url: `${siteConfig.siteUrl}/definitions/#ai-agent-governance`
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: siteConfig.siteUrl
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: pageRegistry.aiAgentGovernance.title,
+      item: pageUrl
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={pageRegistry.aiAgentGovernance.title}
+  description={pageRegistry.aiAgentGovernance.lead}
+  canonicalPath={canonicalPath}
+  shareTitle="AI Agent Governance — Governance Architecture by Jearon Wong"
+  shareDescription={pageRegistry.aiAgentGovernance.lead}
+  ogImagePath="/social/og-ai-agent-governance.png"
+  ogImageAlt="AI Agent Governance — Governance Architecture by Jearon Wong"
+  jsonLd={[webPageJsonLd, definedTermJsonLd, breadcrumbJsonLd]}
+>
+  <RegistryPageHero
+    title={aiAgentGovernancePageContent.hero.title}
+    objectType={pageRegistry.aiAgentGovernance.objectType}
+    objectValue={pageRegistry.aiAgentGovernance.objectValue}
+    lead={aiAgentGovernancePageContent.hero.lead}
+  >
+    <div class="aag-hero-links">
+      <a href="/lifecycle/" class="registry-annotation aag-hero-link">
+        <span class="registry-key">FIELD</span>: <span class="registry-value">AI AGENT LIFECYCLE</span>
+      </a>
+      <a href="/projects/mplp/" class="registry-annotation aag-hero-link">
+        <span class="registry-key">PROTOCOL_PATH</span>: <span class="registry-value">MPLP</span>
+      </a>
+      <a href="/definitions/#ai-agent-governance" class="registry-annotation aag-hero-link">
+        <span class="registry-key">DEFINITION</span>: <span class="registry-value">DEFINITIONS/#AI-AGENT-GOVERNANCE</span>
+      </a>
+    </div>
+  </RegistryPageHero>
+
+  <div class="zone-b page-body aag-body">
+    <div class="shell aag-shell">
+
+      <section class="registry-chassis aag-claim-band">
+        <div class="registry-annotation aag-section-tag">
+          <span class="registry-key">01_THE_CLAIM</span>
+        </div>
+        <h2>{aiAgentGovernancePageContent.claim.title}</h2>
+        {aiAgentGovernancePageContent.claim.body.map((line, i) => (
+          <p class={i === 0 ? "claim-lead" : ""}>{line}</p>
+        ))}
+      </section>
+
+      <section class="aag-governs-section">
+        <div class="section-header">
+          <div class="registry-annotation aag-section-tag">
+            <span class="registry-key">02_WHAT_GOVERNANCE_GOVERNS</span>
+          </div>
+          <h2>What governance governs</h2>
+          <p class="section-lead">Five lifecycle elements. All five must be governed for agent work to be accountable.</p>
+        </div>
+        <div class="governs-ledger">
+          {aiAgentGovernancePageContent.governanceGoverns.map((item, index) => (
+            <article class="governs-row">
+              <span class="governs-index">{String(index + 1).padStart(2, "0")}</span>
+              <h3>{item.name}</h3>
+              <p>{item.definition}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="registry-chassis aag-approaches-section">
+        <div class="registry-annotation aag-section-tag">
+          <span class="registry-key">03_WHY_EXISTING_APPROACHES_FALL_SHORT</span>
+        </div>
+        <h2>Why existing approaches fall short</h2>
+        <p class="approaches-note">These approaches are useful. They are not governance.</p>
+        <div class="approaches-grid">
+          {aiAgentGovernancePageContent.existingApproaches.map((approach) => (
+            <article class="approach-card registry-chassis">
+              <h3>{approach.name}</h3>
+              <p>{approach.limitation}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="aag-split-section">
+        <article class="registry-chassis ledger-panel ledger-panel--lifecycle">
+          <div class="registry-annotation aag-section-tag">
+            <span class="registry-key">04_LIFECYCLE_GOVERNANCE</span>
+          </div>
+          <h2>{aiAgentGovernancePageContent.lifecycleGovernance.title}</h2>
+          {aiAgentGovernancePageContent.lifecycleGovernance.body.map((line) => (
+            <p>{line}</p>
+          ))}
+          <div class="panel-links">
+            <a href="/lifecycle/">AI Agent Lifecycle field analysis</a>
+            <a href="/delivery-standard/">The Delivery Standard</a>
+          </div>
+        </article>
+
+        <article class="registry-chassis ledger-panel ledger-panel--multiagent">
+          <div class="registry-annotation aag-section-tag">
+            <span class="registry-key">06_MULTI_AGENT_FORM</span>
+          </div>
+          <h2>{aiAgentGovernancePageContent.multiAgentForm.title}</h2>
+          {aiAgentGovernancePageContent.multiAgentForm.body.map((line) => (
+            <p>{line}</p>
+          ))}
+          <div class="panel-links">
+            <a href="/definitions/#multi-agent-lifecycle-governance">Multi-Agent Lifecycle Governance definition</a>
+            <a href="/definitions/#multi-agent-systems">Multi-Agent Systems definition</a>
+            <a href="/lifecycle/">Lifecycle field analysis</a>
+          </div>
+        </article>
+      </section>
+
+      <section class="aag-primitives-section">
+        <div class="section-header">
+          <div class="registry-annotation aag-section-tag">
+            <span class="registry-key">05_GOVERNANCE_PRIMITIVES</span>
+          </div>
+          <h2>Governance primitives</h2>
+          <p class="section-lead">Two primitives anchor lifecycle governance.</p>
+        </div>
+        <div class="primitives-ledger">
+          {aiAgentGovernancePageContent.governancePrimitives.map((primitive, index) => (
+            <article class="primitive-row">
+              <span class="primitive-index">{String(index + 1).padStart(2, "0")}</span>
+              <div class="primitive-content">
+                <h3>{primitive.name}</h3>
+                <p>{primitive.definition}</p>
+                <div class="primitive-links">
+                  <a href={primitive.definitionHref}>Definition anchor</a>
+                  <a href={primitive.conceptHref}>Open concept</a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <article class="registry-chassis ledger-panel ledger-panel--protocol">
+        <div class="registry-annotation aag-section-tag">
+          <span class="registry-key">07_PROTOCOL_PATH</span>
+        </div>
+        <h2>{aiAgentGovernancePageContent.protocolPath.title}</h2>
+        <p>{aiAgentGovernancePageContent.protocolPath.body}</p>
+        <div class="panel-links">
+          <a href="/projects/mplp/">MPLP protocol path</a>
+          <a href="/definitions/#ai-agent-governance">AI Agent Governance definition</a>
+          <a href="/delivery-standard/">The Delivery Standard</a>
+          <a href="/lifecycle/">AI Agent Lifecycle field analysis</a>
+        </div>
+      </article>
+
+      <SocialShare
+        title="AI Agent Governance"
+        description={pageRegistry.aiAgentGovernance.lead}
+        url={pageUrl}
+      />
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .aag-hero-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem 1.15rem;
+    margin-top: 1.7rem;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .aag-hero-link {
+    max-width: 100%;
+    min-width: 0;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    overflow-wrap: anywhere;
+    text-decoration: none;
+  }
+
+  .aag-hero-link .registry-value {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .aag-hero-link:hover .registry-value {
+    color: var(--accent-signal);
+  }
+
+  .aag-body {
+    padding: var(--space-page-y) 0;
+  }
+
+  .aag-shell {
+    display: grid;
+    gap: 3rem;
+    min-width: 0;
+  }
+
+  .aag-section-tag {
+    margin-bottom: 1rem;
+  }
+
+  /* 01 — claim band */
+  .aag-claim-band {
+    padding: var(--registry-panel-padding);
+    border-left: 4px solid var(--accent-signal);
+    background: #111111;
+    color: #f1f5f9;
+    --current-surface: #111111;
+    --current-border: rgba(255, 255, 255, 0.1);
+    --current-line: rgba(255, 255, 255, 0.08);
+    --current-muted: rgba(226, 232, 240, 0.68);
+    --current-text: #f1f5f9;
+    display: grid;
+    gap: 1rem;
+  }
+
+  .aag-claim-band h2 {
+    margin: 0;
+    color: var(--current-text);
+    font-size: clamp(1.65rem, 3vw, 2.35rem);
+    line-height: 1.06;
+    letter-spacing: -0.02em;
+  }
+
+  .aag-claim-band p {
+    max-width: 60rem;
+    margin: 0;
+    color: var(--current-muted);
+    font-size: 1rem;
+    line-height: 1.68;
+  }
+
+  .claim-lead {
+    font-size: clamp(1.05rem, 1.8vw, 1.3rem) !important;
+    line-height: 1.55 !important;
+    color: var(--current-text) !important;
+  }
+
+  /* section headers */
+  .section-header {
+    max-width: 68rem;
+    min-width: 0;
+  }
+
+  .section-header h2 {
+    margin: 0;
+    color: var(--current-text);
+    font-size: clamp(1.65rem, 3vw, 2.35rem);
+    line-height: 1.06;
+    letter-spacing: -0.02em;
+  }
+
+  .section-lead {
+    margin: 0.65rem 0 0;
+    color: var(--current-muted);
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  /* 02 — governs ledger */
+  .aag-governs-section {
+    display: grid;
+    gap: 1.35rem;
+    min-width: 0;
+  }
+
+  .governs-ledger {
+    border: 1px solid var(--current-border);
+    background: var(--current-surface);
+    min-width: 0;
+  }
+
+  .governs-row {
+    display: grid;
+    grid-template-columns: 4.5rem minmax(9rem, 0.28fr) minmax(0, 1fr);
+    gap: 1.2rem;
+    align-items: start;
+    padding: var(--registry-supporting-card-padding);
+    border-bottom: 1px solid var(--current-line);
+    min-width: 0;
+  }
+
+  .governs-row:last-child {
+    border-bottom: none;
+  }
+
+  .governs-index {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--accent-proof);
+    letter-spacing: 0.08em;
+  }
+
+  .governs-row h3 {
+    margin: 0;
+    color: var(--current-text);
+    font-size: 1.05rem;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+
+  .governs-row p {
+    margin: 0;
+    color: var(--current-muted);
+    font-size: 0.98rem;
+    line-height: 1.62;
+  }
+
+  /* 03 — existing approaches */
+  .aag-approaches-section {
+    padding: var(--registry-panel-padding);
+    border-top: 2px solid var(--current-border);
+    display: grid;
+    gap: 1.25rem;
+    min-width: 0;
+  }
+
+  .aag-approaches-section h2 {
+    margin: 0;
+    color: var(--current-text);
+    font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .approaches-note {
+    margin: 0;
+    color: var(--current-muted);
+    font-size: 0.95rem;
+    line-height: 1.62;
+  }
+
+  .approaches-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    min-width: 0;
+  }
+
+  .approach-card {
+    padding: var(--registry-card-padding);
+    display: grid;
+    gap: 0.75rem;
+    align-content: start;
+    border-left: 3px solid var(--current-border);
+  }
+
+  .approach-card h3 {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: var(--current-text);
+  }
+
+  .approach-card p {
+    margin: 0;
+    font-size: 0.93rem;
+    line-height: 1.6;
+    color: var(--current-muted);
+  }
+
+  /* 04+06 split panels */
+  .aag-split-section {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    min-width: 0;
+  }
+
+  .ledger-panel {
+    padding: var(--registry-panel-padding);
+    display: grid;
+    gap: 1rem;
+    align-content: start;
+    min-width: 0;
+  }
+
+  .ledger-panel--lifecycle {
+    border-left: 3px solid var(--accent-signal);
+  }
+
+  .ledger-panel--multiagent {
+    border-top: 2px solid var(--accent-proof);
+  }
+
+  .ledger-panel--protocol {
+    border-top: 2px solid var(--accent-proof);
+  }
+
+  .ledger-panel h2 {
+    margin: 0;
+    color: var(--current-text);
+    font-size: clamp(1.2rem, 2vw, 1.55rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .ledger-panel p {
+    margin: 0;
+    color: var(--current-muted);
+    font-size: 1rem;
+    line-height: 1.68;
+  }
+
+  .ledger-panel--lifecycle p:first-of-type {
+    color: var(--current-text);
+  }
+
+  .panel-links {
+    display: grid;
+    gap: 0.7rem;
+    margin-top: 0.25rem;
+  }
+
+  .panel-links a {
+    color: var(--accent-signal);
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .panel-links a:hover {
+    color: var(--current-text);
+  }
+
+  /* 05 — primitives */
+  .aag-primitives-section {
+    display: grid;
+    gap: 1.35rem;
+    min-width: 0;
+  }
+
+  .primitives-ledger {
+    border: 1px solid var(--current-border);
+    background: var(--current-surface);
+    min-width: 0;
+  }
+
+  .primitive-row {
+    display: grid;
+    grid-template-columns: 4.5rem minmax(0, 1fr);
+    gap: 1.2rem;
+    align-items: start;
+    padding: var(--registry-supporting-card-padding);
+    border-bottom: 1px solid var(--current-line);
+    min-width: 0;
+  }
+
+  .primitive-row:last-child {
+    border-bottom: none;
+  }
+
+  .primitive-index {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--accent-proof);
+    letter-spacing: 0.08em;
+  }
+
+  .primitive-content {
+    display: grid;
+    gap: 0.6rem;
+  }
+
+  .primitive-content h3 {
+    margin: 0;
+    color: var(--current-text);
+    font-size: 1.05rem;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+
+  .primitive-content p {
+    margin: 0;
+    color: var(--current-muted);
+    font-size: 0.98rem;
+    line-height: 1.62;
+  }
+
+  .primitive-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1rem;
+  }
+
+  .primitive-links a {
+    color: var(--accent-signal);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .primitive-links a:hover {
+    color: var(--current-text);
+  }
+
+  @media (max-width: 980px) {
+    .aag-split-section,
+    .approaches-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .governs-row {
+      grid-template-columns: 3.5rem minmax(0, 1fr);
+    }
+
+    .governs-row p {
+      grid-column: 2;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .aag-body {
+      padding: var(--space-section-y-mobile) 0;
+    }
+
+    .aag-shell {
+      gap: 2.25rem;
+    }
+
+    .aag-claim-band,
+    .aag-approaches-section,
+    .ledger-panel {
+      padding: var(--registry-card-padding);
+    }
+
+    .aag-hero-links {
+      display: grid;
+      gap: 0.65rem;
+    }
+
+    .aag-hero-link {
+      display: block;
+      width: 100%;
+      line-height: 1.7;
+      white-space: normal;
+    }
+
+    .aag-hero-link .registry-key,
+    .aag-hero-link .registry-value {
+      display: inline;
+      white-space: normal;
+    }
+
+    .aag-hero-link .registry-value {
+      display: block;
+      margin-top: 0.1rem;
+    }
+
+    .governs-row {
+      grid-template-columns: 1fr;
+      gap: 0.55rem;
+      padding: var(--registry-compact-padding);
+    }
+
+    .governs-row p {
+      grid-column: auto;
+    }
+
+    .primitive-row {
+      grid-template-columns: 1fr;
+      gap: 0.55rem;
+      padding: var(--registry-compact-padding);
+    }
+  }
+</style>

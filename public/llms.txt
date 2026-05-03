@@ -86,3 +86,8 @@ Quote-ready definitions for AI Agent Lifecycle, Agentic Delivery, Confirmation B
 
 - Delivery Standard: https://www.jearonwong.com/delivery-standard/
 The Delivery Standard defines when AI agent work counts as accountable delivery: scope, authority, evidence, review, accepted outcome, and responsibility traceability. All six conditions must be present.
+
+## AI Agent Governance
+
+- AI Agent Governance: https://www.jearonwong.com/ai-agent-governance/
+AI Agent Governance is lifecycle accountability for delegated agent work: intent, authority, confirmation, evidence, review, and accepted outcome. Not RBAC. Not monitoring. Not HITL.
