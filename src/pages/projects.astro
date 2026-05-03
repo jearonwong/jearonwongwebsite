@@ -163,7 +163,7 @@ const projectBoundaryNotes = [
   .project-section {
     display: grid;
     gap: 1.35rem;
-    margin-top: var(--space-6);
+    margin-top: var(--space-8);
   }
 
   .section-header h2 {
@@ -191,13 +191,11 @@ const projectBoundaryNotes = [
     display: flex;
     flex-direction: column;
     gap: 0;
+    border: 1px solid var(--current-line);
   }
 
   .ledger-item {
-    border-bottom: 1px solid var(--current-line);
-  }
-  .ledger-item:last-child {
-    border-bottom: none;
+    display: block;
   }
 
   @media (max-width: 768px) {
@@ -226,15 +224,11 @@ const projectBoundaryNotes = [
     }
 
     .project-section {
-      margin-top: 2.25rem;
+      margin-top: var(--space-5);
     }
 
     .proof-ledger {
       gap: 0;
-    }
-
-    .ledger-item {
-      padding-bottom: 0;
     }
   }
 </style>

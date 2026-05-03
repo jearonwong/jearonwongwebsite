@@ -51,22 +51,22 @@ const {
         </div>
       </div>
     ) : variant === "ledger-row" ? (
-      <div class="metadata-grid">
+      <>
         <div class="registry-annotation">
-          <span class="registry-key">PROJECT_ID</span><span class="registry-value">{name.toUpperCase()}</span>
+          <span class="registry-key">PROJECT_ID</span>: <span class="registry-value">{name.toUpperCase()}</span>
         </div>
         {proofRole && (
           <div class="registry-annotation stack-layer-line">
-            <span class="registry-key">PATH_ROLE</span><span class="registry-value">{proofRole}</span>
+            <span class="registry-key">PATH_ROLE</span>: <span class="registry-value">{proofRole}</span>
           </div>
         )}
         <div class="registry-annotation">
-          <span class="registry-key">STATUS</span><span class="registry-value">{status.toUpperCase()}</span>
+          <span class="registry-key">STATUS</span>: <span class="registry-value">{status.toUpperCase()}</span>
         </div>
         <div class="registry-annotation">
-          <span class="registry-key">EVIDENCE_FUNCTION</span><span class="registry-value">{summary}</span>
+          <span class="registry-key">EVIDENCE_FUNCTION</span>: <span class="registry-value">{summary}</span>
         </div>
-      </div>
+      </>
     ) : (
       <>
         <div class="registry-annotation">
@@ -351,12 +351,14 @@ const {
 
   /* Variant: Protocol Monolith */
   .variant-protocol {
-    background-color: var(--bg-monolith);
-    border: 1px solid var(--current-line);
+    background-color: var(--current-surface);
+    border: 1px solid var(--current-border);
+    border-top: 4px solid var(--accent-signal);
     padding: var(--registry-panel-padding-lg);
   }
   .variant-protocol .record-header {
     display: flex;
+    flex-wrap: wrap;
     gap: 1.5rem;
     padding-bottom: 1.5rem;
     border-bottom: 1px solid var(--current-line);
@@ -365,13 +367,13 @@ const {
   .variant-protocol .record-title {
     font-size: clamp(2.8rem, 5vw, 4rem);
     letter-spacing: -0.03em;
-    color: var(--text-registry-primary);
+    color: var(--current-text);
     margin-bottom: 1.5rem;
   }
   .variant-protocol .record-summary {
     font-size: 1.25rem;
     max-width: var(--lead-measure);
-    color: var(--text-registry-primary);
+    color: var(--current-text);
     line-height: 1.6;
     margin-bottom: 2.5rem;
   }
@@ -397,19 +399,29 @@ const {
 
   /* Variant: Ledger Row */
   .variant-ledger-row {
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 4rem;
-    padding: 1.5rem 0;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 2rem;
+    padding: var(--registry-panel-padding);
     border: none;
+    border-bottom: 1px solid var(--current-line);
     background-color: transparent;
     border-radius: 0;
+    transition: background-color 0.25s ease;
+  }
+  .variant-ledger-row:last-child {
+    border-bottom: none;
+  }
+  .variant-ledger-row:hover {
+    background-color: rgba(59, 130, 246, 0.03);
   }
   .variant-ledger-row .record-header {
-    width: 20rem;
-    flex-shrink: 0;
-    border-bottom: none;
-    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    width: auto;
+    border: none;
+    padding: 0;
   }
   .variant-ledger-row .record-content {
     flex-grow: 1;
@@ -439,11 +451,14 @@ const {
 
   @media (max-width: 1024px) {
     .variant-ledger-row {
-      flex-direction: column;
-      gap: 2rem;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
     }
     .variant-ledger-row .record-header {
       width: 100%;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1rem;
       border-bottom: 1px solid var(--current-line);
       padding-bottom: 1.25rem;
     }
@@ -460,6 +475,14 @@ const {
       align-items: flex-start;
       gap: 0.2rem;
       margin-bottom: 0.5rem;
+    }
+    .variant-ledger-row .record-header {
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    .variant-protocol .record-header {
+      flex-direction: column;
+      gap: 0.8rem;
     }
   }
 </style>
