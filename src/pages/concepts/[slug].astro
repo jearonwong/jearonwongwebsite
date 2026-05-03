@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import RegistryPageHero from "../../components/RegistryPageHero.astro";
+import SocialShare from "../../components/SocialShare.astro";
 import { concepts, getConceptBySlug, getProjectBySlug, pageRegistry, siteConfig } from "../../data/site";
 
 export function getStaticPaths() {
@@ -202,6 +203,12 @@ const definedTermJsonLd = {
             </article>
           )}
         </section>
+
+        <SocialShare
+          title={concept.term}
+          description={concept.seoDescription}
+          url={conceptUrl}
+        />
       </div>
     </article>
   </div>

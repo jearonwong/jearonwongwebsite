@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import RegistryPageHero from "../../components/RegistryPageHero.astro";
+import SocialShare from "../../components/SocialShare.astro";
 import {
   getConceptBySlug,
   getProjectBySlug,
@@ -38,6 +39,7 @@ const graphPosition = getProjectGraphPosition(project.slug);
 const previousProof = graphPosition.previous;
 const nextProof = graphPosition.next;
 const projectMetaDescription = project.shareDescription ?? `${project.summary} ${project.proves}`;
+const projectUrl = new URL(`/projects/${project.slug}/`, siteConfig.siteUrl).toString();
 const projectJsonLd = {
   "@context": "https://schema.org",
   "@type": "CreativeWork",
@@ -193,6 +195,12 @@ const projectJsonLd = {
           </p>
         )}
       </section>
+
+      <SocialShare
+        title={`${project.name} — ${project.status}`}
+        description={projectMetaDescription}
+        url={projectUrl}
+      />
     </article>
   </div>
 </BaseLayout>

@@ -1,0 +1,107 @@
+---
+interface Props {
+  title: string;
+  url: string;
+  description?: string;
+}
+
+const { title, url } = Astro.props;
+
+const encodedTitle = encodeURIComponent(title);
+const encodedUrl = encodeURIComponent(url);
+const twitterUrl = `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`;
+const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
+---
+
+<section class="registry-chassis social-share-strip" aria-label="Share this page">
+  <div class="registry-annotation social-share-label">
+    <span class="registry-key">SHARE</span>: <span class="registry-value">DISTRIBUTION SURFACE</span>
+  </div>
+  <div class="share-links">
+    <a href={twitterUrl} target="_blank" rel="noopener noreferrer" class="share-link">X</a>
+    <a href={linkedinUrl} target="_blank" rel="noopener noreferrer" class="share-link">LINKEDIN</a>
+    <button type="button" class="share-link share-link--copy" data-copy-url={url}>COPY LINK</button>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const copyButtons = document.querySelectorAll('[data-copy-url]');
+
+    copyButtons.forEach((button) => {
+      button.addEventListener('click', async () => {
+        const url = button.getAttribute('data-copy-url');
+        if (!url) return;
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          try {
+            await navigator.clipboard.writeText(url);
+            const originalText = button.textContent;
+            button.textContent = 'COPIED';
+            setTimeout(() => {
+              button.textContent = originalText;
+            }, 2000);
+          } catch {
+            // Silently fail
+          }
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .social-share-strip {
+    padding: var(--registry-card-padding);
+  }
+
+  .social-share-label {
+    margin-bottom: 1rem;
+  }
+
+  .share-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+  }
+
+  .share-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 0;
+    background: none;
+    border: none;
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--accent-signal);
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+
+  .share-link:hover {
+    color: var(--current-text);
+  }
+
+  .share-link--copy {
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  @media (max-width: 640px) {
+    .social-share-strip {
+      padding: var(--registry-card-padding);
+    }
+
+    .share-links {
+      gap: 0.65rem 0.85rem;
+    }
+
+    .share-link {
+      font-size: 0.72rem;
+    }
+  }
+</style>
