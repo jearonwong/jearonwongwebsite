@@ -83,7 +83,7 @@ const projectJsonLd = {
     </div>
   </RegistryPageHero>
 
-  <div class="zone-b page-body" style="padding: 6rem 0;">
+  <div class="zone-b page-body page-body--standard">
     <article class="shell proof-shell">
       <section class="proof-grid proof-grid--top">
         <article class="registry-chassis proof-panel">
@@ -216,7 +216,7 @@ const projectJsonLd = {
   .proof-shell {
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: var(--space-5);
   }
 
   .proof-grid {
@@ -230,7 +230,7 @@ const projectJsonLd = {
   }
 
   .proof-panel {
-    padding: 2rem;
+    padding: var(--registry-card-padding);
   }
 
   .proof-panel-title {
@@ -249,7 +249,7 @@ const projectJsonLd = {
   }
 
   .proof-claim {
-    padding: 2rem;
+    padding: var(--registry-panel-padding);
     border-left: 3px solid var(--accent-proof);
   }
 
@@ -262,7 +262,7 @@ const projectJsonLd = {
   }
 
   .next-step-panel {
-    padding: 1.75rem;
+    padding: var(--registry-card-padding);
   }
 
   .link-stack {
@@ -296,7 +296,7 @@ const projectJsonLd = {
     .proof-panel,
     .proof-claim,
     .next-step-panel {
-      padding: 1.5rem;
+      padding: var(--registry-card-padding);
     }
 
     .proof-panel-title {

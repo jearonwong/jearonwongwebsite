@@ -275,7 +275,7 @@ const lifecycleJsonLd = {
   }
 
   .lifecycle-body {
-    padding: 6rem 0;
+    padding: var(--space-page-y) 0;
   }
 
   .lifecycle-shell {
@@ -307,7 +307,7 @@ const lifecycleJsonLd = {
   .ledger-panel,
   .pairing-band,
   .closing-anchor {
-    padding: 2.25rem;
+    padding: var(--registry-panel-padding);
   }
 
   .lifecycle-thesis-band {
@@ -374,7 +374,7 @@ const lifecycleJsonLd = {
   }
 
   .sharp-line {
-    padding-left: 1rem;
+    padding-left: var(--space-2);
     border-left: 3px solid var(--accent-signal);
     font-weight: 760;
   }
@@ -515,7 +515,7 @@ const lifecycleJsonLd = {
     grid-template-columns: 4.5rem minmax(12rem, 0.35fr) minmax(0, 1fr);
     gap: 1.2rem;
     align-items: start;
-    padding: 1.35rem 1.5rem;
+    padding: var(--registry-supporting-card-padding);
     border-bottom: 1px solid var(--current-line);
     min-width: 0;
   }
@@ -600,7 +600,7 @@ const lifecycleJsonLd = {
 
   @media (max-width: 640px) {
     .lifecycle-body {
-      padding: 4rem 0;
+      padding: var(--space-section-y-mobile) 0;
     }
 
     .lifecycle-shell {
@@ -613,7 +613,7 @@ const lifecycleJsonLd = {
     .ledger-panel,
     .pairing-band,
     .closing-anchor {
-      padding: 1.4rem;
+      padding: var(--registry-card-padding);
     }
 
     .lifecycle-hero-links {
@@ -651,7 +651,7 @@ const lifecycleJsonLd = {
     .primitive-row {
       grid-template-columns: 1fr;
       gap: 0.55rem;
-      padding: 1.15rem;
+      padding: var(--registry-compact-padding);
     }
 
     .primitive-row p {

@@ -24,7 +24,7 @@ const projectBoundaryNotes = [
     lead={pageRegistry.projects.lead}
   />
 
-  <div class="zone-b page-body" style="padding: 6rem 0;">
+  <div class="zone-b page-body page-body--standard">
     <section class="shell">
       <div class="registry-chassis proof-room-guidance">
         <div class="registry-annotation" style="margin-bottom: 0.9rem;">
@@ -89,13 +89,13 @@ const projectBoundaryNotes = [
 
 <style>
   .proof-room-guidance {
-    padding: 1.75rem;
-    margin-bottom: 2.5rem;
+    padding: var(--registry-panel-padding);
+    margin-bottom: var(--space-5);
   }
 
   .proof-room-guidance__copy {
     margin: 0;
-    max-width: 62ch;
+    max-width: var(--lead-measure);
     font-size: 1rem;
     line-height: 1.65;
     color: var(--current-muted);
@@ -104,9 +104,9 @@ const projectBoundaryNotes = [
   .boundary-list {
     display: grid;
     gap: 0.45rem;
-    margin: 1.15rem 0 0;
-    padding-left: 1.1rem;
-    max-width: 64ch;
+    margin: 1.25rem 0 0;
+    padding-left: 1.35rem;
+    max-width: var(--content-measure);
     color: var(--current-muted);
     font-size: 0.92rem;
     line-height: 1.55;
@@ -116,7 +116,7 @@ const projectBoundaryNotes = [
     display: flex;
     flex-wrap: wrap;
     gap: 0.8rem 1rem;
-    margin-top: 1.1rem;
+    margin-top: var(--space-3);
   }
 
   .proof-room-link {
@@ -135,7 +135,7 @@ const projectBoundaryNotes = [
   .project-section {
     display: grid;
     gap: 1.35rem;
-    margin-top: 3rem;
+    margin-top: var(--space-6);
   }
 
   .section-header h2 {
@@ -176,8 +176,8 @@ const projectBoundaryNotes = [
 
   @media (max-width: 768px) {
     .proof-room-guidance {
-      padding: 1.4rem;
-      margin-bottom: 2rem;
+      padding: var(--registry-card-padding);
+      margin-bottom: var(--space-4);
     }
     .proof-room-guidance__copy {
       font-size: 0.95rem;

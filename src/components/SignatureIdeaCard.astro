@@ -46,7 +46,7 @@ const { name, description, prompt, essayPath, essayLabel, proofPath, proofLabel 
 
 <style>
   .system-pillar {
-    padding: 2.5rem;
+    padding: var(--registry-card-padding);
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -68,10 +68,10 @@ const { name, description, prompt, essayPath, essayLabel, proofPath, proofLabel 
     font-size: 1rem;
     color: var(--current-muted);
     line-height: 1.55;
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--space-3);
   }
   .focus-block {
-    padding: 1.25rem;
+    padding: var(--registry-compact-padding);
     border: 1px solid var(--border-registry);
     background-color: rgba(255, 255, 255, 0.02);
   }
@@ -108,7 +108,7 @@ const { name, description, prompt, essayPath, essayLabel, proofPath, proofLabel 
 
   @media (max-width: 768px) {
     .system-pillar {
-      padding: 1.75rem;
+      padding: var(--registry-card-padding);
       gap: 1.1rem;
     }
 
@@ -123,7 +123,7 @@ const { name, description, prompt, essayPath, essayLabel, proofPath, proofLabel 
     }
 
     .focus-block {
-      padding: 1rem;
+      padding: var(--registry-compact-padding);
     }
 
     .focus-text {

@@ -12,7 +12,7 @@ import { contentRouteRoles, governanceModules, pageRegistry, siteThesis } from "
     lead={pageRegistry.governance.lead}
   />
 
-  <div class="zone-b page-body" style="padding: 6rem 0;">
+  <div class="zone-b page-body page-body--standard">
     <section class="shell">
       <div class="registry-chassis appendix-guidance">
         <div class="registry-annotation" style="margin-bottom: 0.9rem;">
@@ -47,11 +47,11 @@ import { contentRouteRoles, governanceModules, pageRegistry, siteThesis } from "
 
 <style>
   .appendix-guidance {
-    padding: 1.75rem;
-    margin-bottom: 2.5rem;
+    padding: var(--registry-panel-padding);
+    margin-bottom: var(--space-5);
   }
   .appendix-guidance__copy {
-    max-width: 66ch;
+    max-width: var(--content-measure);
     margin: 0;
     color: var(--current-muted);
     font-size: 1rem;
@@ -77,7 +77,7 @@ import { contentRouteRoles, governanceModules, pageRegistry, siteThesis } from "
     gap: 2rem;
   }
   .appendix-panel {
-    padding: 2.5rem;
+    padding: var(--registry-panel-padding);
   }
   .appendix-title {
     font-size: 1.6rem;
@@ -115,14 +115,14 @@ import { contentRouteRoles, governanceModules, pageRegistry, siteThesis } from "
   }
   @media (max-width: 768px) {
     .appendix-guidance {
-      padding: 1.4rem;
-      margin-bottom: 2rem;
+      padding: var(--registry-card-padding);
+      margin-bottom: var(--space-4);
     }
     .appendix-stack {
       gap: 1.5rem;
     }
     .appendix-panel {
-      padding: 1.75rem;
+      padding: var(--registry-card-padding);
     }
     .appendix-title {
       font-size: 1.35rem;

@@ -94,12 +94,12 @@ const displayLeadLines = leadLines?.length ? leadLines : null;
   }
 
   .registry-page-hero__lead {
-    width: min(100%, 62rem);
+    width: min(100%, var(--lead-measure));
     max-width: none;
     font-size: clamp(1.05rem, 1.2vw, 1.18rem);
     color: rgba(226, 232, 240, 0.68);
     border-left: 2px solid rgba(59, 130, 246, 0.32);
-    padding-left: 1.35rem;
+    padding-left: var(--registry-compact-padding);
     line-height: 1.62;
   }
 
@@ -132,7 +132,7 @@ const displayLeadLines = leadLines?.length ? leadLines : null;
     .registry-page-hero__lead {
       font-size: 1rem;
       line-height: 1.6;
-      padding-left: 1rem;
+      padding-left: var(--space-2);
       width: 100%;
     }
   }

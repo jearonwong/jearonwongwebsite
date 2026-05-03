@@ -28,6 +28,29 @@
   
   /* Effects: Reduced for restraint */
   --shadow-registry: 0 4px 12px rgba(0, 0, 0, 0.5);
+
+  /* Spacing Contract: 8px-based rhythm */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-5: 2.5rem;
+  --space-6: 3rem;
+  --space-8: 4rem;
+  --space-12: 6rem;
+  --space-section-y: 7rem;
+  --space-section-y-mobile: 4.5rem;
+  --space-page-y: 6rem;
+  --space-page-y-mobile: 3.75rem;
+  --registry-panel-padding: clamp(1.75rem, 2.6vw, 2.5rem);
+  --registry-panel-padding-lg: clamp(2.5rem, 4vw, 4rem);
+  --registry-card-padding: clamp(1.5rem, 2vw, 1.75rem);
+  --registry-supporting-card-padding: clamp(1.25rem, 1.8vw, 1.5rem);
+  --registry-compact-padding: clamp(1rem, 1.5vw, 1.25rem);
+  --registry-inline-gap: 1rem;
+  --content-measure: 64ch;
+  --lead-measure: 62ch;
+  --narrow-measure: 42ch;
 }
 
 *,
@@ -140,16 +163,21 @@ button:focus-visible {
 }
 
 .section-rhythm {
-  padding: 7rem 0; /* Expanded rhythm for hierarchy shocks */
+  padding: var(--space-section-y) 0; /* Expanded rhythm for hierarchy shocks */
 }
+
+.page-body--standard {
+  padding: var(--space-page-y) 0;
+}
+
 @media (max-width: 768px) {
   .page-body {
-    padding-top: 3.75rem !important;
-    padding-bottom: 3.75rem !important;
+    padding-top: var(--space-page-y-mobile) !important;
+    padding-bottom: var(--space-page-y-mobile) !important;
   }
 
   .section-rhythm {
-    padding: 4.5rem 0;
+    padding: var(--space-section-y-mobile) 0;
   }
 }
 
@@ -229,7 +257,7 @@ button:focus-visible {
   background-color: var(--current-surface);
   border: 1px solid var(--current-border);
   border-radius: var(--radius-registry);
-  padding: 3rem;
+  padding: var(--registry-panel-padding);
   transition: border-color 0.2s ease;
 }
 
@@ -253,4 +281,5 @@ button:focus-visible {
   font-size: 1.15rem;
   line-height: 1.75;
   color: var(--current-muted);
+  max-width: var(--lead-measure);
 }

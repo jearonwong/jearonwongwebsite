@@ -21,7 +21,7 @@ const latestEssayCoverAlt = latestEssay?.data.images?.[0]?.alt ?? aiAgentLifecyc
     lead={pageRegistry.newsletter.lead}
   />
 
-  <div class="zone-b page-body" style="padding: 6rem 0;">
+  <div class="zone-b page-body page-body--standard">
     <section class="shell" style="max-width: 700px;">
 
       <!-- Subscribe form -->
@@ -118,7 +118,7 @@ const latestEssayCoverAlt = latestEssay?.data.images?.[0]?.alt ?? aiAgentLifecyc
     border-width: 0;
   }
   .subscribe-block {
-    padding: 2.5rem;
+    padding: var(--registry-panel-padding);
   }
   .route-question {
     margin-bottom: 1.25rem;
@@ -265,7 +265,7 @@ const latestEssayCoverAlt = latestEssay?.data.images?.[0]?.alt ?? aiAgentLifecyc
     color: var(--current-muted);
   }
   .rss-block {
-    padding: 2rem 2.5rem;
+    padding: var(--registry-card-padding);
   }
   .rss-desc {
     margin: 0 0 1rem;
@@ -293,7 +293,7 @@ const latestEssayCoverAlt = latestEssay?.data.images?.[0]?.alt ?? aiAgentLifecyc
   }
   @media (max-width: 640px) {
     .subscribe-block, .rss-block {
-      padding: 1.75rem;
+      padding: var(--registry-card-padding);
     }
     .subscribe-form {
       flex-direction: column;

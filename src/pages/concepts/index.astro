@@ -102,7 +102,7 @@ const supportingConcepts = concepts.filter((concept) => !primaryConceptPageSlugs
     </div>
   </RegistryPageHero>
 
-  <div class="zone-b page-body" style="padding: 6rem 0;">
+  <div class="zone-b page-body page-body--standard">
     <section class="shell concepts-shell">
       <section class="concept-opening">
         <div class="registry-annotation" style="margin-bottom: 1rem;">
@@ -196,7 +196,7 @@ const supportingConcepts = concepts.filter((concept) => !primaryConceptPageSlugs
 
   .concepts-shell {
     display: grid;
-    gap: 2.5rem;
+    gap: var(--space-5);
   }
 
   .concept-opening {
@@ -220,7 +220,7 @@ const supportingConcepts = concepts.filter((concept) => !primaryConceptPageSlugs
   }
 
   .concept-path {
-    padding: 2rem;
+    padding: var(--registry-panel-padding);
     border-left: 2px solid var(--accent-proof);
   }
 
@@ -287,7 +287,7 @@ const supportingConcepts = concepts.filter((concept) => !primaryConceptPageSlugs
   }
 
   .tier-note {
-    max-width: 62ch;
+    max-width: var(--lead-measure);
     margin: 0.55rem 0 0;
     color: var(--current-muted);
     font-size: 0.95rem;
@@ -301,7 +301,7 @@ const supportingConcepts = concepts.filter((concept) => !primaryConceptPageSlugs
   }
 
   .concept-card {
-    padding: 1.75rem;
+    padding: var(--registry-card-padding);
     display: grid;
     gap: 0.9rem;
     align-content: start;
@@ -344,7 +344,7 @@ const supportingConcepts = concepts.filter((concept) => !primaryConceptPageSlugs
     display: grid;
     gap: 0.75rem;
     align-content: start;
-    padding: 1.35rem 1.25rem 1.35rem 0;
+    padding: var(--registry-supporting-card-padding);
     border-bottom: 1px solid var(--current-line);
     min-width: 0;
   }
@@ -368,16 +368,16 @@ const supportingConcepts = concepts.filter((concept) => !primaryConceptPageSlugs
 
   @media (max-width: 640px) {
     .concepts-shell {
-      gap: 2rem;
+      gap: var(--space-4);
     }
 
     .concept-path,
     .concept-card {
-      padding: 1.4rem;
+      padding: var(--registry-card-padding);
     }
 
     .supporting-term-card {
-      padding: 1.15rem 0;
+      padding: var(--registry-supporting-card-padding);
     }
   }
 </style>

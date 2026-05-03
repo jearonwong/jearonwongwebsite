@@ -13,7 +13,7 @@ import { aboutSpecs, contentRouteRoles, pageRegistry, siteThesis, socialLinks, s
     lead={pageRegistry.about.lead}
   />
 
-  <div class="zone-b page-body" style="padding: 6rem 0;">
+  <div class="zone-b page-body page-body--standard">
     <section class="shell">
       <div class="registry-chassis spec-sheet">
         <div class="spec-grid">
@@ -69,7 +69,7 @@ import { aboutSpecs, contentRouteRoles, pageRegistry, siteThesis, socialLinks, s
 
 <style>
   .spec-sheet {
-    padding: 4rem;
+    padding: var(--registry-panel-padding-lg);
     background: white;
   }
   .spec-grid {
@@ -100,8 +100,8 @@ import { aboutSpecs, contentRouteRoles, pageRegistry, siteThesis, socialLinks, s
     font-weight: 600;
   }
   .spec-narrative {
-    margin-top: 4rem;
-    padding-top: 4rem;
+    margin-top: var(--space-8);
+    padding-top: var(--space-8);
     border-top: 1px solid var(--current-line);
   }
   .route-question {
@@ -122,7 +122,7 @@ import { aboutSpecs, contentRouteRoles, pageRegistry, siteThesis, socialLinks, s
   }
   @media (max-width: 768px) {
     .spec-sheet {
-      padding: 1.6rem;
+      padding: var(--registry-card-padding);
     }
     .spec-line {
       grid-template-columns: 1fr;
@@ -133,8 +133,8 @@ import { aboutSpecs, contentRouteRoles, pageRegistry, siteThesis, socialLinks, s
       font-size: 1.02rem;
     }
     .spec-narrative {
-      margin-top: 2.5rem;
-      padding-top: 2.5rem;
+      margin-top: var(--space-5);
+      padding-top: var(--space-5);
     }
     .spec-narrative .prose {
       font-size: 1rem;
@@ -143,8 +143,8 @@ import { aboutSpecs, contentRouteRoles, pageRegistry, siteThesis, socialLinks, s
   }
 
   .external-verification {
-    margin-top: 4rem;
-    padding-top: 4rem;
+    margin-top: var(--space-8);
+    padding-top: var(--space-8);
     border-top: 1px solid var(--current-line);
   }
   .verification-grid {
@@ -184,7 +184,7 @@ import { aboutSpecs, contentRouteRoles, pageRegistry, siteThesis, socialLinks, s
     .verification-row {
       grid-template-columns: 1fr;
       gap: 0.3rem;
-      padding: 0.85rem 1rem;
+      padding: var(--registry-supporting-card-padding);
     }
   }
 </style>

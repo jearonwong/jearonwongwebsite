@@ -12,7 +12,7 @@ import { pageRegistry, socialLinks, siteConfig } from "../data/site";
     lead={pageRegistry.contact.lead}
   />
 
-  <div class="zone-b page-body" style="padding: 6rem 0;">
+  <div class="zone-b page-body page-body--standard">
     <section class="shell" style="max-width: 800px;">
 
       <!-- Primary: Email -->
@@ -47,7 +47,7 @@ import { pageRegistry, socialLinks, siteConfig } from "../data/site";
 
 <style>
   .contact-block {
-    padding: 2.5rem;
+    padding: var(--registry-panel-padding);
   }
   .email-cta {
     display: inline-block;
@@ -107,7 +107,7 @@ import { pageRegistry, socialLinks, siteConfig } from "../data/site";
   }
   @media (max-width: 768px) {
     .contact-block {
-      padding: 1.75rem;
+      padding: var(--registry-card-padding);
     }
     .email-cta {
       font-size: 0.95rem;

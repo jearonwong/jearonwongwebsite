@@ -31,7 +31,7 @@ const protocolEssays = ["mcp-connects-tools-a2a-connects-agents-who-governs-the-
     lead={pageRegistry.essays.lead}
   />
 
-  <div class="zone-b page-body" style="padding: 6rem 0;">
+  <div class="zone-b page-body page-body--standard">
     <section class="shell">
       <div class="registry-chassis lifecycle-spotlight">
         <div class="registry-annotation" style="margin-bottom: 1rem;">
@@ -163,8 +163,8 @@ const protocolEssays = ["mcp-connects-tools-a2a-connects-agents-who-governs-the-
 
 <style>
   .lifecycle-spotlight {
-    margin-bottom: 2rem;
-    padding: 2rem;
+    margin-bottom: var(--space-4);
+    padding: var(--registry-panel-padding);
     border-left: 2px solid var(--accent-proof);
   }
   .lifecycle-spotlight-grid {
@@ -211,8 +211,8 @@ const protocolEssays = ["mcp-connects-tools-a2a-connects-agents-who-governs-the-
     gap: 1rem;
   }
   .current-essay {
-    margin-top: 1.35rem;
-    padding-top: 1.2rem;
+    margin-top: var(--space-3);
+    padding-top: var(--space-3);
     border-top: 1px solid var(--current-line);
   }
   .current-essay-label,
@@ -288,12 +288,12 @@ const protocolEssays = ["mcp-connects-tools-a2a-connects-agents-who-governs-the-
 
   .essay-sections {
     display: grid;
-    gap: 3.5rem;
+    gap: var(--space-8);
   }
 
   .essay-section {
     display: grid;
-    gap: 1.4rem;
+    gap: var(--space-4);
   }
 
   .registry-section-heading {
@@ -314,7 +314,7 @@ const protocolEssays = ["mcp-connects-tools-a2a-connects-agents-who-governs-the-
   .log-entry {
     display: grid;
     grid-template-columns: 280px 1fr;
-    padding: 3rem;
+    padding: var(--registry-panel-padding);
     border-bottom: 1px solid var(--current-line);
     transition: background-color 0.25s ease;
   }
@@ -364,7 +364,7 @@ const protocolEssays = ["mcp-connects-tools-a2a-connects-agents-who-governs-the-
   }
   @media (max-width: 900px) {
     .lifecycle-spotlight {
-      padding: 1.5rem;
+      padding: var(--registry-card-padding);
     }
     .lifecycle-spotlight-grid {
       grid-template-columns: 1fr;
@@ -378,8 +378,8 @@ const protocolEssays = ["mcp-connects-tools-a2a-connects-agents-who-governs-the-
     }
     .log-entry {
       grid-template-columns: 1fr;
-      gap: 1.1rem;
-      padding: 1.75rem;
+      gap: var(--space-3);
+      padding: var(--registry-card-padding);
     }
     .log-metadata {
       gap: 0.65rem;
