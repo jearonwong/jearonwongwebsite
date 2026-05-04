@@ -209,7 +209,7 @@ This is not because a single Orchestrator is insufficiently capable. It is becau
 This is not a traditional Byzantine fault-tolerance algorithm, not a BFT protocol from distributed systems. It is closer to **Byzantine-inspired semantic consensus**: single-point semantic judgment cannot be trusted; critical project decisions must pass through challenge and convergence from multiple perspectives.
 
 <figure class="article-figure article-figure--table">
-  <img src="/figures/article3-table-consensus-layer.png" alt="Three orchestration perspectives: Coordination view (goal decomposition, task assignment), Authority/Risk view (authorization, boundary check), Evidence/Acceptance view (evidence sufficiency, acceptance condition)" width="1600" height="720" loading="lazy" decoding="async" />
+  <img src="/figures/article3-table-consensus-layer.svg" alt="Three orchestration perspectives: Coordination view (goal decomposition, task assignment), Authority/Risk view (authorization, boundary check), Evidence/Acceptance view (evidence sufficiency, acceptance condition)" width="1600" height="720" loading="lazy" decoding="async" />
   <figcaption>The three perspectives challenge each other. Their convergence is the real Orchestration Decision.</figcaption>
 </figure>
 
@@ -246,7 +246,7 @@ A Role is not a label copied from human job titles. Tagging an Agent "Developer"
 A Role definition must include the following fields:
 
 <figure class="article-figure article-figure--table">
-  <img src="/figures/article3-table-role-fields.png" alt="Seven required fields for every Agent Role definition: activation condition, deactivation condition, responsibility boundary, authority scope, evidence obligation, confirmation relationship, and acceptance impact" width="1600" height="900" loading="lazy" decoding="async" />
+  <img src="/figures/article3-table-role-fields.svg" alt="Seven required fields for every Agent Role definition: activation condition, deactivation condition, responsibility boundary, authority scope, evidence obligation, confirmation relationship, and acceptance impact" width="1600" height="900" loading="lazy" decoding="async" />
   <figcaption>Without these seven fields, a Role is just a name. With them, it is a responsibility unit the Orchestrator can activate, monitor, and deactivate.</figcaption>
 </figure>
 
@@ -284,7 +284,7 @@ A delivery-grade Orchestrator must dispatch like this:
 The gap between these two is the gap between execution dispatch and lifecycle-bound verifiable objective.
 
 <figure class="article-figure article-figure--table">
-  <img src="/figures/article3-table-dispatch-vs-objective.png" alt="Execution dispatch vs delivery-grade verifiable objective: 6-row comparison across role boundary, scope/constraints, output vs acceptance chain, rollback definition, and task nature" width="1600" height="840" loading="lazy" decoding="async" />
+  <img src="/figures/article3-table-dispatch-vs-objective.svg" alt="Execution dispatch vs delivery-grade verifiable objective: 6-row comparison across role boundary, scope/constraints, output vs acceptance chain, rollback definition, and task nature" width="1600" height="840" loading="lazy" decoding="async" />
   <figcaption>A delivery-grade task must define not just how to complete it, but how to roll back on failure and who confirms compensation is complete.</figcaption>
 </figure>
 
@@ -466,7 +466,7 @@ They are not weak systems. They solve real engineering problems.
 **Pydantic AI** built a typed, observable Agent execution stack: typed agents, structured output, tools/toolsets, dependencies, delegation, programmatic handoff, Pydantic Graphs, Deep Agents, Logfire observability, cost/tool shields, guardrails, subagent task toolset. It brings type safety and observability to Agent runtimes.
 
 <figure class="article-figure article-figure--table">
-  <img src="/figures/article3-table-vendor-comparison.png" alt="Platform and vendor comparison: 11 frameworks including LangGraph, OpenAI Agents SDK, CrewAI, AutoGen, Semantic Kernel, Google ADK, AWS Bedrock, Salesforce Agentforce, IBM watsonx Orchestrate, LlamaIndex, Pydantic AI — with orchestration capabilities and main problem solved" width="1600" height="1340" loading="lazy" decoding="async" />
+  <img src="/figures/article3-table-vendor-comparison.svg" alt="Platform and vendor comparison: 11 frameworks including LangGraph, OpenAI Agents SDK, CrewAI, AutoGen, Semantic Kernel, Google ADK, AWS Bedrock, Salesforce Agentforce, IBM watsonx Orchestrate, LlamaIndex, Pydantic AI — with orchestration capabilities and main problem solved" width="1600" height="1340" loading="lazy" decoding="async" />
   <figcaption>These systems solve execution coordination. None of them, by that fact alone, define when execution becomes delivery.</figcaption>
 </figure>
 
