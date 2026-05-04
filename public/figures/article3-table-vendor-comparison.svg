@@ -1,153 +1,157 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-labelledby="tvc dvc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1340" viewBox="0 0 1600 1340" role="img" aria-labelledby="tvc dvc">
   <title id="tvc">Platform and Vendor Orchestration Capabilities</title>
   <desc id="dvc">Comparison table of 11 AI agent frameworks — LangGraph, OpenAI Agents SDK, CrewAI, AutoGen, Semantic Kernel, Google ADK, AWS Bedrock, Salesforce Agentforce, IBM watsonx Orchestrate, LlamaIndex, Pydantic AI — with orchestration capability enhanced and main problem solved for each.</desc>
   <defs>
     <style>
       .bg{fill:#111111}
       .outer{fill:none;stroke:rgba(241,245,249,0.16);stroke-width:1.2}
-      .kicker{fill:#22d3ee;font:700 17px "JetBrains Mono",Menlo,monospace;letter-spacing:1.4px}
-      .ttl{fill:#f1f5f9;font:800 40px "Outfit",Inter,sans-serif}
-      .th{fill:#94a3b8;font:700 13px "JetBrains Mono",Menlo,monospace;letter-spacing:0.9px}
-      .td-vendor{fill:#f1f5f9;font:700 13px "JetBrains Mono",Menlo,monospace;letter-spacing:0.3px}
-      .td{fill:#94a3b8;font:400 13px Inter,sans-serif}
-      .footer{fill:#64748b;font:700 13px "JetBrains Mono",Menlo,monospace;letter-spacing:0.8px}
+      .kicker{fill:#22d3ee;font:700 19px "JetBrains Mono",Menlo,monospace;letter-spacing:1.4px}
+      .ttl{fill:#f1f5f9;font:800 46px "Outfit",Inter,sans-serif}
+      .th{fill:#94a3b8;font:700 15px "JetBrains Mono",Menlo,monospace;letter-spacing:0.9px}
+      .td-vendor{fill:#f1f5f9;font:700 19px "JetBrains Mono",Menlo,monospace;letter-spacing:0.3px}
+      .td{fill:#94a3b8;font:400 18px Inter,sans-serif}
+      .footer{fill:#64748b;font:700 15px "JetBrains Mono",Menlo,monospace;letter-spacing:0.8px}
     </style>
     <pattern id="gvc" width="40" height="40" patternUnits="userSpaceOnUse">
       <path d="M40 0L0 0 0 40" fill="none" stroke="rgba(241,245,249,0.05)" stroke-width="1"/>
     </pattern>
   </defs>
 
-  <rect width="1600" height="980" class="bg"/>
-  <rect width="1600" height="980" fill="url(#gvc)"/>
-  <rect x="52" y="28" width="1496" height="924" class="outer"/>
+  <rect width="1600" height="1340" class="bg"/>
+  <rect width="1600" height="1340" fill="url(#gvc)"/>
+  <rect x="52" y="28" width="1496" height="1284" class="outer"/>
 
   <!-- Header -->
   <text x="82" y="72" class="kicker">DEFINE THE AI AGENT LIFECYCLE / ESSAY 03</text>
-  <text x="82" y="118" class="ttl">What the Market Has Built: 11 Platforms</text>
+  <text x="82" y="122" class="ttl">What the Market Has Built: 11 Platforms</text>
 
-  <!-- Table: Col1=280 (vendor) Col2=730 (capability) Col3=426 (problem). Total=1436. x=82 -->
-  <!-- Header row: y=142 h=42 -->
-  <rect x="82"   y="142" width="280" height="42" fill="rgba(100,116,139,0.12)" stroke="rgba(100,116,139,0.28)" stroke-width="1"/>
-  <rect x="362"  y="142" width="730" height="42" fill="rgba(100,116,139,0.12)" stroke="rgba(100,116,139,0.28)" stroke-width="1"/>
-  <rect x="1092" y="142" width="426" height="42" fill="rgba(100,116,139,0.12)" stroke="rgba(100,116,139,0.28)" stroke-width="1"/>
-  <text x="100"  y="168" class="th">PLATFORM / VENDOR</text>
-  <text x="380"  y="168" class="th">ORCHESTRATION CAPABILITY ENHANCED</text>
-  <text x="1110" y="168" class="th">MAIN PROBLEM SOLVED</text>
+  <!-- Table: Col1=280 (vendor) Col2=730 (capability) Col3=426 (problem). x=82, 362, 1092 -->
+  <!-- Header row: y=148, h=50 -->
+  <rect x="82"   y="148" width="280" height="50" fill="rgba(100,116,139,0.12)" stroke="rgba(100,116,139,0.28)" stroke-width="1"/>
+  <rect x="362"  y="148" width="730" height="50" fill="rgba(100,116,139,0.12)" stroke="rgba(100,116,139,0.28)" stroke-width="1"/>
+  <rect x="1092" y="148" width="426" height="50" fill="rgba(100,116,139,0.12)" stroke="rgba(100,116,139,0.28)" stroke-width="1"/>
+  <text x="100"  y="179" class="th">PLATFORM / VENDOR</text>
+  <text x="380"  y="179" class="th">ORCHESTRATION CAPABILITY ENHANCED</text>
+  <text x="1110" y="179" class="th">MAIN PROBLEM SOLVED</text>
 
-  <!-- 11 rows, h=72 each. Alternating background. y=184 -->
+  <!-- 11 rows, h=98 each. y starts at 198. Two lines per row -->
+  <!-- text positions in 98px row: line1=y+37, line2=y+63 (2 lines); single=y+57 -->
+
   <!-- Row 1: LangGraph -->
-  <rect x="82"   y="184" width="280" height="72" fill="rgba(34,211,238,0.04)"  stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
-  <rect x="362"  y="184" width="730" height="72" fill="rgba(255,255,255,0.02)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
-  <rect x="1092" y="184" width="426" height="72" fill="rgba(255,255,255,0.02)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
-  <text x="100"  y="215" class="td-vendor">LangGraph /</text>
-  <text x="100"  y="232" class="td-vendor">LangChain</text>
-  <text x="380"  y="210" class="td">stateful graph, checkpoint, durable execution,</text>
-  <text x="380"  y="228" class="td">thread persistence</text>
-  <text x="1110" y="210" class="td">Workflow persistence,</text>
-  <text x="1110" y="228" class="td">recoverability, schedulability</text>
+  <rect x="82"   y="198" width="280" height="98" fill="rgba(34,211,238,0.04)"  stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
+  <rect x="362"  y="198" width="730" height="98" fill="rgba(255,255,255,0.02)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
+  <rect x="1092" y="198" width="426" height="98" fill="rgba(255,255,255,0.02)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
+  <text x="100"  y="235" class="td-vendor">LangGraph /</text>
+  <text x="100"  y="261" class="td-vendor">LangChain</text>
+  <text x="380"  y="235" class="td">stateful graph, checkpoint, durable execution,</text>
+  <text x="380"  y="261" class="td">thread persistence</text>
+  <text x="1110" y="235" class="td">Workflow persistence,</text>
+  <text x="1110" y="261" class="td">recoverability, schedulability</text>
 
   <!-- Row 2: OpenAI -->
-  <rect x="82"   y="256" width="280" height="72" fill="rgba(255,255,255,0.015)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
-  <rect x="362"  y="256" width="730" height="72" fill="rgba(255,255,255,0.015)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
-  <rect x="1092" y="256" width="426" height="72" fill="rgba(255,255,255,0.015)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
-  <text x="100"  y="287" class="td-vendor">OpenAI</text>
-  <text x="100"  y="304" class="td-vendor">Agents SDK</text>
-  <text x="380"  y="282" class="td">tools, handoffs, guardrails, tracing,</text>
-  <text x="380"  y="300" class="td">Responses API</text>
-  <text x="1110" y="282" class="td">Agent runtime primitives:</text>
-  <text x="1110" y="300" class="td">tool calls, handoffs, guardrails</text>
+  <rect x="82"   y="296" width="280" height="98" fill="rgba(255,255,255,0.015)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
+  <rect x="362"  y="296" width="730" height="98" fill="rgba(255,255,255,0.015)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
+  <rect x="1092" y="296" width="426" height="98" fill="rgba(255,255,255,0.015)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
+  <text x="100"  y="333" class="td-vendor">OpenAI</text>
+  <text x="100"  y="359" class="td-vendor">Agents SDK</text>
+  <text x="380"  y="333" class="td">tools, handoffs, guardrails, tracing,</text>
+  <text x="380"  y="359" class="td">Responses API</text>
+  <text x="1110" y="333" class="td">Agent runtime primitives:</text>
+  <text x="1110" y="359" class="td">tool calls, handoffs, guardrails</text>
 
   <!-- Row 3: CrewAI -->
-  <rect x="82"   y="328" width="280" height="72" fill="rgba(34,211,238,0.04)"  stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
-  <rect x="362"  y="328" width="730" height="72" fill="rgba(255,255,255,0.02)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
-  <rect x="1092" y="328" width="426" height="72" fill="rgba(255,255,255,0.02)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
-  <text x="100"  y="369" class="td-vendor">CrewAI</text>
-  <text x="380"  y="354" class="td">crews, flows, processes, event-driven</text>
-  <text x="380"  y="372" class="td">workflows, RBAC</text>
-  <text x="1110" y="354" class="td">Multi-Agent teams and</text>
-  <text x="1110" y="372" class="td">process automation</text>
+  <rect x="82"   y="394" width="280" height="98" fill="rgba(34,211,238,0.04)"  stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
+  <rect x="362"  y="394" width="730" height="98" fill="rgba(255,255,255,0.02)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
+  <rect x="1092" y="394" width="426" height="98" fill="rgba(255,255,255,0.02)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
+  <text x="100"  y="451" class="td-vendor">CrewAI</text>
+  <text x="380"  y="431" class="td">crews, flows, processes, event-driven</text>
+  <text x="380"  y="457" class="td">workflows, RBAC</text>
+  <text x="1110" y="431" class="td">Multi-Agent teams and</text>
+  <text x="1110" y="457" class="td">process automation</text>
 
   <!-- Row 4: AutoGen -->
-  <rect x="82"   y="400" width="280" height="72" fill="rgba(255,255,255,0.015)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
-  <rect x="362"  y="400" width="730" height="72" fill="rgba(255,255,255,0.015)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
-  <rect x="1092" y="400" width="426" height="72" fill="rgba(255,255,255,0.015)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
-  <text x="100"  y="441" class="td-vendor">AutoGen</text>
-  <text x="380"  y="426" class="td">group chat, swarm, Magentic-One,</text>
-  <text x="380"  y="444" class="td">termination, save_state</text>
-  <text x="1110" y="426" class="td">Conversation-centered</text>
-  <text x="1110" y="444" class="td">multi-Agent coordination</text>
+  <rect x="82"   y="492" width="280" height="98" fill="rgba(255,255,255,0.015)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
+  <rect x="362"  y="492" width="730" height="98" fill="rgba(255,255,255,0.015)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
+  <rect x="1092" y="492" width="426" height="98" fill="rgba(255,255,255,0.015)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
+  <text x="100"  y="549" class="td-vendor">AutoGen</text>
+  <text x="380"  y="529" class="td">group chat, swarm, Magentic-One,</text>
+  <text x="380"  y="555" class="td">termination, save_state</text>
+  <text x="1110" y="529" class="td">Conversation-centered</text>
+  <text x="1110" y="555" class="td">multi-Agent coordination</text>
 
   <!-- Row 5: Semantic Kernel -->
-  <rect x="82"   y="472" width="280" height="72" fill="rgba(34,211,238,0.04)"  stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
-  <rect x="362"  y="472" width="730" height="72" fill="rgba(255,255,255,0.02)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
-  <rect x="1092" y="472" width="426" height="72" fill="rgba(255,255,255,0.02)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
-  <text x="100"  y="503" class="td-vendor">Semantic</text>
-  <text x="100"  y="520" class="td-vendor">Kernel</text>
-  <text x="380"  y="498" class="td">sequential/concurrent/group chat</text>
-  <text x="380"  y="516" class="td">orchestration, GroupChatManager</text>
-  <text x="1110" y="498" class="td">Enterprise Agent</text>
-  <text x="1110" y="516" class="td">orchestration patterns</text>
+  <rect x="82"   y="590" width="280" height="98" fill="rgba(34,211,238,0.04)"  stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
+  <rect x="362"  y="590" width="730" height="98" fill="rgba(255,255,255,0.02)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
+  <rect x="1092" y="590" width="426" height="98" fill="rgba(255,255,255,0.02)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
+  <text x="100"  y="627" class="td-vendor">Semantic</text>
+  <text x="100"  y="653" class="td-vendor">Kernel</text>
+  <text x="380"  y="627" class="td">sequential/concurrent/group chat</text>
+  <text x="380"  y="653" class="td">orchestration, GroupChatManager</text>
+  <text x="1110" y="627" class="td">Enterprise Agent</text>
+  <text x="1110" y="653" class="td">orchestration patterns</text>
 
   <!-- Row 6: Google ADK -->
-  <rect x="82"   y="544" width="280" height="72" fill="rgba(255,255,255,0.015)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
-  <rect x="362"  y="544" width="730" height="72" fill="rgba(255,255,255,0.015)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
-  <rect x="1092" y="544" width="426" height="72" fill="rgba(255,255,255,0.015)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
-  <text x="100"  y="585" class="td-vendor">Google ADK</text>
-  <text x="380"  y="570" class="td">Agent hierarchy, workflow agents,</text>
-  <text x="380"  y="588" class="td">LoopAgent, ParallelAgent</text>
-  <text x="1110" y="570" class="td">Agent hierarchy and</text>
-  <text x="1110" y="588" class="td">workflow composition</text>
+  <rect x="82"   y="688" width="280" height="98" fill="rgba(255,255,255,0.015)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
+  <rect x="362"  y="688" width="730" height="98" fill="rgba(255,255,255,0.015)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
+  <rect x="1092" y="688" width="426" height="98" fill="rgba(255,255,255,0.015)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
+  <text x="100"  y="745" class="td-vendor">Google ADK</text>
+  <text x="380"  y="725" class="td">Agent hierarchy, workflow agents,</text>
+  <text x="380"  y="751" class="td">LoopAgent, ParallelAgent</text>
+  <text x="1110" y="725" class="td">Agent hierarchy and</text>
+  <text x="1110" y="751" class="td">workflow composition</text>
 
   <!-- Row 7: AWS Bedrock -->
-  <rect x="82"   y="616" width="280" height="72" fill="rgba(34,211,238,0.04)"  stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
-  <rect x="362"  y="616" width="730" height="72" fill="rgba(255,255,255,0.02)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
-  <rect x="1092" y="616" width="426" height="72" fill="rgba(255,255,255,0.02)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
-  <text x="100"  y="657" class="td-vendor">AWS Bedrock</text>
-  <text x="380"  y="642" class="td">supervisor-collaborator routing,</text>
-  <text x="380"  y="660" class="td">guardrails, IAM</text>
-  <text x="1110" y="642" class="td">Supervisor-collaborator</text>
-  <text x="1110" y="660" class="td">routing in enterprise cloud</text>
+  <rect x="82"   y="786" width="280" height="98" fill="rgba(34,211,238,0.04)"  stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
+  <rect x="362"  y="786" width="730" height="98" fill="rgba(255,255,255,0.02)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
+  <rect x="1092" y="786" width="426" height="98" fill="rgba(255,255,255,0.02)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
+  <text x="100"  y="843" class="td-vendor">AWS Bedrock</text>
+  <text x="380"  y="823" class="td">supervisor-collaborator routing,</text>
+  <text x="380"  y="849" class="td">guardrails, IAM</text>
+  <text x="1110" y="823" class="td">Supervisor-collaborator</text>
+  <text x="1110" y="849" class="td">routing in enterprise cloud</text>
 
   <!-- Row 8: Salesforce Agentforce -->
-  <rect x="82"   y="688" width="280" height="72" fill="rgba(255,255,255,0.015)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
-  <rect x="362"  y="688" width="730" height="72" fill="rgba(255,255,255,0.015)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
-  <rect x="1092" y="688" width="426" height="72" fill="rgba(255,255,255,0.015)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
-  <text x="100"  y="719" class="td-vendor">Salesforce</text>
-  <text x="100"  y="736" class="td-vendor">Agentforce</text>
-  <text x="380"  y="714" class="td">topics, instructions, actions,</text>
-  <text x="380"  y="732" class="td">Trust Layer, CRM integration</text>
-  <text x="1110" y="714" class="td">CRM-native topic/action</text>
-  <text x="1110" y="732" class="td">execution</text>
+  <rect x="82"   y="884" width="280" height="98" fill="rgba(255,255,255,0.015)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
+  <rect x="362"  y="884" width="730" height="98" fill="rgba(255,255,255,0.015)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
+  <rect x="1092" y="884" width="426" height="98" fill="rgba(255,255,255,0.015)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
+  <text x="100"  y="921" class="td-vendor">Salesforce</text>
+  <text x="100"  y="947" class="td-vendor">Agentforce</text>
+  <text x="380"  y="921" class="td">topics, instructions, actions,</text>
+  <text x="380"  y="947" class="td">Trust Layer, CRM integration</text>
+  <text x="1110" y="921" class="td">CRM-native topic/action</text>
+  <text x="1110" y="947" class="td">execution</text>
 
   <!-- Row 9: IBM watsonx -->
-  <rect x="82"   y="760" width="280" height="72" fill="rgba(34,211,238,0.04)"  stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
-  <rect x="362"  y="760" width="730" height="72" fill="rgba(255,255,255,0.02)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
-  <rect x="1092" y="760" width="426" height="72" fill="rgba(255,255,255,0.02)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
-  <text x="100"  y="791" class="td-vendor">IBM watsonx</text>
-  <text x="100"  y="808" class="td-vendor">Orchestrate</text>
-  <text x="380"  y="786" class="td">skills, automations, Agent Builder,</text>
-  <text x="380"  y="804" class="td">prebuilt catalog, MCP</text>
-  <text x="1110" y="786" class="td">Enterprise task automation</text>
-  <text x="1110" y="804" class="td">and skills/tools catalog</text>
+  <rect x="82"   y="982" width="280" height="98" fill="rgba(34,211,238,0.04)"  stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
+  <rect x="362"  y="982" width="730" height="98" fill="rgba(255,255,255,0.02)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
+  <rect x="1092" y="982" width="426" height="98" fill="rgba(255,255,255,0.02)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
+  <text x="100"  y="1019" class="td-vendor">IBM watsonx</text>
+  <text x="100"  y="1045" class="td-vendor">Orchestrate</text>
+  <text x="380"  y="1019" class="td">skills, automations, Agent Builder,</text>
+  <text x="380"  y="1045" class="td">prebuilt catalog, MCP</text>
+  <text x="1110" y="1019" class="td">Enterprise task automation</text>
+  <text x="1110" y="1045" class="td">and skills/tools catalog</text>
 
   <!-- Row 10: LlamaIndex -->
-  <rect x="82"   y="832" width="280" height="72" fill="rgba(255,255,255,0.015)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
-  <rect x="362"  y="832" width="730" height="72" fill="rgba(255,255,255,0.015)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
-  <rect x="1092" y="832" width="426" height="72" fill="rgba(255,255,255,0.015)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
-  <text x="100"  y="873" class="td-vendor">LlamaIndex</text>
-  <text x="380"  y="858" class="td">AgentWorkflow, handoff,</text>
-  <text x="380"  y="876" class="td">orchestrator agent, serializable context</text>
-  <text x="1110" y="858" class="td">Retrieval-intensive</text>
-  <text x="1110" y="876" class="td">multi-Agent workflows</text>
+  <rect x="82"   y="1080" width="280" height="98" fill="rgba(255,255,255,0.015)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
+  <rect x="362"  y="1080" width="730" height="98" fill="rgba(255,255,255,0.015)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
+  <rect x="1092" y="1080" width="426" height="98" fill="rgba(255,255,255,0.015)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
+  <text x="100"  y="1137" class="td-vendor">LlamaIndex</text>
+  <text x="380"  y="1117" class="td">AgentWorkflow, handoff,</text>
+  <text x="380"  y="1143" class="td">orchestrator agent, serializable context</text>
+  <text x="1110" y="1117" class="td">Retrieval-intensive</text>
+  <text x="1110" y="1143" class="td">multi-Agent workflows</text>
 
   <!-- Row 11: Pydantic AI -->
-  <rect x="82"   y="904" width="280" height="48" fill="rgba(34,211,238,0.04)"  stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
-  <rect x="362"  y="904" width="730" height="48" fill="rgba(255,255,255,0.02)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
-  <rect x="1092" y="904" width="426" height="48" fill="rgba(255,255,255,0.02)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
-  <text x="100"  y="933" class="td-vendor">Pydantic AI</text>
-  <text x="380"  y="933" class="td">typed agents, structured output, Logfire, Deep Agents</text>
-  <text x="1110" y="933" class="td">Typed, observable Agent execution</text>
+  <rect x="82"   y="1178" width="280" height="98" fill="rgba(34,211,238,0.04)"  stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
+  <rect x="362"  y="1178" width="730" height="98" fill="rgba(255,255,255,0.02)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
+  <rect x="1092" y="1178" width="426" height="98" fill="rgba(255,255,255,0.02)" stroke="rgba(241,245,249,0.06)" stroke-width="1"/>
+  <text x="100"  y="1235" class="td-vendor">Pydantic AI</text>
+  <text x="380"  y="1215" class="td">typed agents, structured output,</text>
+  <text x="380"  y="1241" class="td">Logfire, Deep Agents</text>
+  <text x="1110" y="1215" class="td">Typed, observable</text>
+  <text x="1110" y="1241" class="td">Agent execution stack</text>
 
   <!-- Footer -->
-  <text x="82" y="970" class="footer">jearonwong.com / Define The AI Agent Lifecycle / Essay 03</text>
+  <text x="82" y="1322" class="footer">jearonwong.com / Define The AI Agent Lifecycle / Essay 03</text>
 </svg>
