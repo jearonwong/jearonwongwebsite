@@ -208,11 +208,10 @@ This is not because a single Orchestrator is insufficiently capable. It is becau
 
 This is not a traditional Byzantine fault-tolerance algorithm, not a BFT protocol from distributed systems. It is closer to **Byzantine-inspired semantic consensus**: single-point semantic judgment cannot be trusted; critical project decisions must pass through challenge and convergence from multiple perspectives.
 
-| Perspective | Responsibility | Core question |
-|-------------|---------------|---------------|
-| Coordination view | Goal decomposition, path organization, task assignment, who executes | How should work be done, and by whom |
-| Authority / Risk view | Authorization, boundary check, confirmation need, risk boundary trigger | Is this permitted, where is the risk |
-| Evidence / Acceptance view | Evidence sufficiency, result reviewability, acceptance condition met | Is this truly done, can it be accepted |
+<figure class="article-figure article-figure--table">
+  <img src="/figures/article3-table-consensus-layer.png" alt="Three orchestration perspectives: Coordination view (goal decomposition, task assignment), Authority/Risk view (authorization, boundary check), Evidence/Acceptance view (evidence sufficiency, acceptance condition)" width="1600" height="620" loading="lazy" decoding="async" />
+  <figcaption>The three perspectives challenge each other. Their convergence is the real Orchestration Decision.</figcaption>
+</figure>
 
 These three perspectives challenge each other: Coordination view wants to push forward, Authority/Risk view wants to halt boundary violations, Evidence/Acceptance view wants to confirm evidence is sufficient. The convergence of three perspectives is the real Orchestration Decision.
 
@@ -246,15 +245,10 @@ A Role is not a label copied from human job titles. Tagging an Agent "Developer"
 
 A Role definition must include the following fields:
 
-| Field | Meaning |
-|-------|---------|
-| Activation condition | Under what circumstances should this Role be activated |
-| Deactivation condition | Under what circumstances should this Role be suspended or deactivated |
-| Responsibility boundary | What this Role is responsible for, and what it is not |
-| Authority scope | What this Role is authorized to do, what is prohibited |
-| Evidence obligation | What evidence this Role must produce before handing off a task |
-| Confirmation relationship | Which human role needs to confirm certain operations of this Role |
-| Acceptance impact | How this Role's output affects downstream acceptance judgment |
+<figure class="article-figure article-figure--table">
+  <img src="/figures/article3-table-role-fields.png" alt="Seven required fields for every Agent Role definition: activation condition, deactivation condition, responsibility boundary, authority scope, evidence obligation, confirmation relationship, and acceptance impact" width="1600" height="700" loading="lazy" decoding="async" />
+  <figcaption>Without these seven fields, a Role is just a name. With them, it is a responsibility unit the Orchestrator can activate, monitor, and deactivate.</figcaption>
+</figure>
 
 <figure class="article-figure article-figure--diagram">
   <img src="/figures/article3-dynamic-role-graph.svg" alt="Project phases across the top; six Agent Roles activating and deactivating across phases, each with activation condition, authority scope, and evidence obligation." width="1600" height="900" loading="lazy" decoding="async" />
@@ -289,14 +283,10 @@ A delivery-grade Orchestrator must dispatch like this:
 
 The gap between these two is the gap between execution dispatch and lifecycle-bound verifiable objective.
 
-| Execution dispatch | Delivery-grade verifiable objective |
-|-------------------|--------------------------------------|
-| Specifies who executes | Specifies which Role within which responsibility boundary |
-| Describes what to do | Describes scope, constraints, evidence requirements, acceptance conditions |
-| Focused on output | Focused on whether output enters review/acceptance chain |
-| Continues after completion | Enters evidence/review/acceptance judgment after completion |
-| No rollback definition | Explicitly defines rollback/compensation condition on failure |
-| Task is an action item | Task is a lifecycle-bound verifiable objective |
+<figure class="article-figure article-figure--table">
+  <img src="/figures/article3-table-dispatch-vs-objective.png" alt="Execution dispatch vs delivery-grade verifiable objective: 6-row comparison across role boundary, scope/constraints, output vs acceptance chain, rollback definition, and task nature" width="1600" height="680" loading="lazy" decoding="async" />
+  <figcaption>A delivery-grade task must define not just how to complete it, but how to roll back on failure and who confirms compensation is complete.</figcaption>
+</figure>
 
 **A delivery-grade task must define not just how to complete it, but how to roll back on failure and who confirms compensation is complete.**
 
@@ -475,19 +465,10 @@ They are not weak systems. They solve real engineering problems.
 
 **Pydantic AI** built a typed, observable Agent execution stack: typed agents, structured output, tools/toolsets, dependencies, delegation, programmatic handoff, Pydantic Graphs, Deep Agents, Logfire observability, cost/tool shields, guardrails, subagent task toolset. It brings type safety and observability to Agent runtimes.
 
-| Platform / Vendor | Orchestration capability enhanced | Main problem solved |
-|-------------------|----------------------------------|---------------------|
-| LangGraph / LangChain | stateful graph, checkpoint, durable execution, thread persistence | Agent workflow persistence, recoverability, schedulability |
-| OpenAI Agents SDK | tools, handoffs, guardrails, tracing, Responses API | Agent runtime primitives: tool calls, handoffs, guardrails |
-| CrewAI | crews, flows, processes, event-driven workflows, RBAC | Multi-Agent teams and process automation |
-| AutoGen | group chat, swarm, Magentic-One, termination, save_state | Conversation-centered multi-Agent coordination |
-| Semantic Kernel | sequential/concurrent/group chat orchestration, GroupChatManager | Enterprise orchestration patterns |
-| Google ADK | Agent hierarchy, workflow agents, LoopAgent, ParallelAgent | Agent hierarchy and workflow composition |
-| AWS Bedrock | supervisor-collaborator routing, guardrails, IAM | Supervisor-collaborator routing in enterprise cloud |
-| Salesforce Agentforce | topics, instructions, actions, Trust Layer, CRM integration | CRM-native topic/action execution |
-| IBM watsonx Orchestrate | skills, automations, Agent Builder, prebuilt catalog, MCP | Enterprise task automation and skills/tools catalog |
-| LlamaIndex | AgentWorkflow, handoff, orchestrator agent, serializable context | Retrieval-intensive multi-Agent workflows |
-| Pydantic AI | typed agents, structured output, Logfire, Deep Agents | Typed, observable Agent execution stack |
+<figure class="article-figure article-figure--table">
+  <img src="/figures/article3-table-vendor-comparison.png" alt="Platform and vendor comparison: 11 frameworks including LangGraph, OpenAI Agents SDK, CrewAI, AutoGen, Semantic Kernel, Google ADK, AWS Bedrock, Salesforce Agentforce, IBM watsonx Orchestrate, LlamaIndex, Pydantic AI — with orchestration capabilities and main problem solved" width="1600" height="980" loading="lazy" decoding="async" />
+  <figcaption>These systems solve execution coordination. None of them, by that fact alone, define when execution becomes delivery.</figcaption>
+</figure>
 
 These systems are valuable. They are not weak systems.
 
