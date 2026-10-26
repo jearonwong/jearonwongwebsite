@@ -883,6 +883,19 @@
     "generatedBy": "scripts/site-publication-sync.mjs",
     "records": [
       {
+        "id": "essay-the-work-outlives-the-agent",
+        "name": "The Work Outlives the Agent",
+        "type": "Essay",
+        "canonical_url": "https://www.jearonwong.com/essays/the-work-outlives-the-agent/",
+        "source_authority": "owned-canonical",
+        "publication_class": "thought",
+        "editorial_track": "lifecycle",
+        "primary_audience": "Architect",
+        "indexability": "index",
+        "relation": "published-publication",
+        "boundary": "Authored publication record; does not claim certification, legal compliance proof, regulator approval, vendor endorsement, or external adoption."
+      },
+      {
         "id": "essay-when-an-agent-says-done-who-accepts-the-outcome",
         "name": "When an Agent Says \"Done,\" Who Accepts the Outcome?",
         "type": "Essay",

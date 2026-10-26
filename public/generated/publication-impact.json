@@ -33,6 +33,44 @@
   },
   "records": [
     {
+      "slug": "the-work-outlives-the-agent",
+      "route": "/essays/the-work-outlives-the-agent/",
+      "title": "The Work Outlives the Agent",
+      "source": "src/content/essays/the-work-outlives-the-agent.md",
+      "controlMode": "governed",
+      "impact": {
+        "synchronize": [
+          "publication manifest",
+          "llms.txt managed publication registry",
+          "essay/site OG assets",
+          "public/generated/media-manifest.json"
+        ],
+        "buildDerived": [
+          "essay canonical route",
+          "essays index placement",
+          "RSS",
+          "sitemap",
+          "JSON-LD",
+          "OG/Twitter metadata"
+        ],
+        "updateFromSot": [
+          "llms.txt",
+          "entity graph",
+          "related concept/project surfaces"
+        ],
+        "verifyOnly": [
+          "authored article body",
+          "article SVG figures",
+          "white-paper artifacts"
+        ],
+        "ownerDecisionRequired": [
+          "primary navigation promotion",
+          "homepage flagship promotion",
+          "new definition or stronger public claim"
+        ]
+      }
+    },
+    {
       "slug": "when-an-agent-says-done-who-accepts-the-outcome",
       "route": "/essays/when-an-agent-says-done-who-accepts-the-outcome/",
       "title": "When an Agent Says \"Done,\" Who Accepts the Outcome?",

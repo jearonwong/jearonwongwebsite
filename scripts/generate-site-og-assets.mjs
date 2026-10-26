@@ -281,6 +281,17 @@ for (const record of selectedRecords) {
       throw new Error(`${record.file}.png source fingerprint is stale; run npm run assets:og`);
     }
   } else {
+    // Preserve source-current rasters: encoder versions can change PNG bytes
+    // without changing the SVG. Unrelated assets must not churn on publication.
+    try {
+      const [currentSvg, currentPng] = await Promise.all([readFile(svgPath, "utf8"), readFile(pngPath)]);
+      const metadata = await sharp(currentPng).metadata();
+      if (currentSvg === `${svg}\n` && metadata.width === 1200 && metadata.height === 630 && readSourceDigest(metadata) === digest) {
+        continue;
+      }
+    } catch {
+      // Missing or unreadable pairs are generated below.
+    }
     const expectedPng = await sharp(Buffer.from(svg))
       .withXmp(renderSourceXmp(digest))
       .png({ compressionLevel: 9, adaptiveFiltering: true })

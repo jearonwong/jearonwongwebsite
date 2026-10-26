@@ -181,6 +181,37 @@
       "semanticMode": "historical",
       "navigationExposure": "essays-index",
       "ownerApproval": { "positioning": "approved", "navigation": "approved", "publication": "approved" }
+    },
+    {
+      "waveId": "essay-2026-10-26-the-work-outlives-the-agent",
+      "source": "src/content/essays/the-work-outlives-the-agent.md",
+      "publicationClass": "thought",
+      "editorialTrack": "lifecycle",
+      "canonicalRoute": "/essays/the-work-outlives-the-agent/",
+      "canonicalParent": "/essays/",
+      "primaryAudience": "Architect",
+      "distinctReaderQuestion": "What must a project preserve when Agents, intent, models, or Runtimes change, and how should people retain responsibility?",
+      "sourceRefs": [
+        "Author-approved public essay draft dated 2026-10-26",
+        "https://www.jearonwong.com/essays/ai-agent-lifecycle-it-was-not-designed-it-grew/",
+        "https://www.jearonwong.com/essays/when-an-agent-says-done-who-accepts-the-outcome/",
+        "Primary market and standards documentation cited inline"
+      ],
+      "indexability": "index",
+      "requiredNextSteps": [
+        "/lifecycle/",
+        "/projects/mplp/",
+        "/essays/when-an-agent-says-done-who-accepts-the-outcome/"
+      ],
+      "semanticMode": "conceptual",
+      "navigationExposure": "essays-index",
+      "ownerApproval": {
+        "positioning": "approved",
+        "navigation": "approved",
+        "publication": "approved"
+      },
+      "approvalBasis": "After reviewing the local article and figures, the owner explicitly authorized formal website publication through the governed workflow on 2026-10-27.",
+      "executionState": "PUBLICATION_APPROVED"
     }
   ]
 }

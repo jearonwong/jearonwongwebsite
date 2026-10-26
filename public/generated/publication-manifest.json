@@ -7,6 +7,86 @@
   ],
   "records": [
     {
+      "slug": "the-work-outlives-the-agent",
+      "title": "The Work Outlives the Agent",
+      "description": "What an Agent lifecycle must preserve as executors, intent, and Runtimes change: project continuity, current authority, evidence, and human responsibility.",
+      "route": "/essays/the-work-outlives-the-agent/",
+      "canonicalParent": "/essays/",
+      "publicationClass": "thought",
+      "editorialTrack": "lifecycle",
+      "primaryAudience": "Architect",
+      "distinctReaderQuestion": "What must a project preserve when Agents, intent, models, or Runtimes change, and how should people retain responsibility?",
+      "sourceRefs": [
+        "Author-approved public essay draft dated 2026-10-26",
+        "https://www.jearonwong.com/essays/ai-agent-lifecycle-it-was-not-designed-it-grew/",
+        "https://www.jearonwong.com/essays/when-an-agent-says-done-who-accepts-the-outcome/",
+        "Primary market and standards documentation cited inline"
+      ],
+      "indexability": "index",
+      "nextSteps": [
+        "/lifecycle/",
+        "/projects/mplp/",
+        "/essays/when-an-agent-says-done-who-accepts-the-outcome/"
+      ],
+      "maxClickDepth": 3,
+      "publishDate": "2026-10-27",
+      "status": "published",
+      "flagship": false,
+      "featured": true,
+      "tags": [
+        "AI Agent Lifecycle",
+        "Lifecycle Governance",
+        "Authority Boundary",
+        "Evidence Chain",
+        "Accepted Outcome",
+        "Protocol Engineering"
+      ],
+      "source": "src/content/essays/the-work-outlives-the-agent.md",
+      "bodySha256": "580a2100010cc9d445ae8cb6d74aa416bbc1b377fc543ca5ddadf9587df94768",
+      "controlMode": "governed",
+      "control": {
+        "waveId": "essay-2026-10-26-the-work-outlives-the-agent",
+        "semanticMode": "conceptual",
+        "navigationExposure": "essays-index",
+        "ownerApproval": {
+          "positioning": "approved",
+          "navigation": "approved",
+          "publication": "approved"
+        }
+      },
+      "impact": {
+        "synchronize": [
+          "publication manifest",
+          "llms.txt managed publication registry",
+          "essay/site OG assets",
+          "public/generated/media-manifest.json"
+        ],
+        "buildDerived": [
+          "essay canonical route",
+          "essays index placement",
+          "RSS",
+          "sitemap",
+          "JSON-LD",
+          "OG/Twitter metadata"
+        ],
+        "updateFromSot": [
+          "llms.txt",
+          "entity graph",
+          "related concept/project surfaces"
+        ],
+        "verifyOnly": [
+          "authored article body",
+          "article SVG figures",
+          "white-paper artifacts"
+        ],
+        "ownerDecisionRequired": [
+          "primary navigation promotion",
+          "homepage flagship promotion",
+          "new definition or stronger public claim"
+        ]
+      }
+    },
+    {
       "slug": "when-an-agent-says-done-who-accepts-the-outcome",
       "title": "When an Agent Says \"Done,\" Who Accepts the Outcome?",
       "description": "An Agent can complete its execution while the work remains unaccepted. A first-person field essay from building MPLP and its Development Runtime about Intent change, evidence, authority, and the lifecycle decision that turns execution into delivery.",

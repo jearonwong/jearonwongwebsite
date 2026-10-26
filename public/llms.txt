@@ -275,6 +275,10 @@ The Delivery Standard defines when AI agent work counts as accountable delivery:
 
 The following routes are derived from the published essay collection; publication control records are attached where present.
 
+- [The Work Outlives the Agent](https://www.jearonwong.com/essays/the-work-outlives-the-agent/)
+  Class: thought; Track: lifecycle; Audience: Architect.
+  Reader question: What must a project preserve when Agents, intent, models, or Runtimes change, and how should people retain responsibility?
+  Next steps: /lifecycle/, /projects/mplp/, /essays/when-an-agent-says-done-who-accepts-the-outcome/.
 - [When an Agent Says "Done," Who Accepts the Outcome?](https://www.jearonwong.com/essays/when-an-agent-says-done-who-accepts-the-outcome/)
   Class: field-note; Track: lifecycle; Audience: Builder.
   Reader question: Who can accept an agent outcome when execution finishes but intent, authority, or evidence has changed?

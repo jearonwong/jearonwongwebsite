@@ -821,6 +821,40 @@
       "sourcePair": "/figures/the-agentic-delivery-test-checklist.png"
     },
     {
+      "path": "/figures/the-work-outlives-the-agent-human-responsibility.svg",
+      "format": "svg",
+      "category": "article-figure",
+      "dimensions": {
+        "width": 1200,
+        "height": 1080
+      },
+      "sha256": "e016401c698c62e890a6c014e47fc7ef93faf5946e5eb9c53be8e1f9e7793f1e",
+      "visualSystem": "research-ledger-b",
+      "paletteMode": "neutral-structure-functional-blue-semantic-exceptions",
+      "manualReview": true,
+      "usedBy": [
+        "src/content/essays/the-work-outlives-the-agent.md"
+      ],
+      "sourcePair": null
+    },
+    {
+      "path": "/figures/the-work-outlives-the-agent-project-continuity.svg",
+      "format": "svg",
+      "category": "article-figure",
+      "dimensions": {
+        "width": 1200,
+        "height": 1020
+      },
+      "sha256": "2d43922614ceffcc8b01dcd90df95eeab4051b46f51b54f12490b0354300b0af",
+      "visualSystem": "research-ledger-b",
+      "paletteMode": "neutral-structure-functional-blue-semantic-exceptions",
+      "manualReview": true,
+      "usedBy": [
+        "src/content/essays/the-work-outlives-the-agent.md"
+      ],
+      "sourcePair": null
+    },
+    {
       "path": "/figures/when-an-agent-says-done-lifecycle-evidence.svg",
       "format": "svg",
       "category": "article-figure",
@@ -2024,6 +2058,40 @@
         "src/content/essays/the-industry-misdefined-multi-agent-ai.md"
       ],
       "sourcePair": "/social/the-industry-misdefined-multi-agent-ai-og.png"
+    },
+    {
+      "path": "/social/the-work-outlives-the-agent-og.png",
+      "format": "png",
+      "category": "social-og",
+      "dimensions": {
+        "width": 1200,
+        "height": 630
+      },
+      "sha256": "f5194bd72ec1efb754574b27f5e839c5ecf775b8eb20cbd4c1ac032a9908d9bd",
+      "visualSystem": null,
+      "paletteMode": "raster-derived",
+      "manualReview": false,
+      "usedBy": [
+        "src/content/essays/the-work-outlives-the-agent.md"
+      ],
+      "sourcePair": "/social/the-work-outlives-the-agent-og.svg"
+    },
+    {
+      "path": "/social/the-work-outlives-the-agent-og.svg",
+      "format": "svg",
+      "category": "social-og",
+      "dimensions": {
+        "width": 1200,
+        "height": 630
+      },
+      "sha256": "35731809e70b8b47af5d850dbc9b8fd6d656cf758d8feb36cc3c32e1aea86b34",
+      "visualSystem": "research-ledger-b",
+      "paletteMode": "neutral-structure-functional-blue",
+      "manualReview": false,
+      "usedBy": [
+        "src/content/essays/the-work-outlives-the-agent.md"
+      ],
+      "sourcePair": "/social/the-work-outlives-the-agent-og.png"
     },
     {
       "path": "/social/when-an-agent-says-done-og.png",
