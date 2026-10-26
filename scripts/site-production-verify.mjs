@@ -7,7 +7,7 @@ const args = process.argv.slice(2);
 const baseArg = args.find((arg) => arg.startsWith("--base="))?.slice("--base=".length) ?? (args.includes("--base") ? args[args.indexOf("--base") + 1] : "");
 const base = (baseArg || process.env.SITE_BASE_URL || "").replace(/\/$/, "");
 const allowMissingCommit = args.includes("--allow-missing-commit");
-const expectedCommit = process.env.VERCEL_DEPLOYMENT_SHA || process.env.VERCEL_GIT_COMMIT_SHA || process.env.EXPECTED_DEPLOY_COMMIT || "";
+const expectedCommit = process.env.EXPECTED_DEPLOY_COMMIT || process.env.VERCEL_GIT_COMMIT_SHA || process.env.VERCEL_DEPLOYMENT_SHA || "";
 const failures = [];
 const warnings = [];
 const pass = (message) => console.log(`[PASS] ${message}`);
@@ -47,6 +47,9 @@ function absolute(route) {
 
 async function get(route, options = {}) {
   const response = await fetch(absolute(route), { redirect: "follow", ...options });
+  if (new URL(response.url).origin !== new URL(base).origin) {
+    throw new Error(`redirected outside the verification origin to ${new URL(response.url).origin}`);
+  }
   const body = options.method === "HEAD" ? "" : await response.text();
   return { response, body };
 }
@@ -108,6 +111,20 @@ async function main() {
     } catch (error) {
       fail(`${route} could not be fetched: ${error instanceof Error ? error.message : String(error)}`);
     }
+  }
+
+  // Provider identity and public content are separate evidence: an attested
+  // deployment must also serve the publication snapshot being verified.
+  try {
+    const { response, body } = await get("/generated/publication-manifest.json");
+    const expectedManifest = JSON.parse(fs.readFileSync(path.join(root, "public", "generated", "publication-manifest.json"), "utf8"));
+    if (response.status !== 200 || JSON.stringify(JSON.parse(body)) !== JSON.stringify(expectedManifest)) {
+      fail("deployed publication manifest differs from the verified source snapshot");
+    } else {
+      pass("deployed publication manifest matches the verified source snapshot");
+    }
+  } catch (error) {
+    fail(`deployed publication manifest could not be verified: ${error instanceof Error ? error.message : String(error)}`);
   }
 
   let sitemapRoute = "/sitemap-index.xml";
